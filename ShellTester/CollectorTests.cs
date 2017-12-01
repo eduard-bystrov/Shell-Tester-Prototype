@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShellTester
 {
-    public class AlgorithmCheckAllTests : IAlgorithmProcessTests
+    class CollectorTests : ICollectorTests
     {
-        public ResultTest[] StartTesting()
+        public TestBlock[] MakeTestBlocks()
         {
             throw new NotImplementedException();
         }

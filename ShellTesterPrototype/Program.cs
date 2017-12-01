@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ShellTester;
+using Tester;
 
 namespace ShellTesterPrototype
 {
@@ -10,7 +10,7 @@ namespace ShellTesterPrototype
     {
         static void Main(string[] args)
         {
-            ITester tester = new Tester();
+            ITester tester = new Tester(new CollectorTests(),new AlgorithmCheckAllTests());
             tester.Run();
         }
     }

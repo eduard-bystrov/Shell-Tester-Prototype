@@ -7,9 +7,10 @@ namespace ShellTester
 {
     public class Tester : ITester
     {
-        Tester(IAlgorithmProcessTests algorithmProcessTests)
+        Tester(ICollectorTests collertor,IAlgorithmProcessTests algorithmProcessTests)
         {
             _algorithmProcessTests = algorithmProcessTests;
+            _collector = collertor;
         }
         public void Run()
         {
@@ -18,5 +19,6 @@ namespace ShellTester
 
 
         private readonly IAlgorithmProcessTests _algorithmProcessTests;
+        private readonly ICollectorTests _collector;
     }
 }
