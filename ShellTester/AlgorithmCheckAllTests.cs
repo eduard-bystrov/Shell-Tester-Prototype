@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ShellTester
 {
-    public class ShellTester : IShellTester
+    class AlgorithmCheckAllTests : IAlgorithmProcessTests
     {
-        public void Run()
+        public ResultTest[] StartTesting()
         {
             throw new NotImplementedException();
         }

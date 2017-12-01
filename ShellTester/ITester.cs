@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ShellTester
 {
-    interface IShellTester
+    public interface ITester
     {
+        void Run();
     }
 }
