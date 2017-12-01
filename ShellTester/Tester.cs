@@ -14,7 +14,8 @@ namespace Tester
         }
         public void Run()
         {
-            throw new NotImplementedException();
+            var tests = _collector.MakeTestBlocks();
+            var resultTests = _algorithmProcessTests.StartTesting(tests);
         }
 
 

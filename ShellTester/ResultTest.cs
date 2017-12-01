@@ -8,9 +8,9 @@ namespace Tester
 {
     public struct ResultTest
     {
-        bool launch;
-        bool success;
-        int time;
-        int memory;
+        public bool launch;
+        public bool success;
+        public int time;
+        public int memory;
     }
 }

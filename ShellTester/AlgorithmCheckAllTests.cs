@@ -8,7 +8,7 @@ namespace Tester
 {
     public class AlgorithmCheckAllTests : IAlgorithmProcessTests
     {
-        public ResultTest[] StartTesting()
+        public ResultTest[] StartTesting(TestBlock[] tests)
         {
             throw new NotImplementedException();
         }

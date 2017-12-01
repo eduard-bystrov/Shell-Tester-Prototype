@@ -13,7 +13,7 @@ namespace Tester
             inputFileName = input;
             idealOutputFileName = output;
         }
-        String inputFileName;
-        String idealOutputFileName;
+        public String inputFileName;
+        public String idealOutputFileName;
     }
 }

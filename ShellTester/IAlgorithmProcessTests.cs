@@ -8,6 +8,6 @@ namespace Tester
 {
     public interface IAlgorithmProcessTests
     {
-        ResultTest[] StartTesting();
+        ResultTest[] StartTesting(TestBlock[] tests);
     }
 }
