@@ -10,7 +10,7 @@ namespace Tester
     {
        public AlgorithmCheckAllTests()
         {
-            _runnerOneTest = new SimpleRunOneTest();
+            _runnerOneTest = new RunnerOneTest();
         }
         public ResultTest[] StartTesting(TestBlock[] tests)
         {
@@ -23,6 +23,6 @@ namespace Tester
             return result.ToArray();
         }
 
-        private readonly ISimpleRunOneTest _runnerOneTest;
+        private readonly IRunnerOneTest _runnerOneTest;
     }
 }

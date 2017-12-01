@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tester
 {
-    class SimpleRunOneTest : ISimpleRunOneTest
+    public interface IRunnerOneTest
     {
-        public ResultTest Run(TestBlock test)
-        {
-            return new ResultTest();
-        }
+        ResultTest Run(TestBlock test);
     }
 }
