@@ -10,7 +10,6 @@ public sealed class Logger
         Console.WriteLine(s);
     }
 
-
     private static readonly Lazy<Logger> lazy =
         new Lazy<Logger>(() => new Logger());
 

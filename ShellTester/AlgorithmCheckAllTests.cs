@@ -8,9 +8,21 @@ namespace Tester
 {
     public class AlgorithmCheckAllTests : IAlgorithmProcessTests
     {
+       public AlgorithmCheckAllTests()
+        {
+            _runnerOneTest = new SimpleRunOneTest();
+        }
         public ResultTest[] StartTesting(TestBlock[] tests)
         {
-            throw new NotImplementedException();
+            var result = new List<ResultTest>();
+            foreach(var test in tests)
+            {
+                result.Add(_runnerOneTest.Run(test));
+            }
+
+            return result.ToArray();
         }
+
+        private readonly ISimpleRunOneTest _runnerOneTest;
     }
 }
