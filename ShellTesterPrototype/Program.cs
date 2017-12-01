@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Tester;
 
-namespace ShellTesterPrototype
+namespace Tester
 {
     class Program
     {

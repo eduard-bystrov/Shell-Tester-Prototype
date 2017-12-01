@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ShellTester
+namespace Tester
 {
     public class Tester : ITester
     {
-        Tester(ICollectorTests collertor,IAlgorithmProcessTests algorithmProcessTests)
+        public Tester(ICollectorTests collertor,IAlgorithmProcessTests algorithmProcessTests)
         {
             _algorithmProcessTests = algorithmProcessTests;
             _collector = collertor;

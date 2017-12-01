@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShellTester
+namespace Tester
 {
-    class CollectorTests : ICollectorTests
+    public class CollectorTests : ICollectorTests
     {
         public TestBlock[] MakeTestBlocks()
         {
