@@ -14,8 +14,8 @@ namespace ShellTester
 
             for (int i = 1; i <= 4; ++i)
             {
-                res[i - 1].inputFileName = String.Format("{0}_IN", i);
-                res[i - 1].idealOutputFileName = String.Format("{0}_OUT", i);
+                res[i - 1].inputFileName = String.Format("{0}_IN.txt", i);
+                res[i - 1].idealOutputFileName = String.Format("{0}_OUT.txt", i);
             }
             
             return res;

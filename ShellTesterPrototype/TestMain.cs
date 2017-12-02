@@ -9,30 +9,30 @@ using System.IO;
 
 namespace ShellTesterPrototype
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            ProcessStartInfo info = new ProcessStartInfo
-            {
-                FileName = "plus.exe",
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardInput = true
-            };
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        ProcessStartInfo info = new ProcessStartInfo
+    //        {
+    //            FileName = "plus.exe",
+    //            UseShellExecute = false,
+    //            RedirectStandardOutput = true,
+    //            RedirectStandardInput = true
+    //        };
             
-            Process process = new Process();
-            process.StartInfo = info;
-            process.Start();
-            StreamWriter streamWriter = process.StandardInput;
-            streamWriter.WriteLine("1 5");
-            streamWriter.Close();
+    //        Process process = new Process();
+    //        process.StartInfo = info;
+    //        process.Start();
+    //        StreamWriter streamWriter = process.StandardInput;
+    //        streamWriter.WriteLine("1 5");
+    //        streamWriter.Close();
             
-            string s = process.StandardOutput.ReadToEnd();
-            Logger.Instance.Write(s);
-            process.WaitForExit();
-            process.Close();
-            process.Start();
-        }
-    }
+    //        string s = process.StandardOutput.ReadToEnd();
+    //        Logger.Instance.Write(s);
+    //        process.WaitForExit();
+    //        process.Close();
+    //        process.Start();
+    //    }
+    //}
 }

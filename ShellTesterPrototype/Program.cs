@@ -6,15 +6,15 @@ using ShellTester;
 
 namespace ShellTesterPrototype
 {
-    //class Program
-    //{
-    //    static void Main(string[] args)
-    //    {
-    //        ITester tester = new Tester(
-    //            new CollectorTests(),
-    //            new AlgorithmCheckAllTests()
-    //        );
-    //        tester.Run();
-    //    }
-    //}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ITester tester = new Tester(
+                new CollectorTests(),
+                new AlgorithmCheckAllTests()
+            );
+            tester.Run();
+        }
+    }
 }
