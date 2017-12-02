@@ -32,7 +32,6 @@ namespace ShellTesterPrototype
             Logger.Instance.Write(s);
             process.WaitForExit();
             process.Close();
-
             process.Start();
         }
     }
