@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ShellTester
 {
-    class OneTestRunner : IOneTestRunner
+    public class OneTestRunner : IOneTestRunner
 	{
         public TestResult Run(Test test) // information about process (processInfo ???)
         {

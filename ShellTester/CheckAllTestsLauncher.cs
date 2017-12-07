@@ -8,21 +8,21 @@ namespace ShellTester
 {
     public class CheckAllTestsLauncher : IProcessTestsLauncher
     {
-       public CheckAllTestsLauncher()
+       public CheckAllTestsLauncher(IOneTestRunner oneTestRunner)
         {
-            _runnerOneTest = new OneTestRunner();
+			_oneTestRunner = oneTestRunner;
         }
         public TestResult[] StartTesting(Test[] tests)
         {
             var result = new List<TestResult>();
             foreach(var test in tests)
             {
-                result.Add(_runnerOneTest.Run(test));
+                result.Add(_oneTestRunner.Run(test));
             }
 
             return result.ToArray();
         }
 
-        private readonly IOneTestRunner _runnerOneTest;
+        private readonly IOneTestRunner _oneTestRunner;
     }
 }
