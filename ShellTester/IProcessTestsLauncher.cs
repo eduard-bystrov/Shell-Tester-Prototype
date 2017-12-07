@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShellTester
 {
-    public interface IRunnerOneTest
+    public interface IProcessTestsLauncher
     {
-        ResultTest Run(TestBlock test);
+        TestResult[] StartTesting(TestBlock[] tests);
     }
 }

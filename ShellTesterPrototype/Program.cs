@@ -12,7 +12,7 @@ namespace ShellTesterPrototype
         {
             ITester tester = new Tester(
                 new CollectorTests(),
-                new AlgorithmCheckAllTests()
+                new CheckAllTestsLauncher()
             );
             tester.Run();
         }

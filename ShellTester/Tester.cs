@@ -7,19 +7,19 @@ namespace ShellTester
 {
     public class Tester : ITester
     {
-        public Tester(ICollectorTests collertor,IAlgorithmProcessTests algorithmProcessTests)
+        public Tester(ICollectorTests collertor,IProcessTestsLauncher processTestsLauncher)
         {
-            _algorithmProcessTests = algorithmProcessTests;
+			_processTestsLauncher = processTestsLauncher;
             _collector = collertor;
         }
         public void Run()
         {
             var tests = _collector.MakeTestBlocks();
-            var resultTests = _algorithmProcessTests.StartTesting(tests);
+            var resultTests = _processTestsLauncher.StartTesting(tests);
         }
 
 
-        private readonly IAlgorithmProcessTests _algorithmProcessTests;
+        private readonly IProcessTestsLauncher _processTestsLauncher;
         private readonly ICollectorTests _collector;
     }
 }

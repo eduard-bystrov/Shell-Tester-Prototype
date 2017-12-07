@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ShellTester
 {
-    public class AlgorithmCheckAllTests : IAlgorithmProcessTests
+    public class CheckAllTestsLauncher : IProcessTestsLauncher
     {
-       public AlgorithmCheckAllTests()
+       public CheckAllTestsLauncher()
         {
-            _runnerOneTest = new RunnerOneTest();
+            _runnerOneTest = new OneTestRunner();
         }
-        public ResultTest[] StartTesting(TestBlock[] tests)
+        public TestResult[] StartTesting(TestBlock[] tests)
         {
-            var result = new List<ResultTest>();
+            var result = new List<TestResult>();
             foreach(var test in tests)
             {
                 result.Add(_runnerOneTest.Run(test));
@@ -23,6 +23,6 @@ namespace ShellTester
             return result.ToArray();
         }
 
-        private readonly IRunnerOneTest _runnerOneTest;
+        private readonly IOneTestRunner _runnerOneTest;
     }
 }
