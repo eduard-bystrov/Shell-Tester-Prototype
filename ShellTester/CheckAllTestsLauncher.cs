@@ -12,7 +12,7 @@ namespace ShellTester
         {
             _runnerOneTest = new OneTestRunner();
         }
-        public TestResult[] StartTesting(TestBlock[] tests)
+        public TestResult[] StartTesting(Test[] tests)
         {
             var result = new List<TestResult>();
             foreach(var test in tests)

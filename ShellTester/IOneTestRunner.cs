@@ -8,6 +8,6 @@ namespace ShellTester
 {
     public interface IOneTestRunner
     {
-        TestResult Run(TestBlock test);
+        TestResult Run(Test test);
     }
 }

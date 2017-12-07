@@ -8,6 +8,6 @@ namespace ShellTester
 {
     public interface IProcessTestsLauncher
     {
-        TestResult[] StartTesting(TestBlock[] tests);
+        TestResult[] StartTesting(Test[] tests);
     }
 }

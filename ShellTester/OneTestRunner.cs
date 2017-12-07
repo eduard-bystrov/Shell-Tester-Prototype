@@ -10,7 +10,7 @@ namespace ShellTester
 {
     class OneTestRunner : IOneTestRunner
 	{
-        public TestResult Run(TestBlock test) // information about process (processInfo ???)
+        public TestResult Run(Test test) // information about process (processInfo ???)
         {
 			Process process = new Process() { StartInfo = CreateProcessInfo() };
             process.Start();
@@ -18,31 +18,39 @@ namespace ShellTester
             StreamWriter streamWriter = process.StandardInput;
             StreamReader streamReaderInput = new StreamReader(test.inputFileName);
             streamWriter.Write(streamReaderInput.ReadToEnd());
-            streamWriter.Close();
-
-            String processOutput = process.StandardOutput.ReadToEnd();
-
+			streamWriter.Close();
             process.WaitForExit();
+           
+			var res = CreateTestResult(process,test);
 
-            process.Close();
+			process.Close();
 
-            StreamReader streamReaderIdeal = new StreamReader(test.idealOutputFileName);
-            String idealOutput = streamReaderIdeal.ReadToEnd();
+			//Logger.Instance.Write(
+			//            String.Format("IDEAL: {0} PROCESS: {1} {2}",
+			//            processOutput, idealOutput, res.Type)
+			//         );
 
-            var res = new TestResult();
+			Logger.Instance.Write(String.Format("{0}",
+				res.Type));
+
+            return res;
+        }
+
+		private TestResult CreateTestResult(Process process,Test test)
+		{
+			StreamReader streamReaderIdeal = new StreamReader(test.idealOutputFileName);
+			String idealOutput = streamReaderIdeal.ReadToEnd();
+			String processOutput = process.StandardOutput.ReadToEnd();
+			
+			var res = new TestResult();
+
 			bool accepted = (idealOutput == processOutput);
 
 			if (accepted) res.Type = TestResultType.Success;
 			else res.Type = TestResultType.WrongAnswer;
 
-			Logger.Instance.Write(
-               String.Format("IDEAL: {0} PROCESS: {1} {2}",
-               processOutput, idealOutput, res.Type)
-            );
-
-
-            return res;
-        }
+			return res;
+		}
 
 		private ProcessStartInfo CreateProcessInfo()
 		{

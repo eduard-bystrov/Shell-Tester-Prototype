@@ -8,9 +8,9 @@ namespace ShellTester
 {
     public class CollectorTests : ICollectorTests
     {
-        public TestBlock[] MakeTestBlocks()
+        public Test[] MakeTestBlocks()
         {
-            TestBlock[] res = new TestBlock[4];
+            Test[] res = new Test[4];
 
             for (int i = 1; i <= 4; ++i)
             {

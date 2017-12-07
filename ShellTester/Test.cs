@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShellTester
 {
-    public struct TestBlock
+    public struct Test
     {
-        TestBlock(String input, String output)
+        Test(String input, String output)
         {
             inputFileName = input;
             idealOutputFileName = output;
