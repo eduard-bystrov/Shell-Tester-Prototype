@@ -10,6 +10,10 @@ namespace ShellTester
 {
     public class OneTestRunner : IOneTestRunner
 	{
+		public OneTestRunner(string exeName)
+		{
+			_exeName = exeName;
+		}
         public TestResult Run(Test test) // information about process (processInfo ???)
         {
 			Process process = new Process() { StartInfo = CreateProcessInfo() };
@@ -56,11 +60,13 @@ namespace ShellTester
 		{
 			return new ProcessStartInfo
 			{
-				FileName = "plus.exe",
+				FileName = _exeName,
 				UseShellExecute = false,
 				RedirectStandardOutput = true,
 				RedirectStandardInput = true
 			};
 		}
+
+		private readonly string _exeName;
     }
 }
