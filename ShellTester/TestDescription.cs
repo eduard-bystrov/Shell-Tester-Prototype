@@ -10,5 +10,8 @@ namespace ShellTester
 	{
 		public string inputFilePath;
 		public string idealOutputFilePath;
+
+		int id;
+		int cost;
 	}
 }

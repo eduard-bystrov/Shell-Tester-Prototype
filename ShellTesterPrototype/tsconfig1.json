@@ -1,0 +1,21 @@
+{
+  "PathToExe": "plus.exe",
+  "PathToTests": "qqq.zip",
+  "Mode": "zip",
+  "Tests": {
+
+    "InputMask": "input00.txt",
+    "OutputMask": "output00.txt",
+    "DefaultTimeLimit_ms": 1000,
+    "DefaultMemoryLimit_mb": 64,
+    "DefaultPrice": 1,
+    "Customizations": [
+      {
+        "Number": "00",
+        "TimeLimit": 5000,
+        "MemoryLimit_mb": 128,
+        "Price": 0
+      }
+    ]
+  }
+}
