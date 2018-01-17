@@ -19,26 +19,31 @@ namespace ShellTester
 			Process process = new Process() { StartInfo = CreateProcessInfo() };
             process.Start();
 
-            StreamWriter streamWriter = process.StandardInput;
-            StreamReader streamReaderInput = new StreamReader(test.inputFileName);
-            streamWriter.Write(streamReaderInput.ReadToEnd());
-			streamWriter.Close();
+			Logger.Instance.Write(String.Format("Start test: {0}", test.inputFileName));
+
+			WriteInputDataToProcess(process, test);
+			
+
+
             process.WaitForExit();
-           
+
+			Logger.Instance.Write(String.Format("End test: {0}", test.inputFileName));
+
+			
 			var res = CreateTestResult(process,test);
 
 			process.Close();
 
-			//Logger.Instance.Write(
-			//            String.Format("IDEAL: {0} PROCESS: {1} {2}",
-			//            processOutput, idealOutput, res.Type)
-			//         );
-
-			Logger.Instance.Write(String.Format("{0}",
-				res.Type));
-
             return res;
         }
+
+		private void WriteInputDataToProcess(Process process,Test test)
+		{
+			StreamWriter streamWriter = process.StandardInput;
+			StreamReader streamReaderInput = new StreamReader(test.inputFileName);
+			streamWriter.Write(streamReaderInput.ReadToEnd());
+			streamWriter.Close();
+		}
 
 		private TestResult CreateTestResult(Process process,Test test)
 		{
@@ -47,11 +52,21 @@ namespace ShellTester
 			String processOutput = process.StandardOutput.ReadToEnd();
 			
 			var res = new TestResult();
-
+			
 			bool accepted = (idealOutput == processOutput);
 
-			if (accepted) res.Type = TestResultType.Success;
-			else res.Type = TestResultType.WrongAnswer;
+			if (accepted)
+			{
+				res.Type = TestResultType.Success;
+			}
+			else
+			{
+				res.Type = TestResultType.WrongAnswer;
+			}
+
+			res.ExecutionTime = process.TotalProcessorTime;
+			
+			Logger.Instance.Write(process.VirtualMemorySize64.ToString());
 
 			return res;
 		}

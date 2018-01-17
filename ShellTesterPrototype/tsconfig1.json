@@ -2,8 +2,8 @@
   "PathToExe": "plus.exe",
   "PathToTests": "qqq.zip",
   "Mode": "zip",
-  "Tests": {
-
+  "Tests": 
+  {
     "InputMask": "input00.txt",
     "OutputMask": "output00.txt",
     "DefaultTimeLimit_ms": 1000,
