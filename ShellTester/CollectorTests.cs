@@ -41,8 +41,8 @@ namespace ShellTester
 
 
 		private readonly string _workPath; 
-		private string _inputFilePattern = @"input00.txt";
-		private string _outputFilePattern = @"output00.txt";
+		private string _inputFilePattern = @"(input)([\d]+)(.txt)";
+		private string _outputFilePattern = @"(output)([\d]+)(.txt)";
 
 		
 	}
