@@ -3,25 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace ShellTester
 {
-    public class CollectorTests : ICollectorTests
-    {
-        public Test[] MakeTestBlocks()
-        {
-            Test[] res = new Test[4];
+	public class CollectorTests : ICollectorTests
+	{
+		public CollectorTests(string workPath)
+		{
+			_workPath = workPath;
+		}
+		public Test[] MakeTestBlocks()
+		{
+			var inputFiles = GetFilesByMask(_inputFilePattern);
+			var outputFiles = GetFilesByMask(_outputFilePattern);
 
-            for (int i = 1; i <= 4; ++i)
-            {
-                res[i - 1].inputFileName = String.Format("{0}_IN.txt", i);
-                res[i - 1].idealOutputFileName = String.Format("{0}_OUT.txt", i);
-            }
-            
-            return res;
-        }
+			var tests = new Test[inputFiles.Length];
 
+			for (int i = 0; i < inputFiles.Length; ++i)
+			{
+				tests[i].inputFileName = inputFiles[i];
+				tests[i].idealOutputFileName = outputFiles[i];
+			};
+
+			return tests;
+		}
+
+
+		private string[] GetFilesByMask(string mask)
+		{
+			Regex reg = new Regex(mask);
+			return Directory.GetFiles(_workPath)
+							.Where(path => reg.IsMatch(path))
+							.ToArray();
+		}
+
+
+		private readonly string _workPath; 
+		private string _inputFilePattern = @"input00.txt";
+		private string _outputFilePattern = @"output00.txt";
 
 		
-    }
+	}
 }

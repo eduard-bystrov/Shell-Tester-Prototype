@@ -8,6 +8,6 @@ namespace ShellTester
 {
     public interface ICollectorTests
     {
-        Test[] MakeTestBlocks();
-    }
+		Test[] MakeTestBlocks();
+	}
 }
