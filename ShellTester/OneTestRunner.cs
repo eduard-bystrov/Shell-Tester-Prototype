@@ -22,20 +22,29 @@ namespace ShellTester
 			Logger.Instance.Write(String.Format("Start test: {0}", test.inputFileName));
 
 			WriteInputDataToProcess(process, test);
-			
-
-
-            process.WaitForExit();
+			WaitProcessAndCollectData(process);
 
 			Logger.Instance.Write(String.Format("End test: {0}", test.inputFileName));
 
-			
 			var res = CreateTestResult(process,test);
 
 			process.Close();
 
             return res;
         }
+
+		private void WaitProcessAndCollectData(Process process)
+		{
+			do
+			{
+				if (!process.HasExited)
+				{
+					_peakPagedMem = process.PeakPagedMemorySize64;
+					_peakVirtualMem = process.PeakVirtualMemorySize64;
+					_peakWorkingSet = process.PeakWorkingSet64;
+				}
+			} while (!process.WaitForExit(TIME_REFRESH_DATA_ABOUT_PROCESS_MS));
+		}
 
 		private void WriteInputDataToProcess(Process process,Test test)
 		{
@@ -65,9 +74,8 @@ namespace ShellTester
 			}
 
 			res.ExecutionTime = process.TotalProcessorTime;
+			res.PeekMemory = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
 			
-			Logger.Instance.Write(process.VirtualMemorySize64.ToString());
-
 			return res;
 		}
 
@@ -83,5 +91,12 @@ namespace ShellTester
 		}
 
 		private readonly string _exeName;
+
+		private Int64 _peakPagedMem = 0;
+		private Int64 _peakWorkingSet = 0;
+		private Int64 _peakVirtualMem = 0;
+
+
+		private const int TIME_REFRESH_DATA_ABOUT_PROCESS_MS = 1000;
     }
 }

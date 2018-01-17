@@ -25,5 +25,11 @@ namespace ShellTester
 			get;
 			set;
 		}
+
+		public Int64 PeekMemory
+		{
+			get;
+			set;
+		}
 	}
 }
