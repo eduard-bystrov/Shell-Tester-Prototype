@@ -35,7 +35,7 @@ namespace ShellTester
 		{
 			Regex reg = new Regex(mask);
 			return Directory.GetFiles(_workPath)
-							.Where(path => reg.IsMatch(path))
+							.Where(file => reg.IsMatch(file))
 							.ToArray();
 		}
 
