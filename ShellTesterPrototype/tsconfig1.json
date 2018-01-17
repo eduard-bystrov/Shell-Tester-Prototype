@@ -4,8 +4,16 @@
   "Mode": "zip",
   "Tests": 
   {
-    "InputMask": "input00.txt",
-    "OutputMask": "output00.txt",
+    "InputMask": {
+      "prefix": "input",
+      "numeration": "[/d]+",
+      "suffix": ".txt"
+    },
+    "OutputMask": {
+      "prefix": "output",
+      "numeration": "[/d]+",
+      "suffix": ".txt"
+    },
     "DefaultTimeLimit_ms": 1000,
     "DefaultMemoryLimit_mb": 64,
     "DefaultPrice": 1,
