@@ -19,7 +19,7 @@ namespace ShellTester
             {
                 result.Add(_oneTestRunner.Run(test));
             }
-
+			
             return result.ToArray();
         }
 
