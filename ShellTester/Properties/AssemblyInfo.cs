@@ -33,7 +33,8 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.0.3")]
-[assembly: AssemblyFileVersion("1.0.0.3")]
+[assembly: AssemblyVersion("1.0.0.4")]
+[assembly: AssemblyFileVersion("1.0.0.4")]
 // 1.0.0.2 fix peek memory problem, add total time 
 // 1.0.0.3 base regex for input filenames
+// 1.0.0.4 path collector ready(ну возможно перемудрил)

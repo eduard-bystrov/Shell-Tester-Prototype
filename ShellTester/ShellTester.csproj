@@ -52,6 +52,7 @@
     <Compile Include="IOneTestRunner.cs" />
     <Compile Include="ITestResult.cs" />
     <Compile Include="TestDescription.cs" />
+    <Compile Include="TestFilePattern.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="OneTestRunner.cs" />
     <Compile Include="Test.cs" />

@@ -8,12 +8,12 @@ namespace ShellTester
 {
     public struct Test
     {
-        Test(String input, String output)
+        public Test(string input, string output)
         {
             inputFileName = input;
             idealOutputFileName = output;
         }
-        public String inputFileName;
-        public String idealOutputFileName;
+        public string inputFileName;
+        public string idealOutputFileName;
     }
 }

@@ -20,7 +20,11 @@ namespace ShellTesterPrototype
 			Logger.Instance.Write(exe);
 
 			ITester tester = new Tester(
-				new CollectorTests("C:\\4к1с\\Shell-Tester-Prototype\\test"),
+				new CollectorTests(@"C:\FкFс\Shell-Tester-Prototype\test",
+					new TestFilePattern(@"(input)(\d+)(.txt)"),
+					new TestFilePattern(@"(output)(\d+)(.txt)")
+				
+				),
 				new CheckAllTestsLauncher
 					(
 						new OneTestRunner(exe)

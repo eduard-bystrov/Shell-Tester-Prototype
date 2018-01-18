@@ -11,53 +11,105 @@ namespace ShellTester
 	public class CollectorTests : ICollectorTests
 	{
 		public CollectorTests(string workPath,
-							  string inputFilePattern = INPUT_FILE_PATTERN_DEFAULT,
-							  string outoutFilePatten = OUTPUT_FILE_PATTERN_DEFAULT)
+							  TestFilePattern inputFilePattern,
+							  TestFilePattern outoutFilePatten)
 		{
 			_workPath = workPath;
-			_inputFileReg = new Regex(inputFilePattern);
-			_outputFileReg = new Regex(outoutFilePatten);
-
+			_inputFilePattern = inputFilePattern;
+			_outputFilePattern = outoutFilePatten;
 		}
 		public Test[] MakeTestBlocks()
 		{
 			Logger.Instance.Write("Finding test files...");
 
-			var inputFiles = GetFilesByMask(_inputFileReg);
-			var outputFiles = GetFilesByMask(_outputFileReg);
+			string[] inputFiles = GetFilesByMask(_inputFilePattern.GetPattern);
+			string[] outputFiles = GetFilesByMask(_outputFilePattern.GetPattern);
 
-			var tests = new Test[inputFiles.Length];
-
-			for (int i = 0; i < inputFiles.Length; ++i)
-			{
-				tests[i].inputFileName = inputFiles[i];
-				tests[i].idealOutputFileName = outputFiles[i];
-			};
+			var tests = MakeTestBlocks(inputFiles, outputFiles);
 
 			Logger.Instance.Write("Test blocks ready");
-
+			
 			return tests;
 		}
 
-
-		private string[] GetFilesByMask(Regex reg)
+		//IGNORED NOT MERGED FILES
+		private Test[] MakeTestBlocks(string[] inputFiles, string[] outputFiles)
 		{
+			List<Test> tests = new List<Test>();
+
+			string[] inputNumberFilenames = GetOnlyNumberFilenames(inputFiles, _inputFilePattern);
+			string[] outpuNumberFilenames = GetOnlyNumberFilenames(outputFiles, _outputFilePattern);
+
+			for (int i = 0; i < inputNumberFilenames.Length; ++i)
+			{
+				for (int j = 0; j < outpuNumberFilenames.Length; ++j)
+				{
+					string inNumber = inputNumberFilenames[i];
+					string outNumber = outpuNumberFilenames[j];
+
+					if (inNumber == outNumber)
+					{
+						Test test = new Test(inputFiles[i],outputFiles[j]);
+						tests.Add(test);
+						break;
+					}
+				}
+			}
+
+			return tests.ToArray();
+		}
+		private string[] GetOnlyNumberFilenames(string[] filenames, TestFilePattern pattern)
+		{
+			int len = filenames.Length;
+			string[] res = new string[len];
+			for (int i = 0; i < len; ++i)
+			{
+				var filename = filenames[i];
+				res[i] = GetNumberOfTestFileName(filename,pattern);
+			}
+			return res;
+		}
+
+		private string[] GetFilesByMask(string pattern)
+		{
+			Regex reg = new Regex(pattern);
 			return Directory.GetFiles(_workPath)
 							.Where(file => reg.IsMatch(file))
 							.ToArray();
 		}
 
+		//private string[] GetArrayOfNumberTest(string[] filesname, TestFilePattern pattern)
+		//{
+		//	var result = from filename in filesname
+		//				 select GetNumberOfTestFileName(filename, pattern)
+		//				 .ToArray().ToString();
+		//	return result;
+		//}
 
+		private string GetNumberOfTestFileName(string fileName, TestFilePattern pattern)
+		{
+			string[] substrings = Regex.Split(fileName,pattern.GetPattern);
+			Regex reg = new Regex(pattern._numberPattern.Replace(@"//",@"/"));
+
+			foreach (var substring in substrings)
+			{
+				if (reg.IsMatch(substring)) return substring;
+			}
+
+			throw new NotImplementedException();
+
+		}
 
 		private readonly string _workPath; 
-		private readonly Regex _inputFileReg;  // suf num pref 
-		private readonly Regex _outputFileReg;// suf num pref
-		private const string INPUT_FILE_PATTERN_DEFAULT = @"(input)([\d] +)(.txt)";
-		private const string OUTPUT_FILE_PATTERN_DEFAULT = @"(output)([\d]+)(.txt)";
+		private readonly TestFilePattern _inputFilePattern;
+		private readonly TestFilePattern _outputFilePattern;
+	
+		private const int POSITION_NUMBER = 2;
+
 		// может быть разбить на три блока и потом собирать их ?
 		// парсить в один блок потом разбивать ?
 		// что если два файла с одинаковым номером
-
-
+		// что будет если преф. и/или суф. пустые
+		// перемудрил, мб, вернуть как было )00000
 	}
 }
