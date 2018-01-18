@@ -10,14 +10,21 @@ namespace ShellTester
 {
 	public class CollectorTests : ICollectorTests
 	{
-		public CollectorTests(string workPath)
+		public CollectorTests(string workPath,
+							  string inputFilePattern = INPUT_FILE_PATTERN_DEFAULT,
+							  string outoutFilePatten = OUTPUT_FILE_PATTERN_DEFAULT)
 		{
 			_workPath = workPath;
+			_inputFileReg = new Regex(inputFilePattern);
+			_outputFileReg = new Regex(outoutFilePatten);
+
 		}
 		public Test[] MakeTestBlocks()
 		{
-			var inputFiles = GetFilesByMask(_inputFilePattern);
-			var outputFiles = GetFilesByMask(_outputFilePattern);
+			Logger.Instance.Write("Finding test files...");
+
+			var inputFiles = GetFilesByMask(_inputFileReg);
+			var outputFiles = GetFilesByMask(_outputFileReg);
 
 			var tests = new Test[inputFiles.Length];
 
@@ -27,23 +34,30 @@ namespace ShellTester
 				tests[i].idealOutputFileName = outputFiles[i];
 			};
 
+			Logger.Instance.Write("Test blocks ready");
+
 			return tests;
 		}
 
 
-		private string[] GetFilesByMask(string mask)
+		private string[] GetFilesByMask(Regex reg)
 		{
-			Regex reg = new Regex(mask);
 			return Directory.GetFiles(_workPath)
 							.Where(file => reg.IsMatch(file))
 							.ToArray();
 		}
 
 
-		private readonly string _workPath; 
-		private string _inputFilePattern = @"(input)([\d]+)(.txt)";
-		private string _outputFilePattern = @"(output)([\d]+)(.txt)";
 
-		
+		private readonly string _workPath; 
+		private readonly Regex _inputFileReg;  // suf num pref 
+		private readonly Regex _outputFileReg;// suf num pref
+		private const string INPUT_FILE_PATTERN_DEFAULT = @"(input)([\d] +)(.txt)";
+		private const string OUTPUT_FILE_PATTERN_DEFAULT = @"(output)([\d]+)(.txt)";
+		// может быть разбить на три блока и потом собирать их ?
+		// парсить в один блок потом разбивать ?
+		// что если два файла с одинаковым номером
+
+
 	}
 }
