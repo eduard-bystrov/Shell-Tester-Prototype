@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 
 namespace ShellTester
 {
-	public class CollectorTests : ICollectorTests
+	public class CollectorTestsInPath : ICollectorTests
 	{
-		public CollectorTests(string workPath,
+		public CollectorTestsInPath(string workPath,
 							  TestFilePattern inputFilePattern,
 							  TestFilePattern outoutFilePatten)
 		{
