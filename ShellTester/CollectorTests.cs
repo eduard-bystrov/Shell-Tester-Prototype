@@ -103,8 +103,6 @@ namespace ShellTester
 		private readonly string _workPath; 
 		private readonly TestFilePattern _inputFilePattern;
 		private readonly TestFilePattern _outputFilePattern;
-	
-		private const int POSITION_NUMBER = 2;
 
 		// может быть разбить на три блока и потом собирать их ?
 		// парсить в один блок потом разбивать ?
