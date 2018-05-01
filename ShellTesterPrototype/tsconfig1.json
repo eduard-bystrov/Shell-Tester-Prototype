@@ -1,17 +1,18 @@
 {
-  "PathToExe": "plus.exe",
+  "PathToExe": "plus.exe", //ком
   "PathToTests": "qqq.zip",
   "Mode": "zip",
+   "asdf" :  1,
   "Tests": 
-  {
+  [{
     "InputMask": {
       "prefix": "input",
-      "numeration": "[/d]+",
+      "numeration": "[\d]+",
       "suffix": ".txt"
     },
     "OutputMask": {
       "prefix": "output",
-      "numeration": "[/d]+",
+      "numeration": "[\d]+",
       "suffix": ".txt"
     },
     "DefaultTimeLimit_ms": 1000,

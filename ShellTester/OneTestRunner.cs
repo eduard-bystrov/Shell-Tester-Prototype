@@ -64,6 +64,8 @@ namespace ShellTester
 			
 			bool accepted = (idealOutput == processOutput);
 
+			Logger.Instance.Write(String.Format("Result {0}", accepted));
+
 			if (accepted)
 			{
 				res.Type = TestResultType.Success;

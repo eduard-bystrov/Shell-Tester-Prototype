@@ -13,17 +13,28 @@ namespace ShellTesterPrototype
         static void Main(string[] args)
         {
 			var parser = new FluentCommandLineParser();
-			String exe = "plus.exe";
-			parser.Setup<String>("e", "exe")
+
+			String exe = null;
+			String inMask = null, outMask=null;
+			String path = null;
+
+			parser.Setup<String>("p", longOption: "path")
+				.Callback(e => path = e);
+			parser.Setup<String>("e", longOption: "exe")
 				.Callback(e => exe = e);
+			parser.Setup<String>(longOption: "inMask")
+				.Callback(e => inMask = e);
+			parser.Setup<String>(longOption: "outMask")
+				.Callback(e => outMask = e);
+
 			parser.Parse(args);
 
 			Logger.Instance.Write(exe);
 
 			ITester tester = new Tester(
-				new CollectorTestsInPath(@"C:\FкFс\Shell-Tester-Prototype\test",
-					new TestFilePattern(@"(input)(\d+)(.txt)"),
-					new TestFilePattern(@"(output)(\d+)(.txt)")
+				new CollectorTestsInPath(path,
+					new TestFilePattern(inMask),
+					new TestFilePattern(outMask)
 				
 				),
 				new CheckAllTestsLauncher

@@ -20,7 +20,7 @@ namespace ShellTester
 		}
 		public Test[] MakeTestBlocks()
 		{
-			Logger.Instance.Write("Finding test files...");
+			Logger.Instance.Write("Find test files...");
 
 			string[] inputFiles = GetFilesByMask(_inputFilePattern.GetPattern);
 			string[] outputFiles = GetFilesByMask(_outputFilePattern.GetPattern);
@@ -32,7 +32,8 @@ namespace ShellTester
 			return tests;
 		}
 
-		//IGNORED NOT MERGED FILES
+		//ignored not merged file
+		//adding first asseptable
 		private Test[] MakeTestBlocks(string[] inputFiles, string[] outputFiles)
 		{
 			List<Test> tests = new List<Test>();
@@ -89,11 +90,14 @@ namespace ShellTester
 		private string GetNumberOfTestFileName(string fileName, TestFilePattern pattern)
 		{
 			string[] substrings = Regex.Split(fileName,pattern.GetPattern);
-			Regex reg = new Regex(pattern._numberPattern.Replace(@"//",@"/"));
+			Regex reg = new Regex(pattern._numberPattern);
 
 			foreach (var substring in substrings)
 			{
-				if (reg.IsMatch(substring)) return substring;
+				if (reg.IsMatch(substring))
+				{
+					return substring;
+				} 
 			}
 
 			throw new NotImplementedException();
