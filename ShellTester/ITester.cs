@@ -1,7 +1,9 @@
-﻿namespace ShellTester
+﻿using System.Collections.Generic;
+
+namespace ShellTester
 {
 	public interface ITester
 	{
-		void Run();
+		IEnumerable<TestResult> Run();
 	}
 }

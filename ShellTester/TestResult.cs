@@ -11,7 +11,7 @@ namespace ShellTester
 		public TestDescription Description { get; set; }
 		public Int64 PeekMemory { get; set; }
 
-		public String Json
+		public String ToJson
 		{
 			get
 			{

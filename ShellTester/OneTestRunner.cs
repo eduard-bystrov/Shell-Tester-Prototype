@@ -59,6 +59,8 @@ namespace ShellTester
 
 			var res = new TestResult();
 
+
+			//TODO Сравниватель файлов, доблы и тд
 			Boolean accepted = (idealOutput == processOutput);
 
 			Logger.Instance.Write(String.Format("Result {0}", accepted));
@@ -72,6 +74,8 @@ namespace ShellTester
 				res.Type = TestResultType.WrongAnswer;
 			}
 
+
+			//TODO память время
 			res.ExecutionTime = process.TotalProcessorTime;
 			res.PeekMemory = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
 

@@ -38,7 +38,9 @@ namespace ShellTesterPrototype
 						new OneTestRunner(exe)
 					)
 			);
-			tester.Run();
+			var result = tester.Run();
+
+
 		}
 	}
 }

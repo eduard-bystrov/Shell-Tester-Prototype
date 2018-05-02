@@ -1,4 +1,6 @@
-﻿namespace ShellTester
+﻿using System.Collections.Generic;
+
+namespace ShellTester
 {
 	public class Tester : ITester
 	{
@@ -8,10 +10,10 @@
 			_collector = collertor;
 		}
 
-		public void Run()
+		public IEnumerable<TestResult> Run()
 		{
 			var tests = _collector.MakeTestBlocks();
-			var resultTests = _processTestsLauncher.StartTesting(tests);
+			return _processTestsLauncher.StartTesting(tests);
 		}
 
 		private readonly IProcessTestsLauncher _processTestsLauncher;
