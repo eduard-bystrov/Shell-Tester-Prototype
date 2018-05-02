@@ -1,28 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShellTester
 {
-    public class CheckAllTestsLauncher : IProcessTestsLauncher
-    {
-       public CheckAllTestsLauncher(IOneTestRunner oneTestRunner)
-        {
+	public class CheckAllTestsLauncher : IProcessTestsLauncher
+	{
+		public CheckAllTestsLauncher(IOneTestRunner oneTestRunner)
+		{
 			_oneTestRunner = oneTestRunner;
-        }
-        public TestResult[] StartTesting(Test[] tests)
-        {
-            var result = new List<TestResult>();
-            foreach(var test in tests)
-            {
-                result.Add(_oneTestRunner.Run(test));
-            }
-			
-            return result.ToArray();
-        }
+		}
 
-        private readonly IOneTestRunner _oneTestRunner;
-    }
+		public IEnumerable<TestResult> StartTesting(IEnumerable<Test> tests)
+		{
+			return tests.Select(x => { return _oneTestRunner.Run(x); });
+		}
+
+		private readonly IOneTestRunner _oneTestRunner;
+	}
 }

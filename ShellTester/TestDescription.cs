@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShellTester
 {
-	public struct TestDescription
+	public class TestDescription
 	{
-		public string inputFilePath;
-		public string idealOutputFilePath;
+		public String inputFilePath;
+		public String idealOutputFilePath;
 
-		int id;
-		int cost;
+		public Int32 id;
+		public Int32 cost;
 	}
 }

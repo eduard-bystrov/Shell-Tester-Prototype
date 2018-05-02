@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ShellTesterPrototype</RootNamespace>
     <AssemblyName>ShellTesterPrototype</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>

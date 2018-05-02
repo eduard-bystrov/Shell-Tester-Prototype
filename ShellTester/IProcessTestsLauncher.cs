@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ShellTester
 {
-    public interface IProcessTestsLauncher
-    {
-        TestResult[] StartTesting(Test[] tests);
-    }
+	public interface IProcessTestsLauncher
+	{
+		IEnumerable<TestResult> StartTesting(IEnumerable<Test> tests);
+	}
 }

@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 
 namespace ShellTester
 {
-    public class OneTestRunner : IOneTestRunner
+	public class OneTestRunner : IOneTestRunner
 	{
-		public OneTestRunner(string exeName)
+		public OneTestRunner(String exeName)
 		{
 			_exeName = exeName;
 		}
-        public TestResult Run(Test test) // information about process (processInfo ???)
-        {
+
+		public TestResult Run(Test test) // information about process (processInfo ???)
+		{
 			Process process = new Process() { StartInfo = CreateProcessInfo() };
-            process.Start();
+			process.Start();
 
 			Logger.Instance.Write(String.Format("Start test: {0}", test.inputFileName));
 
@@ -26,12 +23,12 @@ namespace ShellTester
 
 			Logger.Instance.Write(String.Format("End test: {0}", test.inputFileName));
 
-			var res = CreateTestResult(process,test);
+			var res = CreateTestResult(process, test);
 
 			process.Close();
 
-            return res;
-        }
+			return res;
+		}
 
 		private void WaitProcessAndCollectData(Process process)
 		{
@@ -46,7 +43,7 @@ namespace ShellTester
 			} while (!process.WaitForExit(TIME_REFRESH_DATA_ABOUT_PROCESS_MS));
 		}
 
-		private void WriteInputDataToProcess(Process process,Test test)
+		private void WriteInputDataToProcess(Process process, Test test)
 		{
 			StreamWriter streamWriter = process.StandardInput;
 			StreamReader streamReaderInput = new StreamReader(test.inputFileName);
@@ -54,15 +51,15 @@ namespace ShellTester
 			streamWriter.Close();
 		}
 
-		private TestResult CreateTestResult(Process process,Test test)
+		private TestResult CreateTestResult(Process process, Test test)
 		{
 			StreamReader streamReaderIdeal = new StreamReader(test.idealOutputFileName);
 			String idealOutput = streamReaderIdeal.ReadToEnd();
 			String processOutput = process.StandardOutput.ReadToEnd();
-			
+
 			var res = new TestResult();
-			
-			bool accepted = (idealOutput == processOutput);
+
+			Boolean accepted = (idealOutput == processOutput);
 
 			Logger.Instance.Write(String.Format("Result {0}", accepted));
 
@@ -77,7 +74,7 @@ namespace ShellTester
 
 			res.ExecutionTime = process.TotalProcessorTime;
 			res.PeekMemory = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
-			
+
 			return res;
 		}
 
@@ -92,13 +89,12 @@ namespace ShellTester
 			};
 		}
 
-		private readonly string _exeName;
+		private readonly String _exeName;
 
 		private Int64 _peakPagedMem = 0;
 		private Int64 _peakWorkingSet = 0;
 		private Int64 _peakVirtualMem = 0;
 
-
-		private const int TIME_REFRESH_DATA_ABOUT_PROCESS_MS = 1000;
-    }
+		private Int32 TIME_REFRESH_DATA_ABOUT_PROCESS_MS => 10;
+	}
 }

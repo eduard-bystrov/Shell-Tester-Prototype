@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShellTester
 {
@@ -16,6 +12,7 @@ namespace ShellTester
 		TimeLimitExceeded,
 		MemoryLimitExceeded
 	}
+
 	public interface ITestResult
 	{
 		TestDescription Description { get; }

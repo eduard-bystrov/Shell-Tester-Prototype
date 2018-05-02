@@ -1,43 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace ShellTester
 {
-	
 	public class TestResult : ITestResult
 	{
-		public TestResultType Type
-		{
-			get;
-			set;
-		}
+		public TestResultType Type { get; set; }
+		public TimeSpan ExecutionTime { get; set; }
 
-		public TimeSpan ExecutionTime
-		{
-			get;
-			set;
-		}
+		public TestDescription Description { get; set; }
+		public Int64 PeekMemory { get; set; }
 
-		public TestDescription Description
+		public String Json
 		{
-			get;
-			set;
-		}
-
-		public Int64 PeekMemory
-		{
-			get;
-			set;
-		}
-
-		public string GetJson()
-		{
-			return JsonConvert.SerializeObject(this);
+			get
+			{
+				return JsonConvert.SerializeObject(this);
+			}
 		}
 	}
 }

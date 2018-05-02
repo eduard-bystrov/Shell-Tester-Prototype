@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Fclp;
 using ShellTester;
-using Fclp;
-using System.Web;
+using System;
 
 namespace ShellTesterPrototype
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
+	internal class Program
+	{
+		private static void Main(String[] args)
+		{
 			var parser = new FluentCommandLineParser();
 
 			String exe = null;
-			String inMask = null, outMask=null;
+			String inMask = null, outMask = null;
 			String path = null;
 
 			parser.Setup<String>("p", longOption: "path")
@@ -35,17 +31,14 @@ namespace ShellTesterPrototype
 				new CollectorTestsInPath(path,
 					new TestFilePattern(inMask),
 					new TestFilePattern(outMask)
-				
+
 				),
 				new CheckAllTestsLauncher
 					(
 						new OneTestRunner(exe)
 					)
-            );
-            tester.Run();
-
-			
-
+			);
+			tester.Run();
 		}
-    }
+	}
 }
