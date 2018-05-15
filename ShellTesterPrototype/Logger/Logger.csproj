@@ -50,6 +50,10 @@
   <ItemGroup>
     <Compile Include="Enhanced\LogLevel.cs" />
     <Compile Include="Enhanced\LogLevelExtensions.cs" />
+    <Compile Include="Enhanced\LogMessage.cs" />
+    <Compile Include="Enhanced\OperationScopeLogger.cs" />
+    <Compile Include="Enhanced\ScopeLogger.cs" />
+    <Compile Include="Enhanced\ScopeLoggerExtensions.cs" />
     <Compile Include="IPlatformLogger.cs" />
     <Compile Include="LogCategory.cs" />
     <Compile Include="LogPriority.cs" />
