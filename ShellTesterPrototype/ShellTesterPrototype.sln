@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellTester", "..\ShellTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{20F41CDB-3FB1-4032-86FD-023A484DEA40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postman", "..\Postman\Postman.csproj", "{65B61830-DFF5-4586-AAA5-CA62AB45E588}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{20F41CDB-3FB1-4032-86FD-023A484DEA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F41CDB-3FB1-4032-86FD-023A484DEA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20F41CDB-3FB1-4032-86FD-023A484DEA40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B61830-DFF5-4586-AAA5-CA62AB45E588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B61830-DFF5-4586-AAA5-CA62AB45E588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B61830-DFF5-4586-AAA5-CA62AB45E588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B61830-DFF5-4586-AAA5-CA62AB45E588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
