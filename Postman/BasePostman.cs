@@ -24,8 +24,11 @@ namespace Postman
 			SmtpClient = new SmtpClient(smptpAdress, port)
 			{
 				Credentials = new NetworkCredential(email, password),
-				EnableSsl = true
+				EnableSsl = true,
+				//DeliveryMethod = SmtpDeliveryMethod.Network,
+				//UseDefaultCredentials = false
 			};
+
 
 			From = new MailAddress(email, name);
 
@@ -51,10 +54,8 @@ namespace Postman
 				Body = IEnumerableExtension<TestResult>.
 				CreateHtmlTable(
 				testResults, _funcs),
-				IsBodyHtml = true
-				
+				IsBodyHtml = true,
 			};
-
 
 			SmtpClient.Send(message);
 

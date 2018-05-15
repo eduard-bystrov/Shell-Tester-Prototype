@@ -18,7 +18,7 @@ namespace Postman
 
 		}
 
-		private static readonly String _smptpAdress = @"smtp.gmail.ru";
-		private static readonly Int32 _port = 587;
+		private static readonly String _smptpAdress = @"smtp.gmail.com";
+		private static readonly Int32 _port = 25;
 	}
 }

@@ -18,10 +18,10 @@ namespace Postman
 		)
 			:base(email, password, name, _smptpAdress, _port)
 		{
-		
+			
 		}
 		
-		private static readonly String _smptpAdress = @"smtp.yandex.ru";
-		private static readonly Int32 _port = 587;
+		private static readonly String _smptpAdress = "smtp..yandex.ru";
+		private static readonly Int32 _port = 25;
 	}
 }

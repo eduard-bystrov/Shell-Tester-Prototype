@@ -56,7 +56,7 @@ namespace ShellTesterPrototype
 
 				List<TestResult> l = new List<TestResult>(result);
 
-				YandexPostman postman = new YandexPostman("PostmanSfedu@yandex.ru", "123456vkr^^", "TesterSfedu");
+				IPostman postman = new GmailPostman("testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
 
 				postman.Send("eipii0@yandex.ru", "Test", l);
 				
