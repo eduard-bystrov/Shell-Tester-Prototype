@@ -1,13 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Logger;
+using System.Collections.Generic;
 
 namespace ShellTester
 {
 	public class Tester : ITester
 	{
-		public Tester(ICollectorTests collertor, IProcessTestsLauncher processTestsLauncher)
+		public Tester(
+			IPlatformLogger logger,
+			ICollectorTests collertor, 
+			IProcessTestsLauncher processTestsLauncher
+		)
 		{
 			_processTestsLauncher = processTestsLauncher;
 			_collector = collertor;
+			_logger = logger;
 		}
 
 		public IEnumerable<TestResult> Run()
@@ -18,5 +24,6 @@ namespace ShellTester
 
 		private readonly IProcessTestsLauncher _processTestsLauncher;
 		private readonly ICollectorTests _collector;
+		private readonly IPlatformLogger _logger;
 	}
 }

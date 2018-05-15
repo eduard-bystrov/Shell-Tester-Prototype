@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logger;
+using Logger.Enhanced;
+using System;
 using System.Diagnostics;
 using System.IO;
 
@@ -6,8 +8,12 @@ namespace ShellTester
 {
 	public class OneTestRunner : IOneTestRunner
 	{
-		public OneTestRunner(String exeName)
+		public OneTestRunner(
+			IPlatformLogger logger,
+			String exeName
+		)
 		{
+			_logger = logger;
 			_exeName = exeName;
 		}
 
@@ -16,12 +22,12 @@ namespace ShellTester
 			Process process = new Process() { StartInfo = CreateProcessInfo() };
 			process.Start();
 
-			Logger.Instance.Write(String.Format("Start test: {0}", test.inputFileName));
+			_logger.Info(String.Format("Start test: {0}", test.inputFileName));
 
 			WriteInputDataToProcess(process, test);
 			WaitProcessAndCollectData(process);
 
-			Logger.Instance.Write(String.Format("End test: {0}", test.inputFileName));
+			_logger.Info(String.Format("End test: {0}", test.inputFileName));
 
 			var res = CreateTestResult(process, test);
 
@@ -63,7 +69,7 @@ namespace ShellTester
 			//TODO Сравниватель файлов, доблы и тд
 			Boolean accepted = (idealOutput == processOutput);
 
-			Logger.Instance.Write(String.Format("Result {0}", accepted));
+			_logger.Info(String.Format("Result {0}", accepted));
 
 			if (accepted)
 			{
@@ -93,6 +99,7 @@ namespace ShellTester
 			};
 		}
 
+		private readonly IPlatformLogger _logger;
 		private readonly String _exeName;
 
 		private Int64 _peakPagedMem = 0;

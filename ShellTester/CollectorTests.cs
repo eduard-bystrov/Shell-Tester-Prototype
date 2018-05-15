@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logger;
+using Logger.Enhanced;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,10 +10,14 @@ namespace ShellTester
 {
 	public class CollectorTestsInPath : ICollectorTests
 	{
-		public CollectorTestsInPath(String workPath,
-							  TestFilePattern inputFilePattern,
-							  TestFilePattern outoutFilePatten)
+		public CollectorTestsInPath(
+			IPlatformLogger logger,
+			String workPath,
+			TestFilePattern inputFilePattern,
+			TestFilePattern outoutFilePatten
+		)
 		{
+			_logger = logger;
 			_workPath = workPath;
 			_inputFilePattern = inputFilePattern;
 			_outputFilePattern = outoutFilePatten;
@@ -19,14 +25,14 @@ namespace ShellTester
 
 		public IEnumerable<Test> MakeTestBlocks()
 		{
-			Logger.Instance.Write("Find test files...");
+			_logger.Info("Find test files...");
 
 			String[] inputFiles = GetFilesByMask(_inputFilePattern.GetPattern);
 			String[] outputFiles = GetFilesByMask(_outputFilePattern.GetPattern);
 
 			var tests = MakeTestBlocks(inputFiles, outputFiles);
 
-			Logger.Instance.Write("Test blocks ready");
+			_logger.Info("Test blocks ready");
 
 			return tests;
 		}
@@ -98,6 +104,7 @@ namespace ShellTester
 			throw new NotImplementedException();
 		}
 
+		private readonly IPlatformLogger _logger;
 		private readonly String _workPath;
 		private readonly TestFilePattern _inputFilePattern;
 		private readonly TestFilePattern _outputFilePattern;
