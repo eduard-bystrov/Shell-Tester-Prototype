@@ -21,7 +21,7 @@ namespace Postman
 			
 		}
 		
-		private static readonly String _smptpAdress = "smtp..yandex.ru";
+		private static readonly String _smptpAdress = "smtp.yandex.ru";
 		private static readonly Int32 _port = 25;
 	}
 }

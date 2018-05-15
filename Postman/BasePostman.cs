@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -32,7 +33,9 @@ namespace Postman
 
 			From = new MailAddress(email, name);
 
-			_funcs = new List<Func<TestResult, Object>>();
+			_funcs = new List<Expression<Func<TestResult, Object>>>();
+
+			//TODO тоже в рефлекшн
 			_funcs.Add(x => x.Id);
 			_funcs.Add(x => x.Description);
 			_funcs.Add(x => x.Type);
@@ -66,7 +69,18 @@ namespace Postman
 			String subject,
 			IEnumerable<TestResult> testResults)
 		{
-			throw new NotImplementedException();
+			Boolean result = true;
+
+			try
+			{
+				Send(email, subject, testResults);
+			}
+			catch (Exception ex)
+			{
+				result = false;
+			}
+
+			return result;
 		}
 
 
@@ -74,6 +88,6 @@ namespace Postman
 		protected MailAddress From { get; set; }
 		protected SmtpClient SmtpClient { get; set; }
 
-		protected List<Func<TestResult, Object>> _funcs;
+		protected IList<Expression<Func<TestResult, Object>>> _funcs;
 	}
 }
