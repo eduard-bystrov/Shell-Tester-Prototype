@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Postman.Helpers
 {
 	public static class IEnumerableExtension<T>
 	{
-		public static String CreateHtmlTable<T>(IEnumerable<T> list,  IEnumerable<Expression<Func<T, Object>>> fxns)
+		public static String CreateHtmlTable<T>(IEnumerable<T> list, IEnumerable<Expression<Func<T, Object>>> fxns)
 		{
-
 			StringBuilder sb = new StringBuilder();
 			sb.Append("<TABLE>\n");
 
@@ -25,7 +22,6 @@ namespace Postman.Helpers
 				sb.Append("</TD>");
 			}
 			sb.Append("</TR> <!-- HEADER -->\n");
-
 
 			foreach (var item in list)
 			{
@@ -43,7 +39,7 @@ namespace Postman.Helpers
 			return sb.ToString();
 		}
 
-		static String GetName<T>(Expression<Func<T, Object>> expr)
+		private static String GetName<T>(Expression<Func<T, Object>> expr)
 		{
 			var member = expr.Body as MemberExpression;
 			if (member != null)
@@ -56,7 +52,7 @@ namespace Postman.Helpers
 			return "?+?";
 		}
 
-		static String GetNameReflection(MemberExpression member)
+		private static String GetNameReflection(MemberExpression member)
 		{
 			var fieldInfo = member.Member as FieldInfo;
 			if (fieldInfo != null)

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logger.Enhanced
 {
@@ -12,7 +8,6 @@ namespace Logger.Enhanced
 		{
 			return new ScopeLogger(source, scopePrefix, logLevel);
 		}
-
 
 		public static OperationScopeLogger BeginOperation(this IPlatformLogger source, LogLevel logLevel, String operationName)
 		{
@@ -33,6 +28,5 @@ namespace Logger.Enhanced
 		{
 			return new OperationScopeLogger(source, source, logLevel, operationName, new LogMessage(format, args));
 		}
-
 	}
 }

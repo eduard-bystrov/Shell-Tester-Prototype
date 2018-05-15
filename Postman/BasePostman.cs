@@ -1,13 +1,10 @@
-﻿using System;
+﻿using Postman.Helpers;
+using ShellTester;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using Postman.Helpers;
-using ShellTester;
 
 namespace Postman
 {
@@ -30,22 +27,22 @@ namespace Postman
 				//UseDefaultCredentials = false
 			};
 
-
 			From = new MailAddress(email, name);
 
-			_funcs = new List<Expression<Func<TestResult, Object>>>();
+			_funcs = new List<Expression<Func<TestResult, Object>>>
+			{
 
-			//TODO тоже в рефлекшн
-			_funcs.Add(x => x.Id);
-			_funcs.Add(x => x.Description);
-			_funcs.Add(x => x.Type);
-			_funcs.Add(x => x.ExecutionTime);
-			_funcs.Add(x => x.PeekMemory);
+				//TODO тоже в рефлекшн
+				x => x.Id,
+				x => x.Description,
+				x => x.Type,
+				x => x.ExecutionTime,
+				x => x.PeekMemory
+			};
 		}
 
-		
 		public void Send(
-			String email, 
+			String email,
 			String subject,
 			IEnumerable<TestResult> testResults
 		)
@@ -61,7 +58,6 @@ namespace Postman
 			};
 
 			SmtpClient.Send(message);
-
 		}
 
 		public Boolean TrySend(
@@ -82,8 +78,6 @@ namespace Postman
 
 			return result;
 		}
-
-
 
 		protected MailAddress From { get; set; }
 		protected SmtpClient SmtpClient { get; set; }

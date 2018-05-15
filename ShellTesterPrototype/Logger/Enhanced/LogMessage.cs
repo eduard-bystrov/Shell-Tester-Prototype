@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logger.Enhanced
 {
@@ -22,6 +18,5 @@ namespace Logger.Enhanced
 		public String Message { get; private set; }
 
 		public Object[] Args { get; private set; }
-
 	}
 }

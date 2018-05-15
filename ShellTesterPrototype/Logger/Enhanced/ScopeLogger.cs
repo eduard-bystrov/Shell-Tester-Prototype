@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logger.Enhanced
 {
@@ -20,7 +16,6 @@ namespace Logger.Enhanced
 			ScopePrefix = scopePrefix;
 			LogLevel = logLevel;
 		}
-
 
 		public String ScopePrefix { get; }
 
@@ -50,9 +45,7 @@ namespace Logger.Enhanced
 			Source.Write(category, priority, system, ScopePrefix + message, args);
 		}
 
-
 		public LogPriority MinPriority => Source.MinPriority;
 		public Boolean IsEnable => Source.IsEnable;
 	}
 }
-

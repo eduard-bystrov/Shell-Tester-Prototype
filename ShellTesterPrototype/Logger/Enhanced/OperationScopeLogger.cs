@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Logger.Enhanced
 {
@@ -73,6 +71,7 @@ namespace Logger.Enhanced
 		}
 
 		private List<CounterResult> _innerOperationResults;
+
 		private void AddInnerOperationResult(CounterResult result)
 		{
 			if (_innerOperationResults == null) _innerOperationResults = new List<CounterResult>();
@@ -80,6 +79,7 @@ namespace Logger.Enhanced
 		}
 
 		private Boolean _isDisposed = false;
+
 		public void Dispose()
 		{
 			if (_isDisposed) return;
