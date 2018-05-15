@@ -55,6 +55,10 @@
     <Compile Include="TestMain.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Postman\Postman.csproj">
+      <Project>{65B61830-DFF5-4586-AAA5-CA62AB45E588}</Project>
+      <Name>Postman</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShellTester\ShellTester.csproj">
       <Project>{fd1d9d71-881d-400e-89f3-bc66285782b1}</Project>
       <Name>ShellTester</Name>

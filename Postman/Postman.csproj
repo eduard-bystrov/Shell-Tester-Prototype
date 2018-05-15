@@ -57,14 +57,22 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GmailPostman.cs" />
     <Compile Include="Helpers\IEnumerableExtension.cs" />
-    <Compile Include="Postman.cs" />
+    <Compile Include="BasePostman.cs" />
+    <Compile Include="YandexPostman.cs" />
     <Compile Include="IPostman.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShellTester\ShellTester.csproj">
+      <Project>{FD1D9D71-881D-400E-89F3-BC66285782B1}</Project>
+      <Name>ShellTester</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

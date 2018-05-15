@@ -53,7 +53,7 @@ namespace ShellTester
 
 					if (inNumber == outNumber)
 					{
-						yield return new Test(inputFiles[i], outputFiles[j]);
+						yield return new Test(inputFiles[i], outputFiles[j], i);
 						break;
 					}
 				}

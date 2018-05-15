@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShellTester;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace Postman
 {
 	public interface IPostman
 	{
+		Boolean TrySend(String email, String subject, IEnumerable<TestResult> testResults);
+		void Send(String email, String subject, IEnumerable<TestResult> testResults);
 	}
 }

@@ -10,6 +10,7 @@ namespace ShellTester
 
 		public TestDescription Description { get; set; }
 		public Int64 PeekMemory { get; set; }
+		public Int32 Id { get; set; }
 
 		public String ToJson
 		{

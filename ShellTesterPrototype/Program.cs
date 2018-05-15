@@ -1,6 +1,7 @@
 ﻿using Fclp;
 using Logger;
 using Logger.Enhanced;
+using Postman;
 using ShellTester;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,10 @@ namespace ShellTesterPrototype
 				var result = tester.Run();
 
 				List<TestResult> l = new List<TestResult>(result);
+
+				YandexPostman postman = new YandexPostman("PostmanSfedu@yandex.ru", "123456vkr^^", "TesterSfedu");
+
+				postman.Send("eipii0@yandex.ru", "Test", l);
 				
 			}
 

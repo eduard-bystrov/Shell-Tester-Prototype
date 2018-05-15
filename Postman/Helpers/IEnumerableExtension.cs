@@ -8,7 +8,7 @@ namespace Postman.Helpers
 {
 	public static class IEnumerableExtension<T>
 	{
-		public static String CreateHtmlTable(IEnumerable<T> list, params Func<T, Object>[] fxns)
+		public static String CreateHtmlTable(IEnumerable<T> list,  IEnumerable<Func<T, Object>> fxns)
 		{
 
 			StringBuilder sb = new StringBuilder();

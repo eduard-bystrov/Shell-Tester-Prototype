@@ -4,13 +4,19 @@ namespace ShellTester
 {
 	public class Test
 	{
-		public Test(String input, String output)
+		public Test(
+			String input,
+			String output,
+			Int32 id
+		)
 		{
-			inputFileName = input;
-			idealOutputFileName = output;
+			InputFileName = input;
+			IdealOutputFileName = output;
+			Id = id;
 		}
 
-		public String inputFileName;
-		public String idealOutputFileName;
+		public String InputFileName { get; }
+		public String IdealOutputFileName { get; }
+		public Int32 Id { get; }
 	}
 }

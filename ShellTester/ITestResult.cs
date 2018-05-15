@@ -18,6 +18,7 @@ namespace ShellTester
 	}
 	public interface ITestResult
 	{
+		Int32 Id { get; }
 		TestDescription Description { get; }
 		TestResultType Type { get; }
 		TimeSpan ExecutionTime { get; }
