@@ -22,12 +22,12 @@ namespace ShellTester
 			Process process = new Process() { StartInfo = CreateProcessInfo() };
 			process.Start();
 
-			_logger.Info(String.Format("Start test: {0}", test.InputFileName));
+			_logger.Info(String.Format("Start test: {0}", test.InputStream));
 
 			WriteInputDataToProcess(process, test);
 			WaitProcessAndCollectData(process);
 
-			_logger.Info(String.Format("End test: {0}", test.InputFileName));
+			_logger.Info(String.Format("End test: {0}", test.InputStream));
 
 			var res = CreateTestResult(process, test);
 
@@ -52,15 +52,15 @@ namespace ShellTester
 		private void WriteInputDataToProcess(Process process, Test test)
 		{
 			StreamWriter streamWriter = process.StandardInput;
-			StreamReader streamReaderInput = new StreamReader(test.InputFileName);
+			StreamReader streamReaderInput = test.InputStream;
 			streamWriter.Write(streamReaderInput.ReadToEnd());
 			streamWriter.Close();
 		}
 
 		private TestResult CreateTestResult(Process process, Test test)
 		{
-			StreamReader streamReaderIdeal = new StreamReader(test.IdealOutputFileName);
-			String idealOutput = streamReaderIdeal.ReadToEnd();
+			//StreamReader streamReaderIdeal = new StreamReader(test.IdealOutputFileName);
+			String idealOutput = test.IdealOutputStream.ReadToEnd();
 			String processOutput = process.StandardOutput.ReadToEnd();
 
 			var res = new TestResult();
@@ -81,7 +81,7 @@ namespace ShellTester
 			}
 
 
-			//TODO память время
+			//TODO память
 			res.ExecutionTime = process.TotalProcessorTime;
 			res.PeekMemory = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
 			res.Id = test.Id;

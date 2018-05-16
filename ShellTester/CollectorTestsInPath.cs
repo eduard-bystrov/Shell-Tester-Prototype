@@ -53,7 +53,12 @@ namespace ShellTester
 
 					if (inNumber == outNumber)
 					{
-						yield return new Test(inputFiles[i], outputFiles[j], i);
+						
+						yield return new Test(
+							new StreamReader(inputFiles[i]),
+							new StreamReader(outputFiles[j]),
+							inputNumberFilenames[i]
+						);
 						break;
 					}
 				}
@@ -91,7 +96,7 @@ namespace ShellTester
 		private String GetNumberOfTestFileName(String fileName, TestFilePattern pattern)
 		{
 			String[] substrings = Regex.Split(fileName, pattern.GetPattern);
-			Regex reg = new Regex(pattern._numberPattern);
+			Regex reg = new Regex(pattern.NumberPattern);
 
 			foreach (var substring in substrings)
 			{

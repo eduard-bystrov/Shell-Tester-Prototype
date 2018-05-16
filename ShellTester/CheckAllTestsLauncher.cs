@@ -12,7 +12,7 @@ namespace ShellTester
 
 		public IEnumerable<TestResult> StartTesting(IEnumerable<Test> tests)
 		{
-			return tests.Select(x => { return _oneTestRunner.Run(x); });
+			return tests.Select(x => _oneTestRunner.Run(x));
 		}
 
 		private readonly IOneTestRunner _oneTestRunner;

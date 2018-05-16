@@ -7,11 +7,14 @@ using System.Text;
 
 namespace Postman.Helpers
 {
-	public static class IEnumerableExtension<T>
+	public static class HtmlHelper<T>
 	{
+
+		//TODO СТИЛИ
 		public static String CreateHtmlTable<T>(IEnumerable<T> list, IEnumerable<Expression<Func<T, Object>>> fxns)
 		{
 			StringBuilder sb = new StringBuilder();
+
 			sb.Append("<TABLE>\n");
 
 			sb.Append("<TR>\n");
@@ -34,10 +37,13 @@ namespace Postman.Helpers
 				}
 				sb.Append("</TR>\n");
 			}
-			sb.Append("</TABLE>");
+			sb.Append("</TABLE>\n");
+			sb.Append("</body>\n");
+			sb.Append("</html>\n");
 
 			return sb.ToString();
 		}
+
 
 		private static String GetName<T>(Expression<Func<T, Object>> expr)
 		{

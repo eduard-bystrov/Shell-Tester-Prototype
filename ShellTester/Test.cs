@@ -1,22 +1,23 @@
 ﻿using System;
+using System.IO;
 
 namespace ShellTester
 {
 	public class Test
 	{
 		public Test(
-			String input,
-			String output,
-			Int32 id
+			StreamReader input,
+			StreamReader output,
+			String id
 		)
 		{
-			InputFileName = input;
-			IdealOutputFileName = output;
+			InputStream = input;
+			IdealOutputStream = output;
 			Id = id;
 		}
 
-		public String InputFileName { get; }
-		public String IdealOutputFileName { get; }
-		public Int32 Id { get; }
+		public StreamReader InputStream { get; }
+		public StreamReader IdealOutputStream { get; }
+		public String Id { get; }
 	}
 }

@@ -2,6 +2,7 @@
 using ShellTester;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
@@ -51,9 +52,10 @@ namespace Postman
 			MailMessage message = new MailMessage(From, to)
 			{
 				Subject = subject,
-				Body = IEnumerableExtension<TestResult>.
-				CreateHtmlTable(
-				testResults, _funcs),
+				Body = HtmlHelper<TestResult>.CreateHtmlTable(
+						testResults,
+						_funcs),
+				
 				IsBodyHtml = true,
 			};
 

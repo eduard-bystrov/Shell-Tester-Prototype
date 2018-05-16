@@ -13,31 +13,31 @@ namespace ShellTester
 
 			if (splits.Length != 7) throw new NotImplementedException();
 
-			_prefixPattern = splits[1];
-			_numberPattern = splits[3];
-			_suffixPattern = splits[5];
+			PrefixPattern = splits[1];
+			NumberPattern = splits[3];
+			SuffixPattern = splits[5];
 		}
 
 		public TestFilePattern(String prefix, String number, String suffix)
 		{
-			_prefixPattern = prefix;
-			_numberPattern = number;
-			_suffixPattern = suffix;
+			PrefixPattern = prefix;
+			NumberPattern = number;
+			SuffixPattern = suffix;
 		}
 
 		public String GetPattern
 		{
 			get
 			{
-				return WrapBracket(_prefixPattern) +
-					   WrapBracket(_numberPattern) +
-					   WrapBracket(_suffixPattern);
+				return WrapBracket(PrefixPattern) +
+					   WrapBracket(NumberPattern) +
+					   WrapBracket(SuffixPattern);
 			}
 		}
 
-		public String _prefixPattern { get; private set; }
-		public String _numberPattern { get; private set; }
-		public String _suffixPattern { get; private set; }
+		public String PrefixPattern { get; private set; }
+		public String NumberPattern { get; private set; }
+		public String SuffixPattern { get; private set; }
 
 		private String WrapBracket(String s)
 		{

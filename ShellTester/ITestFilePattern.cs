@@ -4,8 +4,8 @@ namespace ShellTester
 {
 	public interface ITestFilePattern
 	{
-		String _prefixPattern { get; }
-		String _numberPattern { get; }
-		String _suffixPattern { get; }
+		String PrefixPattern { get; }
+		String NumberPattern { get; }
+		String SuffixPattern { get; }
 	}
 }
