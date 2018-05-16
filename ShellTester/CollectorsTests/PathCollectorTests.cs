@@ -3,6 +3,8 @@ using Logger.Enhanced;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ShellTester.CollectorsTests
 {
@@ -22,8 +24,8 @@ namespace ShellTester.CollectorsTests
 		{
 			_logger.Info("Find test files...");
 
-			String[] inputFiles = GetFilesByMask(_inputFilePattern.GetPattern);
-			String[] outputFiles = GetFilesByMask(_outputFilePattern.GetPattern);
+			String[] inputFiles = GetFilesByMask(_inputFilePattern.GetFullRegex());
+			String[] outputFiles = GetFilesByMask(_outputFilePattern.GetFullRegex());
 
 			var tests = MakeTestBlocks(inputFiles, outputFiles);
 
@@ -32,8 +34,6 @@ namespace ShellTester.CollectorsTests
 			return tests;
 		}
 
-		//ignored not merged file
-		//adding first asseptable
 		private IEnumerable<Test> MakeTestBlocks(String[] inputFiles, String[] outputFiles)
 		{
 			String[] inputNumberFilenames = GetOnlyNumberFilenames(inputFiles, _inputFilePattern);
@@ -57,6 +57,20 @@ namespace ShellTester.CollectorsTests
 					}
 				}
 			}
+		}
+
+		private String[] GetOnlyNumberFilenames(String[] filenames, TestFilePattern pattern)
+		{
+
+			return filenames.Select(x => pattern.GetNumberPart(x)).ToArray();
+		}
+
+
+		private String[] GetFilesByMask(Regex reg)
+		{
+			return Directory.GetFiles(_workPath)
+							.Where(file => reg.IsMatch(file))
+							.ToArray();
 		}
 	}
 }

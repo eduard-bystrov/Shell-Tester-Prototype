@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace ShellTester
 {
@@ -25,7 +26,7 @@ namespace ShellTester
 			SuffixPattern = suffix;
 		}
 
-		public String GetPattern
+		public String Pattern
 		{
 			get
 			{

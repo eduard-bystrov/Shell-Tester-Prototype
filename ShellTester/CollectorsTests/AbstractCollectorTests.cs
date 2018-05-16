@@ -27,17 +27,6 @@ namespace ShellTester.CollectorsTests
 			throw new NotImplementedException();
 		}
 
-		protected String[] GetOnlyNumberFilenames(String[] filenames, TestFilePattern pattern)
-		{
-			Int32 len = filenames.Length;
-			String[] res = new String[len];
-			for (Int32 i = 0; i < len; ++i)
-			{
-				var filename = filenames[i];
-				res[i] = GetNumberOfTestFileName(filename, pattern);
-			}
-			return res;
-		}
 
 		//private string[] GetArrayOfNumberTest(string[] filesname, TestFilePattern pattern)
 		//{
@@ -46,30 +35,6 @@ namespace ShellTester.CollectorsTests
 		//				 .ToArray().ToString();
 		//	return result;
 		//}
-
-		protected String GetNumberOfTestFileName(String fileName, TestFilePattern pattern)
-		{
-			String[] substrings = Regex.Split(fileName, pattern.GetPattern);
-			Regex reg = new Regex(pattern.NumberPattern);
-
-			foreach (var substring in substrings)
-			{
-				if (reg.IsMatch(substring))
-				{
-					return substring;
-				}
-			}
-
-			throw new NotImplementedException();
-		}
-
-		protected String[] GetFilesByMask(String pattern)
-		{
-			Regex reg = new Regex(pattern);
-			return Directory.GetFiles(_workPath)
-							.Where(file => reg.IsMatch(file))
-							.ToArray();
-		}
 
 		protected readonly IPlatformLogger _logger;
 		protected readonly String _workPath;
