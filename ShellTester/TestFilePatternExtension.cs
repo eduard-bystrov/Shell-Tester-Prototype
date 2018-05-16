@@ -37,7 +37,6 @@ namespace ShellTester
 
 		}
 
-
 		public static Regex GetFullRegex(this TestFilePattern pattern)
 		{
 			return new Regex(pattern.Pattern);

@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +46,9 @@
     </Reference>
     <Reference Include="SevenZipLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\ShellTesterPrototype\packages\unofficial.sevenziplib.codeplex.9.13.2\lib\net40\SevenZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Shaman.SevenZipSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8ff6ba0184838bb, processorArchitecture=MSIL">
+      <HintPath>..\ShellTesterPrototype\packages\Shaman.SevenZipSharp.1.0.6.3\lib\net45\Shaman.SevenZipSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -107,7 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectorsTests\AbstractCollectorTests.cs" />
+    <Compile Include="CollectorsTests\ArchiveEntryExtension.cs" />
     <Compile Include="CollectorsTests\PathCollectorTests.cs" />
+    <Compile Include="CollectorsTests\TestFileNameComparer.cs" />
     <Compile Include="CollectorsTests\ZipCollectorTests.cs" />
     <Compile Include="IProcessTestsLauncher.cs" />
     <Compile Include="CheckAllTestsLauncher.cs" />
@@ -140,4 +147,11 @@
     <Content Include="7z86.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\ShellTesterPrototype\packages\SevenZipSharp.Interop.9.38.3\build\SevenZipSharp.Interop.targets" Condition="Exists('..\ShellTesterPrototype\packages\SevenZipSharp.Interop.9.38.3\build\SevenZipSharp.Interop.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\ShellTesterPrototype\packages\SevenZipSharp.Interop.9.38.3\build\SevenZipSharp.Interop.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\ShellTesterPrototype\packages\SevenZipSharp.Interop.9.38.3\build\SevenZipSharp.Interop.targets'))" />
+  </Target>
 </Project>

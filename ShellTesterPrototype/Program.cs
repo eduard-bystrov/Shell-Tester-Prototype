@@ -7,6 +7,7 @@ using ShellTester.CollectorsTests;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ShellTesterPrototype
 {
@@ -17,6 +18,8 @@ namespace ShellTesterPrototype
 
 			using (var logger = new StreamLogger(new StreamWriter(DateTime.Now.Date.ToString("dd/MM/yyyy") + ".log") { AutoFlush = true }))
 			{
+				
+
 				var parser = new FluentCommandLineParser();
 
 				String exe = null;
@@ -38,11 +41,12 @@ namespace ShellTesterPrototype
 
 				ITester tester = new Tester(
 					logger,
-					new PathCollectorTests(
+					new ZipCollectorTests(
 						logger,
 						path,
 						new TestFilePattern(inMask),
-						new TestFilePattern(outMask)
+						new TestFilePattern(outMask),
+						Enumerable.Empty<String>()
 
 					),
 					new CheckAllTestsLauncher
