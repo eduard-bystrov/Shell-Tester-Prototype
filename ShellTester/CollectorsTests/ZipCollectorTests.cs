@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Logger;
+using SevenZipLib;
 
 namespace ShellTester.CollectorsTests
 {
@@ -13,15 +14,21 @@ namespace ShellTester.CollectorsTests
 			IPlatformLogger logger,
 			String workPath,
 			TestFilePattern inputFilePattern,
-			TestFilePattern outputFilePatten
+			TestFilePattern outputFilePatten,
+			IEnumerable<String> passwords
 		) 
 			: base(logger, workPath, inputFilePattern, outputFilePatten)
 		{
+			_passwords = passwords;
 		}
 
 		public IEnumerable<Test> MakeTestBlocks()
 		{
-			throw new NotImplementedException();
+			//TODO без пароля
+			//TODO пароли
 		}
+
+
+		private readonly IEnumerable<String> _passwords;
 	}
 }
