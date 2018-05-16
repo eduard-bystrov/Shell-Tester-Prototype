@@ -1,4 +1,5 @@
 ﻿using Logger;
+using ShellTester.CollectorsTests;
 using System.Collections.Generic;
 
 namespace ShellTester

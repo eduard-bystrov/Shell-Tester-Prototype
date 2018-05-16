@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ShellTester
+namespace ShellTester.CollectorsTests
 {
 	public interface ICollectorTests
 	{

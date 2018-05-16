@@ -3,6 +3,7 @@ using Logger;
 using Logger.Enhanced;
 using Postman;
 using ShellTester;
+using ShellTester.CollectorsTests;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,7 +38,7 @@ namespace ShellTesterPrototype
 
 				ITester tester = new Tester(
 					logger,
-					new CollectorTestsInPath(
+					new PathCollectorTests(
 						logger,
 						path,
 						new TestFilePattern(inMask),
