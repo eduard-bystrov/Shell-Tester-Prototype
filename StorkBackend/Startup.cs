@@ -18,8 +18,6 @@ namespace StorkBackend
 	{
 		public Startup(IConfiguration configuration)
 		{
-
-
 			Configuration = configuration;
 		}
 
