@@ -22,11 +22,9 @@ namespace ShellTester.CollectorsTests
 		) 
 			: base(logger, workPath, inputFilePattern, outputFilePatten)
 		{
-			//SevenZip.SevenZipExtractor.SetLibraryPath(@"C:\Program Files\7-Zip\7z.dll");
 			_passwords = passwords;
 		}
 
-	
 		//TODO 
 		public override IEnumerable<Test> MakeTestBlocks()
 		{
@@ -54,11 +52,7 @@ namespace ShellTester.CollectorsTests
 					}
 				}
 			}
-
 		}
-
-
-		
 
 		//TODO
 		[Obsolete]

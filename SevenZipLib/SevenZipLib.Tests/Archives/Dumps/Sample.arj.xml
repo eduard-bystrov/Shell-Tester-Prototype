@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Archive>
+  <FileName>Sample.arj</FileName>
+  <Format>Arj</Format>
+  <PackedSize>106717</PackedSize>
+  <UnPackedSize>245743</UnPackedSize>
+  <Password />
+  <IsEncrypted>false</IsEncrypted>
+  <HasSubArchive>false</HasSubArchive>
+  <Volumes>
+    <Volume>Sample.arj</Volume>
+  </Volumes>
+  <Properties>
+    <Property Name="Name">DRUID1.ARJ</Property>
+    <Property Name="Created">1991-05-10T10:19:42-04:00</Property>
+    <Property Name="Modified" />
+    <Property Name="Host OS">MSDOS</Property>
+    <Property Name="Comment" />
+  </Properties>
+  <Entries>
+    <Entry>
+      <FileName>1DEGREE.TXT</FileName>
+      <LastWriteTime>1989-09-30T21:51:18Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2952222617</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>ADFCNDLM.TXT</FileName>
+      <LastWriteTime>1990-01-31T21:08:40Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1509764283</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>ADFGROVE.TXT</FileName>
+      <LastWriteTime>1989-12-20T15:36:22Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2933591009</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>ADFRTUL1.TXT</FileName>
+      <LastWriteTime>1989-04-28T13:49:28Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>966949707</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>ADFWSC.TXT</FileName>
+      <LastWriteTime>1990-02-02T21:12:34Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>797981329</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>ADFYULE.TXT</FileName>
+      <LastWriteTime>1989-12-05T20:12:34Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2451322650</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>BRIGIT.TXT</FileName>
+      <LastWriteTime>1989-12-12T01:38:24Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1850443469</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>CATALOG.11</FileName>
+      <LastWriteTime>1990-06-19T20:45:28Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>4022194052</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>CELTDIE.TXT</FileName>
+      <LastWriteTime>1989-09-28T00:07:04Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2728330599</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>CELTNUM1.DOC</FileName>
+      <LastWriteTime>1990-04-24T21:36:48Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1150619514</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>CELTNUM2.DOC</FileName>
+      <LastWriteTime>1990-04-24T21:36:58Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1099558326</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>CELTNUM3.DOC</FileName>
+      <LastWriteTime>1990-04-24T21:37:14Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2375760480</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DR101-01.TXT</FileName>
+      <LastWriteTime>1989-12-24T19:01:46Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>388692902</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DRDCLERG.TXT</FileName>
+      <LastWriteTime>2023-04-29T21:31:44Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2717742650</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DRDINTRO.TXT</FileName>
+      <LastWriteTime>2023-04-29T21:31:44Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>818312546</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DRDPALEO.TXT</FileName>
+      <LastWriteTime>2023-04-29T21:31:44Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1065678129</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DRDPOLI.TXT</FileName>
+      <LastWriteTime>2023-04-29T21:31:44Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>592670326</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DRUID.BIB</FileName>
+      <LastWriteTime>1989-10-08T17:07:34Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1767841869</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>DRUIDID.TXT</FileName>
+      <LastWriteTime>1990-01-07T17:09:08Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2710350167</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>EVALS.TXT</FileName>
+      <LastWriteTime>1989-08-14T16:12:20Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2374818679</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>FAMDRD1.TXT</FileName>
+      <LastWriteTime>1990-04-24T21:57:54Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1023357599</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>FAMDRD2.TXT</FileName>
+      <LastWriteTime>1990-04-24T21:58:08Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1687743799</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>FESTCALC.TXT</FileName>
+      <LastWriteTime>1989-11-06T15:59:14Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1264191862</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>LUGHNOTE.TXT</FileName>
+      <LastWriteTime>1989-08-05T08:10:40Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2133026546</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>NEWGROVE.TXT</FileName>
+      <LastWriteTime>1989-05-04T14:19:38Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>613566291</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>PROCESS1.TXT</FileName>
+      <LastWriteTime>1989-12-16T06:58:50Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>3790919798</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>STARWOOD.TXT</FileName>
+      <LastWriteTime>1989-12-16T06:50:28Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>2393629537</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>TRAINADF.TXT</FileName>
+      <LastWriteTime>1989-12-16T01:25:02Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>211768088</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+    <Entry>
+      <FileName>WHATSADF.TXT</FileName>
+      <LastWriteTime>1989-12-14T01:08:26Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>0</Size>
+      <Crc>1987172321</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment />
+    </Entry>
+  </Entries>
+  <Parent />
+</Archive>

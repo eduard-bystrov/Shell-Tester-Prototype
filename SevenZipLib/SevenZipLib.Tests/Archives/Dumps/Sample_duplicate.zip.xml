@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Archive>
+  <FileName>Sample_duplicate.zip</FileName>
+  <Format>Zip</Format>
+  <PackedSize>18942</PackedSize>
+  <UnPackedSize>18521</UnPackedSize>
+  <Password />
+  <IsEncrypted>false</IsEncrypted>
+  <HasSubArchive>false</HasSubArchive>
+  <Volumes>
+    <Volume>Sample_duplicate.zip</Volume>
+  </Volumes>
+  <Properties>
+    <Property Name="64-bit" />
+    <Property Name="Comment"></Property>
+    <Property Name="Physical Size">18942</Property>
+    <Property Name="Offset" />
+  </Properties>
+  <Entries>
+    <Entry>
+      <FileName>Resources\Volume.1\Chapter.1\[1]Page.12.gif</FileName>
+      <LastWriteTime>2008-03-08T20:07:56Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>5750</Size>
+      <Crc>365361003</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment></Comment>
+    </Entry>
+    <Entry>
+      <FileName>Resources\Volume.1\Chapter.1\Page.1.gif</FileName>
+      <LastWriteTime>2008-03-08T20:07:56Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>7021</Size>
+      <Crc>645073201</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment></Comment>
+    </Entry>
+    <Entry>
+      <FileName>Resources\Volume.1\Chapter.1\Page.12.gif</FileName>
+      <LastWriteTime>2008-03-08T20:07:56Z</LastWriteTime>
+      <CreationTime />
+      <LastAccessTime />
+      <Size>5750</Size>
+      <Crc>365361003</Crc>
+      <Attributes />
+      <IsDirectory>false</IsDirectory>
+      <IsEncrypted>false</IsEncrypted>
+      <IsUntitled>false</IsUntitled>
+      <Comment></Comment>
+    </Entry>
+  </Entries>
+  <Parent />
+</Archive>
