@@ -5,17 +5,30 @@
     <UserSecretsId>aspnet-StorkBackend-062E3787-404C-479A-AACF-08DB19D24D00</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\StorkBackend.pubxml" />
+  </ItemGroup>
+
 
   <ItemGroup>
+    <PackageReference Include="linq2db.Core" Version="1.10.2" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.1.0-rc1-final" />
+    <PackageReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Swagger" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postman", "..\Postman\Postm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenZipLib", "..\SevenZipLib\SevenZipLib\SevenZipLib.csproj", "{B05D17BC-8A2B-482A-85BD-FF4B757E41BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorkBackend", "..\StorkBackend\StorkBackend.csproj", "{0D3D4F3C-2E67-408B-8BD1-129EA1655B40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorkTester", "..\StorkBackend\StorkTester.csproj", "{0D3D4F3C-2E67-408B-8BD1-129EA1655B40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
