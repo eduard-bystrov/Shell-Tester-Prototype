@@ -1,4 +1,6 @@
-﻿using Postman.Helpers;
+﻿using Logger;
+using Logger.Enhanced;
+using Postman.Helpers;
 using ShellTester;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,7 @@ namespace Postman
 	public class BasePostman : IPostman
 	{
 		public BasePostman(
+			IPlatformLogger logger,
 			String email,
 			String password,
 			String name,
@@ -20,6 +23,9 @@ namespace Postman
 
 		)
 		{
+
+			Logger = logger;
+
 			SmtpClient = new SmtpClient(smptpAdress, port)
 			{
 				Credentials = new NetworkCredential(email, password),
@@ -52,7 +58,7 @@ namespace Postman
 			MailMessage message = new MailMessage(From, to)
 			{
 				Subject = subject,
-				Body = HtmlHelper<TestResult>.CreateHtmlTable(
+				Body = CSharpObjectToHtmlTableConverter.CreateHtmlTable<TestResult>(
 						testResults,
 						_funcs),
 				
@@ -75,6 +81,7 @@ namespace Postman
 			}
 			catch (Exception ex)
 			{
+				Logger.Warn($"Exception on send message: {ex.ToString()}");
 				result = false;
 			}
 
@@ -83,6 +90,7 @@ namespace Postman
 
 		protected MailAddress From { get; set; }
 		protected SmtpClient SmtpClient { get; set; }
+		protected IPlatformLogger Logger { get; }
 
 		protected IList<Expression<Func<TestResult, Object>>> _funcs;
 	}

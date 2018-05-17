@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GmailPostman.cs" />
-    <Compile Include="Helpers\IEnumerableExtension.cs" />
+    <Compile Include="Helpers\CSharpObjectToHtmlTableConverter.cs" />
     <Compile Include="BasePostman.cs" />
     <Compile Include="YandexPostman.cs" />
     <Compile Include="IPostman.cs" />

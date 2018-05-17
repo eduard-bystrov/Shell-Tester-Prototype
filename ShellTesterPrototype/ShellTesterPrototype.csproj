@@ -136,9 +136,5 @@
     <None Include="packages.config" />
     <None Include="tsconfig1.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Native\x64\7z.dll" />
-    <Content Include="Native\x86\7z.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

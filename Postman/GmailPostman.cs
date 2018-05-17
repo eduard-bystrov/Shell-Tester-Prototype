@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Logger;
+using System;
 
 namespace Postman
 {
 	public class GmailPostman : BasePostman
 	{
 		public GmailPostman(
-		String email,
-		String password,
-		String name
+			IPlatformLogger logger,
+			String email,
+			String password,
+			String name
 		)
-		: base(email, password, name, _smptpAdress, _port)
+		: base(logger, email, password, name, _smptpAdress, _port)
 		{
 		}
 

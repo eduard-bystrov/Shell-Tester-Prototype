@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Logger;
+using System;
 
 namespace Postman
 {
 	public class YandexPostman : BasePostman
 	{
 		public YandexPostman(
+			IPlatformLogger logger,
 			String email,
 			String password,
 			String name
 		)
-			: base(email, password, name, _smptpAdress, _port)
+			: base(logger, email, password, name, _smptpAdress, _port)
 		{
 		}
 

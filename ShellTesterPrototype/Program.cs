@@ -57,11 +57,12 @@ namespace ShellTesterPrototype
 							)
 						)
 				);
+
 				var result = tester.Run();
 
 				List<TestResult> l = new List<TestResult>(result);
 
-				IPostman postman = new GmailPostman("testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
+				IPostman postman = new GmailPostman(logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
 
 				postman.Send("eipii0@yandex.ru", "Test", l);
 				

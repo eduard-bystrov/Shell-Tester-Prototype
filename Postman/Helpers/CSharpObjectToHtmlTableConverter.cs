@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Postman.Helpers
 {
-	public static class HtmlHelper<T>
+	public static class CSharpObjectToHtmlTableConverter
 	{
 
 		//TODO СТИЛИ
