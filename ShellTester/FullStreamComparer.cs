@@ -23,7 +23,7 @@ namespace ShellTester
 
 		public Int32 GetHashCode(StreamReader obj)
 		{
-			throw new NotImplementedException();
+			return obj.GetHashCode();
 		}
 	}
 }

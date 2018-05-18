@@ -116,7 +116,6 @@
     <Compile Include="CheckAllTestsLauncher.cs" />
     <Compile Include="CollectorsTests\ICollectorTests.cs" />
     <Compile Include="IOneTestRunner.cs" />
-    <Compile Include="IStreamComparer.cs" />
     <Compile Include="ITestFilePattern.cs" />
     <Compile Include="ITestResult.cs" />
     <Compile Include="TestDescription.cs" />

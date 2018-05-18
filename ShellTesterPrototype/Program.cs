@@ -46,7 +46,7 @@ namespace ShellTesterPrototype
 						path,
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),
-						Enumerable.Empty<String>()
+						new String[] {"228", "123"}
 
 					),
 					new CheckAllTestsLauncher
