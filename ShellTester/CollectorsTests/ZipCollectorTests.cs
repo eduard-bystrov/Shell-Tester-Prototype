@@ -22,10 +22,7 @@ namespace ShellTester.CollectorsTests
 		) 
 			: base(logger, workPath, inputFilePattern, outputFilePatten)
 		{
-
 			_password = BruteForcePassword(new List<String>(passwords));
-			
-
 		}
 
 
