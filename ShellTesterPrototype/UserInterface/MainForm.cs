@@ -37,5 +37,45 @@ namespace UserInterface
 
 		}
 
+		private void MenuStrip_ItemClicked(Object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
+
+		private void ChoicePathToTestsetButton_Click(Object sender, EventArgs e)
+		{
+			ChoicePathDialog(choicePathToTestsetBox);
+		}
+
+		private void ChoicePathToProgramButton_Click(Object sender, EventArgs e)
+		{
+			
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+
+			openFileDialog.InitialDirectory = "c:\\";
+			openFileDialog.Filter = "Exe Files (.exe)|*.exe|All Files (*.*)|*.*";
+			openFileDialog.FilterIndex = 1;
+			openFileDialog.RestoreDirectory = true;
+
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				var selectedFileName = openFileDialog.FileName;
+				choicePathToProgramBox.Text = selectedFileName;
+			}
+			
+		}
+
+
+
+		private void ChoicePathDialog(TextBox textBox)
+		{
+			var folderBrowserDialog = new FolderBrowserDialog();
+
+			if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+			{
+				var path = folderBrowserDialog.SelectedPath;
+				textBox.Text = path;
+			}
+		}
 	}
 }
