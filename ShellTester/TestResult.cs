@@ -7,8 +7,6 @@ namespace ShellTester
 	{
 		public TestResultType Type { get; set; }
 
-
-
 		public TimeSpan ExecutionTime { get; set; }
 		public Int32 ExecutionTime_ms => Convert.ToInt32(ExecutionTime.TotalMilliseconds);
 		public Int32 ExecutionTime_s => Convert.ToInt32(ExecutionTime.TotalSeconds);

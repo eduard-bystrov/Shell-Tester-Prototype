@@ -1,6 +1,7 @@
 ﻿using Logger;
 using Logger.Enhanced;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -10,10 +11,12 @@ namespace ShellTester
 	{
 		public OneTestRunner(
 			IPlatformLogger logger,
+			IEqualityComparer<StreamReader> comparer,
 			String exeName
 		)
 		{
 			_logger = logger;
+			_comparer = comparer;
 			_exeName = exeName;
 		}
 
@@ -60,14 +63,13 @@ namespace ShellTester
 		private TestResult CreateTestResult(Process process, Test test)
 		{
 			//StreamReader streamReaderIdeal = new StreamReader(test.IdealOutputFileName);
-			String idealOutput = test.IdealOutputStream.ReadToEnd();
-			String processOutput = process.StandardOutput.ReadToEnd();
+			
 
 			var res = new TestResult();
 
 
 			//TODO Сравниватель файлов, доблы и тд
-			Boolean accepted = (idealOutput == processOutput);
+			Boolean accepted = _comparer.Equals(test.IdealOutputStream, process.StandardOutput);
 
 			_logger.Info(String.Format("Result {0}", accepted));
 
@@ -101,6 +103,7 @@ namespace ShellTester
 		}
 
 		private readonly IPlatformLogger _logger;
+		private readonly IEqualityComparer<StreamReader> _comparer;
 		private readonly String _exeName;
 
 		private Int64 _peakPagedMem = 0;

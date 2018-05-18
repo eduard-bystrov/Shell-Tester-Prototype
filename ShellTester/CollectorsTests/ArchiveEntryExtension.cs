@@ -13,8 +13,12 @@ namespace ShellTester.CollectorsTests
 		public static StreamReader ExtractToStreamReader(this ArchiveEntry archiveEntry)
 		{
 			var stream = new MemoryStream();
+			stream.Position = 0;
 			archiveEntry.Extract(stream);
-			return new StreamReader(stream);
+			var result = new StreamReader(stream);
+			result.BaseStream.Position = 0;
+			return result;
 		}
 	}
 }
+

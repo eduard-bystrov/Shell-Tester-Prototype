@@ -53,6 +53,7 @@ namespace ShellTesterPrototype
 						(
 							new OneTestRunner(
 								logger,
+								new FullStreamComparer(),
 								exe
 							)
 						)

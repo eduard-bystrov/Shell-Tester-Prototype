@@ -111,10 +111,12 @@
     <Compile Include="CollectorsTests\PathCollectorTests.cs" />
     <Compile Include="CollectorsTests\TestFileNameComparer.cs" />
     <Compile Include="CollectorsTests\ZipCollectorTests.cs" />
+    <Compile Include="FullStreamComparer.cs" />
     <Compile Include="IProcessTestsLauncher.cs" />
     <Compile Include="CheckAllTestsLauncher.cs" />
     <Compile Include="CollectorsTests\ICollectorTests.cs" />
     <Compile Include="IOneTestRunner.cs" />
+    <Compile Include="IStreamComparer.cs" />
     <Compile Include="ITestFilePattern.cs" />
     <Compile Include="ITestResult.cs" />
     <Compile Include="TestDescription.cs" />
