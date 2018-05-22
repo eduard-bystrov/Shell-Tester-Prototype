@@ -1,30 +1,30 @@
 {
-  "PathToExe": "plus.exe", //ком
+  "PathToExe": "plus.exe", 
   "PathToTests": "qqq.zip",
   "Mode": "zip",
-   "asdf" :  1,
-  "Tests": 
-  [{
-    "InputMask": {
-      "prefix": "input",
-      "numeration": "[\d]+",
-      "suffix": ".txt"
-    },
-    "OutputMask": {
-      "prefix": "output",
-      "numeration": "[\d]+",
-      "suffix": ".txt"
-    },
-    "DefaultTimeLimit_ms": 1000,
-    "DefaultMemoryLimit_mb": 64,
-    "DefaultPrice": 1,
-    "Customizations": [
-      {
-        "Number": "00",
-        "TimeLimit": 5000,
-        "MemoryLimit_mb": 128,
-        "Price": 0
-      }
-    ]
-  }
+  "Tests": [
+    {
+      "InputMask": {
+        "prefix": "input",
+        "numeration": "[\d]+",
+        "suffix": ".txt"
+      },
+      "OutputMask": {
+        "prefix": "output",
+        "numeration": "[\d]+",
+        "suffix": ".txt"
+      },
+      "DefaultTimeLimit_ms": 1000,
+      "DefaultMemoryLimit_mb": 64,
+      "DefaultPrice": 1,
+      "Customizations": [
+        {
+          "Number": "00",
+          "TimeLimit": 5000,
+          "MemoryLimit_mb": 128,
+          "Price": 0
+        }
+      ]
+    }
+  ]
 }

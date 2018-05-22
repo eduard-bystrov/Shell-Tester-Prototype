@@ -45,10 +45,14 @@ namespace UserInterface
 			this.choicePathToProgramBox = new System.Windows.Forms.TextBox();
 			this.choicePathToTestsetBox = new System.Windows.Forms.TextBox();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
+			this.CreateProblemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.SettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.StartTestingButton = new System.Windows.Forms.Button();
 			this.personalData.SuspendLayout();
 			this.testerData.SuspendLayout();
+			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// personalData
@@ -190,12 +194,34 @@ namespace UserInterface
 			// 
 			// menuStrip
 			// 
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateProblemToolStripMenuItem,
+            this.SettingsToolStripMenuItem,
+            this.AboutToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(800, 24);
+			this.menuStrip.Size = new System.Drawing.Size(374, 24);
 			this.menuStrip.TabIndex = 2;
 			this.menuStrip.Text = "MenuStrip";
 			this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip_ItemClicked);
+			// 
+			// CreateProblemToolStripMenuItem
+			// 
+			this.CreateProblemToolStripMenuItem.Name = "CreateProblemToolStripMenuItem";
+			this.CreateProblemToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+			this.CreateProblemToolStripMenuItem.Text = "Создание задачи";
+			// 
+			// SettingsToolStripMenuItem
+			// 
+			this.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
+			this.SettingsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+			this.SettingsToolStripMenuItem.Text = "Настройки";
+			// 
+			// справкаToolStripMenuItem
+			// 
+			this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+			this.AboutToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+			this.AboutToolStripMenuItem.Text = "Справка";
 			// 
 			// StartTestingButton
 			// 
@@ -210,7 +236,7 @@ namespace UserInterface
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(374, 296);
 			this.Controls.Add(this.StartTestingButton);
 			this.Controls.Add(this.testerData);
 			this.Controls.Add(this.personalData);
@@ -223,6 +249,8 @@ namespace UserInterface
 			this.personalData.PerformLayout();
 			this.testerData.ResumeLayout(false);
 			this.testerData.PerformLayout();
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -251,6 +279,9 @@ namespace UserInterface
 
 
 		private System.Windows.Forms.Button StartTestingButton;
+		private System.Windows.Forms.ToolStripMenuItem CreateProblemToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem SettingsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
 	}
 }
 
