@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UserInterface
 {
-	public partial class CreateNewProblem : Form
+	public partial class SendForm : Form
 	{
-		public CreateNewProblem()
+		public SendForm()
 		{
 			InitializeComponent();
-		}
-
-		private void groupBox1_Enter(Object sender, EventArgs e)
-		{
-
 		}
 	}
 }

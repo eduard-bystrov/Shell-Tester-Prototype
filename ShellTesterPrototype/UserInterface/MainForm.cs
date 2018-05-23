@@ -77,5 +77,15 @@ namespace UserInterface
 				textBox.Text = path;
 			}
 		}
+
+		private void SettingsToolStripMenuItem_Click(Object sender, EventArgs e)
+		{
+
+		}
+
+		private void dataGridView1_CellContentClick(Object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }

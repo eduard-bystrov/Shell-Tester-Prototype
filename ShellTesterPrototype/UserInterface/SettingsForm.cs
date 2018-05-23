@@ -16,5 +16,10 @@ namespace UserInterface
 		{
 			InitializeComponent();
 		}
+
+		private void comboBox1_SelectedIndexChanged(Object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -1,2 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Postman.GmailPostman">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GmailPostman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Postman.BasePostman">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAIIBAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BasePostman.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Postman.YandexPostman">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>YandexPostman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UserInterface
+namespace ProblemCreatorUI
 {
-	public partial class CreateNewProblem : Form
+	public partial class Form1 : Form
 	{
-		public CreateNewProblem()
+		public Form1()
 		{
 			InitializeComponent();
-		}
-
-		private void groupBox1_Enter(Object sender, EventArgs e)
-		{
-
 		}
 	}
 }
