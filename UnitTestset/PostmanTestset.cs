@@ -9,6 +9,7 @@ namespace UnitTestset
 		[TestMethod]
 		public void EmptyMessage()
 		{
+
 		}
 
 		[TestMethod]
