@@ -37,21 +37,20 @@
 			this.choicePathToProgramBox = new System.Windows.Forms.TextBox();
 			this.choicePathToTestsetBox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.testerData.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// StartTestingButton
 			// 
-			this.StartTestingButton.Location = new System.Drawing.Point(120, 310);
+			this.StartTestingButton.Location = new System.Drawing.Point(117, 280);
 			this.StartTestingButton.Name = "StartTestingButton";
 			this.StartTestingButton.Size = new System.Drawing.Size(130, 22);
 			this.StartTestingButton.TabIndex = 5;
@@ -116,7 +115,6 @@
 			this.choicePathToProgramBox.ReadOnly = true;
 			this.choicePathToProgramBox.Size = new System.Drawing.Size(267, 20);
 			this.choicePathToProgramBox.TabIndex = 7;
-			this.choicePathToProgramBox.Text = "Путь к программе";
 			// 
 			// choicePathToTestsetBox
 			// 
@@ -125,11 +123,9 @@
 			this.choicePathToTestsetBox.ReadOnly = true;
 			this.choicePathToTestsetBox.Size = new System.Drawing.Size(267, 20);
 			this.choicePathToTestsetBox.TabIndex = 6;
-			this.choicePathToTestsetBox.Text = "Путь к тестам";
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.checkBox1);
 			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.textBox3);
 			this.groupBox1.Controls.Add(this.label3);
@@ -139,11 +135,37 @@
 			this.groupBox1.Controls.Add(this.textBox2);
 			this.groupBox1.Location = new System.Drawing.Point(12, 128);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(352, 176);
+			this.groupBox1.Size = new System.Drawing.Size(352, 146);
 			this.groupBox1.TabIndex = 6;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Ограничения";
 			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(279, 109);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(63, 23);
+			this.button1.TabIndex = 14;
+			this.button1.Text = "Выбрать";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Location = new System.Drawing.Point(6, 112);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.ReadOnly = true;
+			this.textBox3.Size = new System.Drawing.Size(267, 20);
+			this.textBox3.TabIndex = 13;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(6, 96);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(114, 13);
+			this.label3.TabIndex = 12;
+			this.label3.Text = "Особые ограничения";
 			// 
 			// label1
 			// 
@@ -177,48 +199,11 @@
 			this.textBox2.Size = new System.Drawing.Size(336, 20);
 			this.textBox2.TabIndex = 6;
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(6, 96);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(114, 13);
-			this.label3.TabIndex = 12;
-			this.label3.Text = "Особые ограничения";
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(279, 109);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(63, 23);
-			this.button1.TabIndex = 14;
-			this.button1.Text = "Выбрать";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// textBox3
-			// 
-			this.textBox3.Location = new System.Drawing.Point(6, 112);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.ReadOnly = true;
-			this.textBox3.Size = new System.Drawing.Size(267, 20);
-			this.textBox3.TabIndex = 13;
-			this.textBox3.Text = "Путь к файлу";
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(9, 138);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(179, 17);
-			this.checkBox1.TabIndex = 16;
-			this.checkBox1.Text = "Видимость результатов теста";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
 			// CreateNewProblem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(373, 346);
+			this.ClientSize = new System.Drawing.Size(373, 317);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.StartTestingButton);
 			this.Controls.Add(this.testerData);
@@ -247,7 +232,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label label3;

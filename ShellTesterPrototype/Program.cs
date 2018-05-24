@@ -4,6 +4,7 @@ using Logger.Enhanced;
 using Postman;
 using ShellTester;
 using ShellTester.CollectorsTests;
+using ShellTester.Launchers;
 using System;
 using System.Collections.Generic;
 using System.IO;

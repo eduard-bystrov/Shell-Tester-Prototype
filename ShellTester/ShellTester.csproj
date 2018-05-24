@@ -112,8 +112,9 @@
     <Compile Include="CollectorsTests\TestFileNameComparer.cs" />
     <Compile Include="CollectorsTests\ZipCollectorTests.cs" />
     <Compile Include="FullStreamComparer.cs" />
-    <Compile Include="IProcessTestsLauncher.cs" />
-    <Compile Include="CheckAllTestsLauncher.cs" />
+    <Compile Include="Launchers\BaseTestsLauncher.cs" />
+    <Compile Include="Launchers\IProcessTestsLauncher.cs" />
+    <Compile Include="Launchers\CheckAllTestsLauncher.cs" />
     <Compile Include="CollectorsTests\ICollectorTests.cs" />
     <Compile Include="IOneTestRunner.cs" />
     <Compile Include="ITestFilePattern.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Tester.cs" />
     <Compile Include="ITester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Launchers\WhileSuccessTestsLauncher.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SevenZipLib\SevenZipLib\SevenZipLib.csproj">

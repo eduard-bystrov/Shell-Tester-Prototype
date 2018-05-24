@@ -17,13 +17,7 @@ namespace ShellTester
 		public Int64 PeekMemory { get; set; }
 		public String Id { get; set; }
 
-		public String ToJson
-		{
-			get
-			{
-				return JsonConvert.SerializeObject(this);
-			}
-		}
+		
 
 		
 	}

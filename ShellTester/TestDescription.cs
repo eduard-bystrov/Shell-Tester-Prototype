@@ -7,7 +7,6 @@ namespace ShellTester
 		public String inputFilePath;
 		public String idealOutputFilePath;
 
-		public Int32 id;
 		public Int32 cost;
 	}
 }

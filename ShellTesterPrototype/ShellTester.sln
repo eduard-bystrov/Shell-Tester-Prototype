@@ -15,9 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenZipLib", "..\SevenZipL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorkTester", "..\StorkBackend\StorkTester.csproj", "{0D3D4F3C-2E67-408B-8BD1-129EA1655B40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface\UserInterface.csproj", "{E486A303-99A2-420E-982C-5593BCC8D75C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineTester", "UserInterface\OfflineTester.csproj", "{E486A303-99A2-420E-982C-5593BCC8D75C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestset", "..\UnitTestset\UnitTestset.csproj", "{B6230EEC-F16C-4D0C-AE55-6C08DEAAEA76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemCreatorUI", "..\ProblemCreatorUI\ProblemCreatorUI.csproj", "{4016E82C-05F8-4874-B7E4-02665447EA02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,14 @@ Global
 		{B6230EEC-F16C-4D0C-AE55-6C08DEAAEA76}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6230EEC-F16C-4D0C-AE55-6C08DEAAEA76}.Release|x64.ActiveCfg = Release|Any CPU
 		{B6230EEC-F16C-4D0C-AE55-6C08DEAAEA76}.Release|x64.Build.0 = Release|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Debug|x64.Build.0 = Debug|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|x64.ActiveCfg = Release|Any CPU
+		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -302,6 +302,7 @@ namespace UserInterface
 			// 
 			this.textBox3.Location = new System.Drawing.Point(143, 121);
 			this.textBox3.Name = "textBox3";
+			this.textBox3.ReadOnly = true;
 			this.textBox3.Size = new System.Drawing.Size(107, 20);
 			this.textBox3.TabIndex = 16;
 			// 
