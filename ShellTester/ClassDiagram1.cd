@@ -91,10 +91,17 @@
       <FileName>ITestFilePattern.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="ShellTester.TestResultKind" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Interface Name="ShellTester.ITestResult">
+    <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAIQIAAAAAAAAAAgAAAAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAADAAAAAABoABAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ITestResult.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ShellTester.TestResultKind">
+    <Position X="6.25" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAIQIAAAAAAAAAAgAAAAAgAAAAAAEAAAA=</HashCode>
       <FileName>ITestResult.cs</FileName>
     </TypeIdentifier>
   </Enum>

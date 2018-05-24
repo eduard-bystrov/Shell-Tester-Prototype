@@ -51,7 +51,7 @@ namespace UnitTestset
 		[TestMethod]
 		public void TimeLimit()
 		{
-			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
+			var results = RunTester(@"../../test.zip", @"../../Programs/TimeLimit.exe");
 
 			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.TimeLimitExceeded));
 		}
@@ -59,13 +59,13 @@ namespace UnitTestset
 		[TestMethod]
 		public void ErrorInProcess()
 		{
-			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
+			var results = RunTester(@"../../test.zip", @"../../Programs/ErrorInProcess.exe");
 
 			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.RuntimeError));
 		}
 		public void OutOfMemory()
 		{
-			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
+			var results = RunTester(@"../../test.zip", @"../../Programs/OutOfMemory.exe");
 
 			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.RuntimeError));
 		}
@@ -73,7 +73,7 @@ namespace UnitTestset
 		[TestMethod]
 		public void AllTestWA()
 		{
-			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
+			var results = RunTester(@"../../test.zip", @"../../Programs/AllTestWA.exe");
 
 			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.WrongAnswer));
 		}
@@ -81,7 +81,7 @@ namespace UnitTestset
 		[TestMethod]
 		public void AllTestAC()
 		{
-			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
+			var results = RunTester(@"../../test.zip", @"../../Programs/AllTestAC.exe");
 
 			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.Success));
 		}
@@ -89,7 +89,7 @@ namespace UnitTestset
 		[TestMethod]
 		public void SecondTestWA_RunAllTests()
 		{
-			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
+			var results = RunTester(@"../../test.zip", @"../../Programs/SecondWa.exe");
 
 			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.Success));
 		}
@@ -112,7 +112,7 @@ namespace UnitTestset
 							new OneTestRunner(
 								Logger,
 								new FullStreamComparer(),
-								@"../../Tests/Programs/SecondTestWA.exe"
+								@"../../Tests/Programs/SecondWa.exe"
 							)
 						)
 				);
