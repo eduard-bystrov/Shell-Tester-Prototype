@@ -42,7 +42,7 @@ namespace Postman
 				//TODO тоже в рефлекшн
 				x => x.Id,
 				x => x.Description,
-				x => x.Type,
+				x => x.Kind,
 				x => x.ExecutionTime,
 				x => x.PeekMemory
 			};

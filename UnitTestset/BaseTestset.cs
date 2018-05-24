@@ -32,7 +32,7 @@ namespace UnitTestset
 							ExecutionTime = TimeSpan.FromDays(12),
 							Id = "500",
 							PeekMemory = Int32.MaxValue,
-							Type = TestResultType.CompilationError
+							Kind = TestResultKind.CompilationError
 						}
 					},
 					{
@@ -47,7 +47,7 @@ namespace UnitTestset
 							ExecutionTime = TimeSpan.FromMilliseconds(10),
 							Id = "31",
 							PeekMemory = 51235512,
-							Type = TestResultType.RuntimeError
+							Kind = TestResultKind.RuntimeError
 						}
 					},
 					{
@@ -62,7 +62,7 @@ namespace UnitTestset
 							ExecutionTime = TimeSpan.FromMilliseconds(10),
 							Id = "214",
 							PeekMemory = 123456,
-							Type = TestResultType.Success
+							Kind = TestResultKind.Success
 						}
 					}
 				};

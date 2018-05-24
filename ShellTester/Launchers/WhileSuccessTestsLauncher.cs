@@ -25,13 +25,13 @@ namespace ShellTester.Launchers
 					yield return new TestResult()
 					{
 						Id = test.Id,
-						Type = TestResultType.NotLaunched
+						Kind = TestResultKind.NotLaunched
 					};
 				}
 				else
 				{
 					var result = _oneTestRunner.Run(test);
-					wasWrong = result.Type != TestResultType.Success;
+					wasWrong = result.Kind != TestResultKind.Success;
 					yield return result;
 				}
 			}

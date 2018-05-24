@@ -63,10 +63,8 @@ namespace ShellTester
 		private TestResult CreateTestResult(Process process, Test test)
 		{
 			//StreamReader streamReaderIdeal = new StreamReader(test.IdealOutputFileName);
-			
 
 			var res = new TestResult();
-
 
 			//TODO Сравниватель файлов, доблы и тд
 			Boolean accepted = _comparer.Equals(test.IdealOutputStream, process.StandardOutput);
@@ -75,13 +73,12 @@ namespace ShellTester
 
 			if (accepted)
 			{
-				res.Type = TestResultType.Success;
+				res.Kind = TestResultKind.Success;
 			}
 			else
 			{
-				res.Type = TestResultType.WrongAnswer;
+				res.Kind = TestResultKind.WrongAnswer;
 			}
-
 
 			//TODO память точно верно(сравнить)
 			res.ExecutionTime = process.TotalProcessorTime;

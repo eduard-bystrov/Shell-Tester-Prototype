@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShellTester
 {
-	public enum TestResultType
+	public enum TestResultKind
 	{
 		NotLaunched,
 		Success,
@@ -14,13 +14,14 @@ namespace ShellTester
 		RuntimeError,
 		CompilationError,
 		TimeLimitExceeded,
-		MemoryLimitExceeded
+		MemoryLimitExceeded,
+		None,
 	}
 	public interface ITestResult
 	{
 		String Id { get; }
 		TestDescription Description { get; }
-		TestResultType Type { get; }
+		TestResultKind Kind { get; }
 		TimeSpan ExecutionTime { get; }
 		Int64 PeekMemory { get; }
 

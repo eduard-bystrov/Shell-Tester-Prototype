@@ -1,29 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
 
-namespace ShellTester
-{
-	public class FullStreamComparer : IEqualityComparer<StreamReader>
+	namespace ShellTester
 	{
-		public Boolean Equals(StreamReader lsh, StreamReader rsh)
+		public class FullStreamComparer : IEqualityComparer<StreamReader>
 		{
-			if (lsh == null && rsh == null) return true;
-			if (lsh == null || rsh == null) return false;
+			public Boolean Equals(StreamReader lsh, StreamReader rsh)
+			{
+				if (lsh == null && rsh == null) return true;
+				if (lsh == null || rsh == null) return false;
 
-			String lshString = lsh.ReadToEnd();
-			String rshString = rsh.ReadToEnd();
+				String lshString = lsh.ReadToEnd();
+				String rshString = rsh.ReadToEnd();
 
-			return lshString == rshString;
-		}
+				return lshString == rshString;
+			}
 
 
-		public Int32 GetHashCode(StreamReader obj)
-		{
-			return obj.GetHashCode();
+			public Int32 GetHashCode(StreamReader obj)
+			{
+				return obj.GetHashCode();
+			}
 		}
 	}
-}

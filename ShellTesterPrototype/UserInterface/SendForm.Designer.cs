@@ -33,51 +33,61 @@
 			this.surnameBox = new System.Windows.Forms.TextBox();
 			this.surnameLabel = new System.Windows.Forms.Label();
 			this.nameLabel = new System.Windows.Forms.Label();
-			this.testerData = new System.Windows.Forms.GroupBox();
-			this.choicePathToProgramLabel = new System.Windows.Forms.Label();
-			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
 			this.choicePathToProgramButton = new System.Windows.Forms.Button();
-			this.choicePathToTestsetBox = new System.Windows.Forms.TextBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.choicePathToProgramLabel = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.personalData.SuspendLayout();
-			this.testerData.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// personalData
 			// 
+			this.personalData.Controls.Add(this.textBox3);
+			this.personalData.Controls.Add(this.textBox1);
+			this.personalData.Controls.Add(this.label4);
+			this.personalData.Controls.Add(this.label3);
+			this.personalData.Controls.Add(this.comboBox1);
+			this.personalData.Controls.Add(this.textBox2);
+			this.personalData.Controls.Add(this.label2);
+			this.personalData.Controls.Add(this.label1);
 			this.personalData.Controls.Add(this.nameBox);
 			this.personalData.Controls.Add(this.surnameBox);
 			this.personalData.Controls.Add(this.surnameLabel);
 			this.personalData.Controls.Add(this.nameLabel);
 			this.personalData.Location = new System.Drawing.Point(12, 12);
 			this.personalData.Name = "personalData";
-			this.personalData.Size = new System.Drawing.Size(352, 79);
+			this.personalData.Size = new System.Drawing.Size(446, 125);
 			this.personalData.TabIndex = 6;
 			this.personalData.TabStop = false;
 			this.personalData.Text = "Персональные данные";
 			// 
 			// nameBox
 			// 
-			this.nameBox.Location = new System.Drawing.Point(72, 20);
+			this.nameBox.Location = new System.Drawing.Point(58, 19);
 			this.nameBox.Name = "nameBox";
-			this.nameBox.Size = new System.Drawing.Size(270, 20);
+			this.nameBox.Size = new System.Drawing.Size(377, 20);
 			this.nameBox.TabIndex = 5;
 			// 
 			// surnameBox
 			// 
-			this.surnameBox.Location = new System.Drawing.Point(72, 43);
+			this.surnameBox.Location = new System.Drawing.Point(58, 47);
 			this.surnameBox.Name = "surnameBox";
-			this.surnameBox.Size = new System.Drawing.Size(270, 20);
+			this.surnameBox.Size = new System.Drawing.Size(78, 20);
 			this.surnameBox.TabIndex = 3;
 			// 
 			// surnameLabel
 			// 
 			this.surnameLabel.AutoSize = true;
-			this.surnameLabel.Location = new System.Drawing.Point(10, 46);
+			this.surnameLabel.Location = new System.Drawing.Point(10, 50);
 			this.surnameLabel.Name = "surnameLabel";
 			this.surnameLabel.Size = new System.Drawing.Size(42, 13);
 			this.surnameLabel.TabIndex = 1;
@@ -92,115 +102,135 @@
 			this.nameLabel.TabIndex = 0;
 			this.nameLabel.Text = "ФИО";
 			// 
-			// testerData
-			// 
-			this.testerData.Controls.Add(this.label2);
-			this.testerData.Controls.Add(this.textBox2);
-			this.testerData.Controls.Add(this.label1);
-			this.testerData.Controls.Add(this.textBox1);
-			this.testerData.Controls.Add(this.checkBox1);
-			this.testerData.Controls.Add(this.choicePathToProgramLabel);
-			this.testerData.Controls.Add(this.choicePathToTestsetLabel);
-			this.testerData.Controls.Add(this.choicePathToTestsetBox);
-			this.testerData.Location = new System.Drawing.Point(12, 97);
-			this.testerData.Name = "testerData";
-			this.testerData.Size = new System.Drawing.Size(352, 137);
-			this.testerData.TabIndex = 5;
-			this.testerData.TabStop = false;
-			this.testerData.Text = "Почтовая информация";
-			// 
-			// choicePathToProgramLabel
-			// 
-			this.choicePathToProgramLabel.AutoSize = true;
-			this.choicePathToProgramLabel.Location = new System.Drawing.Point(10, 107);
-			this.choicePathToProgramLabel.Name = "choicePathToProgramLabel";
-			this.choicePathToProgramLabel.Size = new System.Drawing.Size(151, 13);
-			this.choicePathToProgramLabel.TabIndex = 10;
-			this.choicePathToProgramLabel.Text = "Отправить результаты в БД";
-			// 
-			// choicePathToTestsetLabel
-			// 
-			this.choicePathToTestsetLabel.AutoSize = true;
-			this.choicePathToTestsetLabel.Location = new System.Drawing.Point(10, 26);
-			this.choicePathToTestsetLabel.Name = "choicePathToTestsetLabel";
-			this.choicePathToTestsetLabel.Size = new System.Drawing.Size(33, 13);
-			this.choicePathToTestsetLabel.TabIndex = 3;
-			this.choicePathToTestsetLabel.Text = "Кому";
-			// 
 			// choicePathToProgramButton
 			// 
-			this.choicePathToProgramButton.Location = new System.Drawing.Point(148, 240);
+			this.choicePathToProgramButton.Location = new System.Drawing.Point(196, 197);
 			this.choicePathToProgramButton.Name = "choicePathToProgramButton";
 			this.choicePathToProgramButton.Size = new System.Drawing.Size(69, 23);
 			this.choicePathToProgramButton.TabIndex = 9;
 			this.choicePathToProgramButton.Text = "Отправить";
 			this.choicePathToProgramButton.UseVisualStyleBackColor = true;
 			// 
-			// choicePathToTestsetBox
-			// 
-			this.choicePathToTestsetBox.Location = new System.Drawing.Point(72, 23);
-			this.choicePathToTestsetBox.Name = "choicePathToTestsetBox";
-			this.choicePathToTestsetBox.Size = new System.Drawing.Size(270, 20);
-			this.choicePathToTestsetBox.TabIndex = 6;
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(167, 106);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(15, 14);
-			this.checkBox1.TabIndex = 11;
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(10, 52);
+			this.label1.Location = new System.Drawing.Point(142, 49);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(47, 13);
-			this.label1.TabIndex = 12;
-			this.label1.Text = "От Кого";
+			this.label1.Size = new System.Drawing.Size(74, 13);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "Год обучения";
 			// 
-			// textBox1
+			// textBox2
 			// 
-			this.textBox1.Location = new System.Drawing.Point(72, 49);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(270, 20);
-			this.textBox1.TabIndex = 13;
+			this.textBox2.Location = new System.Drawing.Point(362, 47);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(73, 20);
+			this.textBox2.TabIndex = 9;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(10, 78);
+			this.label2.Location = new System.Drawing.Point(305, 50);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(45, 13);
-			this.label2.TabIndex = 14;
-			this.label2.Text = "Пароль";
+			this.label2.Size = new System.Drawing.Size(51, 13);
+			this.label2.TabIndex = 8;
+			this.label2.Text = "Семестр";
 			// 
-			// textBox2
+			// comboBox1
 			// 
-			this.textBox2.Location = new System.Drawing.Point(72, 75);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.PasswordChar = '*';
-			this.textBox2.Size = new System.Drawing.Size(270, 20);
-			this.textBox2.TabIndex = 15;
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(222, 45);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(77, 21);
+			this.comboBox1.TabIndex = 10;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(195, 79);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(84, 13);
+			this.label3.TabIndex = 11;
+			this.label3.Text = "Итоговый балл";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(10, 79);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(100, 13);
+			this.label4.TabIndex = 12;
+			this.label4.Text = "Тестов пройденно";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(285, 76);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(82, 20);
+			this.textBox1.TabIndex = 13;
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Location = new System.Drawing.Point(178, 169);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(15, 14);
+			this.checkBox1.TabIndex = 13;
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// choicePathToProgramLabel
+			// 
+			this.choicePathToProgramLabel.AutoSize = true;
+			this.choicePathToProgramLabel.Location = new System.Drawing.Point(22, 169);
+			this.choicePathToProgramLabel.Name = "choicePathToProgramLabel";
+			this.choicePathToProgramLabel.Size = new System.Drawing.Size(150, 13);
+			this.choicePathToProgramLabel.TabIndex = 12;
+			this.choicePathToProgramLabel.Text = "Сохранить результаты в БД";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(22, 146);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(168, 13);
+			this.label5.TabIndex = 14;
+			this.label5.Text = "Отправить результаты на почту";
+			// 
+			// textBox3
+			// 
+			this.textBox3.CausesValidation = false;
+			this.textBox3.Cursor = System.Windows.Forms.Cursors.SizeNESW;
+			this.textBox3.Location = new System.Drawing.Point(116, 76);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.ReadOnly = true;
+			this.textBox3.Size = new System.Drawing.Size(73, 20);
+			this.textBox3.TabIndex = 14;
+			// 
+			// textBox4
+			// 
+			this.textBox4.Location = new System.Drawing.Point(196, 143);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(251, 20);
+			this.textBox4.TabIndex = 15;
 			// 
 			// SendForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(378, 271);
+			this.ClientSize = new System.Drawing.Size(469, 232);
+			this.Controls.Add(this.textBox4);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.checkBox1);
+			this.Controls.Add(this.choicePathToProgramLabel);
 			this.Controls.Add(this.personalData);
-			this.Controls.Add(this.testerData);
 			this.Controls.Add(this.choicePathToProgramButton);
 			this.Name = "SendForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Отправка результатов";
 			this.personalData.ResumeLayout(false);
 			this.personalData.PerformLayout();
-			this.testerData.ResumeLayout(false);
-			this.testerData.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -211,15 +241,18 @@
 		private System.Windows.Forms.TextBox surnameBox;
 		private System.Windows.Forms.Label surnameLabel;
 		private System.Windows.Forms.Label nameLabel;
-		private System.Windows.Forms.GroupBox testerData;
+		private System.Windows.Forms.Button choicePathToProgramButton;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label choicePathToProgramLabel;
-		private System.Windows.Forms.Label choicePathToTestsetLabel;
-		private System.Windows.Forms.TextBox choicePathToTestsetBox;
-		private System.Windows.Forms.Button choicePathToProgramButton;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox textBox4;
 	}
 }

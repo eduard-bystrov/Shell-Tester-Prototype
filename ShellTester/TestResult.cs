@@ -5,7 +5,7 @@ namespace ShellTester
 {
 	public class TestResult : ITestResult
 	{
-		public TestResultType Type { get; set; }
+		public TestResultKind Kind { get; set; }
 
 		public TimeSpan ExecutionTime { get; set; }
 		public Int32 ExecutionTime_ms => Convert.ToInt32(ExecutionTime.TotalMilliseconds);

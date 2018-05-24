@@ -240,7 +240,7 @@ namespace UserInterface
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(248, 21);
+			this.label4.Location = new System.Drawing.Point(237, 21);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(140, 13);
 			this.label4.TabIndex = 0;
@@ -249,7 +249,7 @@ namespace UserInterface
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(33, 57);
+			this.label5.Location = new System.Drawing.Point(15, 57);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(86, 13);
 			this.label5.TabIndex = 1;
@@ -258,7 +258,7 @@ namespace UserInterface
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(125, 54);
+			this.comboBox1.Location = new System.Drawing.Point(107, 54);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(486, 21);
 			this.comboBox1.TabIndex = 2;
@@ -266,7 +266,7 @@ namespace UserInterface
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(255, 87);
+			this.label6.Location = new System.Drawing.Point(237, 87);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(126, 13);
 			this.label6.TabIndex = 4;
@@ -284,15 +284,15 @@ namespace UserInterface
 			// dataGridView1
 			// 
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(36, 160);
+			this.dataGridView1.Location = new System.Drawing.Point(18, 160);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(575, 346);
+			this.dataGridView1.Size = new System.Drawing.Size(585, 346);
 			this.dataGridView1.TabIndex = 13;
 			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(33, 121);
+			this.label7.Location = new System.Drawing.Point(15, 124);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(104, 13);
 			this.label7.TabIndex = 14;
@@ -300,7 +300,7 @@ namespace UserInterface
 			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(143, 121);
+			this.textBox3.Location = new System.Drawing.Point(125, 124);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.ReadOnly = true;
 			this.textBox3.Size = new System.Drawing.Size(107, 20);

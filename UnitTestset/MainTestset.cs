@@ -45,7 +45,7 @@ namespace UnitTestset
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.Any(x => x.Type == TestResultType.MemoryLimitExceeded));
+			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.MemoryLimitExceeded));
 		}
 
 		[TestMethod]
@@ -53,7 +53,7 @@ namespace UnitTestset
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.Any(x => x.Type == TestResultType.TimeLimitExceeded));
+			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.TimeLimitExceeded));
 		}
 
 		[TestMethod]
@@ -61,13 +61,13 @@ namespace UnitTestset
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.Any(x => x.Type == TestResultType.RuntimeError));
+			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.RuntimeError));
 		}
 		public void OutOfMemory()
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.Any(x => x.Type == TestResultType.RuntimeError));
+			Assert.IsTrue(results.Any(x => x.Kind == TestResultKind.RuntimeError));
 		}
 
 		[TestMethod]
@@ -75,7 +75,7 @@ namespace UnitTestset
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.All(x => x.Type == TestResultType.WrongAnswer));
+			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.WrongAnswer));
 		}
 
 		[TestMethod]
@@ -83,7 +83,7 @@ namespace UnitTestset
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.All(x => x.Type == TestResultType.Success));
+			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.Success));
 		}
 
 		[TestMethod]
@@ -91,7 +91,7 @@ namespace UnitTestset
 		{
 			var results = RunTester(@"../../test.zip", @"../../Programs/MemoryLimit.exe");
 
-			Assert.IsTrue(results.All(x => x.Type == TestResultType.Success));
+			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.Success));
 		}
 
 		[TestMethod]
@@ -119,7 +119,7 @@ namespace UnitTestset
 
 			List<ShellTester.TestResult> results = new List<ShellTester.TestResult>(tester.Run());
 
-			Assert.IsTrue(results.All(x => x.Type == TestResultType.Success));
+			Assert.IsTrue(results.All(x => x.Kind == TestResultKind.Success));
 		}
 
 
