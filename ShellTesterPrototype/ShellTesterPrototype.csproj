@@ -135,6 +135,7 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+    <None Include="sending.json" />
     <None Include="tsconfig1.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
