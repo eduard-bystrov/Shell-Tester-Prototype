@@ -41,8 +41,9 @@ namespace ShellTester.CreatorsTestset
 
 		private String CreateOutputFileName(String inputFileName)
 		{
-			return _outputFilePattern.PrefixPattern +
-				inputFileName.Substring(0, inputFileName.LastIndexOf('/')) +
+			return inputFileName.Substring(0, inputFileName.LastIndexOf('/')) +
+				_outputFilePattern.PrefixPattern +
+				_inputFilePattern.GetNumberPart(inputFileName) +
 				_outputFilePattern.SuffixPattern;
 		}
 
