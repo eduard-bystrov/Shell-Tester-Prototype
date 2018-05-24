@@ -1,0 +1,37 @@
+﻿{
+  "Time": "Sun, 31 Dec 2018 00:00:00 GMT",
+
+  "Student": {
+    "Fullname": "Иванов Иван Иванович",
+    "Group": "КТбо4-8",
+    "AcademicYear": "2018",
+    "Semester": "2017-2018"
+  },
+
+  "Work": {
+    "Subject": "ООП",
+    "Task": "Лабораторная работа №1",
+    "Variant": "7",
+    "TestsetVersion": "1.0.0.0",
+    "Mark": "5"
+  },
+
+  //Полные результаты по тестированию
+  "SecurityInformation": [
+    {
+      "Type": 4,
+      "ExecutionTime": "12.00:00:00",
+      "ExecutionTime_ms": 1036800000,
+      "ExecutionTime_s": 1036800,
+      "ExecutionTime_m": 17280,
+      "Description": {
+        "inputFilePath": "12312321312.txt",
+        "idealOutputFilePath": "123.txt",
+        "cost": 228
+      },
+      "PeekMemory": 2147483647,
+      "Id": "500"
+    }
+  ]
+
+}

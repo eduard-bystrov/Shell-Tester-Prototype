@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 namespace ShellTester
 {
 	public class TestFilePattern : ITestFilePattern
 	{
-		// можно ли сделать так что гет метод вернет собранный паттерн
-
 		public TestFilePattern(String pattern)
 		{
-			// пытался сделать регулярку, но не пошло ))00000
 			String[] splits = pattern.Split(SEPARATORS);
 
 			if (splits.Length != 7) throw new NotImplementedException();

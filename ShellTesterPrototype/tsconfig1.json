@@ -1,6 +1,7 @@
 {
   "ProblemName": "Имя задания", // A+B
   "LaboratoryWorkName": "Имя", // ООП:Лабораторная работа №1
+  "TestsetVersion": "3.2.2.8", // версия пакета тестов
 
   "Tests": [
     {
@@ -36,7 +37,7 @@
           //максимальный пик памяти на 128
           //с ценой 0
           "Number": "00",
-          "TimeLimit": 5000,
+          "TimeLimit_ms": 5000,
           "MemoryLimit_mb": 128,
           "Price": 0
         },
@@ -44,7 +45,7 @@
         //группа тестов будет запущена с параметрами
         {
           "Number": "15-20",
-          "TimeLimit": 5000,
+          "TimeLimit_ms": 5000,
           "MemoryLimit_mb": 32,
           "Price": 2
         }

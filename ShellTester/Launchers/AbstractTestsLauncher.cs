@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShellTester.Launchers
 {
-	abstract public class BaseTestsLauncher : IProcessTestsLauncher
+	abstract public class AbstractTestsLauncher : IProcessTestsLauncher
 	{
-		public BaseTestsLauncher(IOneTestRunner oneTestRunner)
+		public AbstractTestsLauncher(IOneTestRunner oneTestRunner)
 		{
 			_oneTestRunner = oneTestRunner;
 		}

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ShellTester.Launchers
 {
-	public class CheckAllTestsLauncher : BaseTestsLauncher
+	public class CheckAllTestsLauncher : AbstractTestsLauncher
 	{
 		public CheckAllTestsLauncher(IOneTestRunner oneTestRunner)
 			:base(oneTestRunner)

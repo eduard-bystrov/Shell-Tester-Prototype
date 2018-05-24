@@ -4,28 +4,22 @@ using ShellTester;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTestset
 {
 	[TestClass]
 	public class BaseTestset
 	{
-
 		[TestInitialize]
 		public virtual void TestInitialize()
 		{
 			Logger = new StreamLogger(new StreamWriter(DateTime.Now.Date.ToString("dd/MM/yyyy") + ".log") { AutoFlush = true });
 		}
 
-
 		public IEnumerable<ShellTester.TestResult> CreateSimpleTestResult()
 		{
 			return new List<ShellTester.TestResult>
 				{
-
 					{
 						new ShellTester.TestResult
 						{
@@ -39,7 +33,6 @@ namespace UnitTestset
 							Id = "500",
 							PeekMemory = Int32.MaxValue,
 							Type = TestResultType.CompilationError
-
 						}
 					},
 					{
@@ -55,7 +48,6 @@ namespace UnitTestset
 							Id = "31",
 							PeekMemory = 51235512,
 							Type = TestResultType.RuntimeError
-
 						}
 					},
 					{
@@ -71,7 +63,6 @@ namespace UnitTestset
 							Id = "214",
 							PeekMemory = 123456,
 							Type = TestResultType.Success
-
 						}
 					}
 				};
@@ -80,6 +71,5 @@ namespace UnitTestset
 		protected static readonly string inMask = @"(input)(\d+)(.txt)";
 		protected static readonly string outMask = @"(output)(\d+)(.txt)";
 		protected virtual IPlatformLogger Logger { get; set; }
-
 	}
 }
