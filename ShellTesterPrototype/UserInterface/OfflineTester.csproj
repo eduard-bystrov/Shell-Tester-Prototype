@@ -130,5 +130,19 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Model\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Postman\Postman.csproj">
+      <Project>{65B61830-DFF5-4586-AAA5-CA62AB45E588}</Project>
+      <Name>Postman</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ShellTester\ShellTester.csproj">
+      <Project>{FD1D9D71-881D-400E-89F3-BC66285782B1}</Project>
+      <Name>ShellTester</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{20F41CDB-3FB1-4032-86FD-023A484DEA40}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

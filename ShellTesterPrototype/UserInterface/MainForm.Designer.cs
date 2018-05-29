@@ -35,18 +35,18 @@ namespace UserInterface
 			this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.button2 = new System.Windows.Forms.Button();
-			this.label3 = new System.Windows.Forms.Label();
 			this.choicePathToProgramButton = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.choiceTestsetButton = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.TimelimitBox = new System.Windows.Forms.TextBox();
+			this.MemorylimitBox = new System.Windows.Forms.TextBox();
 			this.StartTestingButton = new System.Windows.Forms.Button();
-			this.PathToProgramBox = new System.Windows.Forms.TextBox();
+			this.PathToTestsetBox = new System.Windows.Forms.TextBox();
 			this.choicePathToProgramLabel = new System.Windows.Forms.Label();
-			this.choicePathToProgramBox = new System.Windows.Forms.TextBox();
+			this.PathToProgramBox = new System.Windows.Forms.TextBox();
 			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.textBox3 = new System.Windows.Forms.TextBox();
@@ -90,14 +90,14 @@ namespace UserInterface
 			// panel1
 			// 
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel1.Controls.Add(this.button2);
-			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.choicePathToProgramButton);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Controls.Add(this.choiceTestsetButton);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Controls.Add(this.StartTestingButton);
-			this.panel1.Controls.Add(this.PathToProgramBox);
+			this.panel1.Controls.Add(this.PathToTestsetBox);
 			this.panel1.Controls.Add(this.choicePathToProgramLabel);
-			this.panel1.Controls.Add(this.choicePathToProgramBox);
+			this.panel1.Controls.Add(this.PathToProgramBox);
 			this.panel1.Controls.Add(this.choicePathToTestsetLabel);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -105,14 +105,15 @@ namespace UserInterface
 			this.panel1.Size = new System.Drawing.Size(274, 546);
 			this.panel1.TabIndex = 4;
 			// 
-			// button2
+			// choicePathToProgramButton
 			// 
-			this.button2.Location = new System.Drawing.Point(191, 218);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(69, 20);
-			this.button2.TabIndex = 17;
-			this.button2.Text = "Выбрать";
-			this.button2.UseVisualStyleBackColor = true;
+			this.choicePathToProgramButton.Location = new System.Drawing.Point(191, 218);
+			this.choicePathToProgramButton.Name = "choicePathToProgramButton";
+			this.choicePathToProgramButton.Size = new System.Drawing.Size(69, 20);
+			this.choicePathToProgramButton.TabIndex = 17;
+			this.choicePathToProgramButton.Text = "Выбрать";
+			this.choicePathToProgramButton.UseVisualStyleBackColor = true;
+			this.choicePathToProgramButton.Click += new System.EventHandler(this.ChoicePathToProgramButton_Click);
 			// 
 			// label3
 			// 
@@ -123,22 +124,22 @@ namespace UserInterface
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Проверка работы";
 			// 
-			// choicePathToProgramButton
+			// choiceTestsetButton
 			// 
-			this.choicePathToProgramButton.Location = new System.Drawing.Point(191, 60);
-			this.choicePathToProgramButton.Name = "choicePathToProgramButton";
-			this.choicePathToProgramButton.Size = new System.Drawing.Size(69, 20);
-			this.choicePathToProgramButton.TabIndex = 11;
-			this.choicePathToProgramButton.Text = "Выбрать";
-			this.choicePathToProgramButton.UseVisualStyleBackColor = true;
-			this.choicePathToProgramButton.Click += new System.EventHandler(this.ChoicePathToProgramButton_Click);
+			this.choiceTestsetButton.Location = new System.Drawing.Point(191, 60);
+			this.choiceTestsetButton.Name = "choiceTestsetButton";
+			this.choiceTestsetButton.Size = new System.Drawing.Size(69, 20);
+			this.choiceTestsetButton.TabIndex = 11;
+			this.choiceTestsetButton.Text = "Выбрать";
+			this.choiceTestsetButton.UseVisualStyleBackColor = true;
+			this.choiceTestsetButton.Click += new System.EventHandler(this.ChoiceTestsetButton_Click);
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.textBox1);
-			this.groupBox1.Controls.Add(this.textBox2);
+			this.groupBox1.Controls.Add(this.TimelimitBox);
+			this.groupBox1.Controls.Add(this.MemorylimitBox);
 			this.groupBox1.Location = new System.Drawing.Point(12, 87);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(254, 112);
@@ -164,19 +165,19 @@ namespace UserInterface
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Память MB";
 			// 
-			// textBox1
+			// TimelimitBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(6, 73);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(242, 20);
-			this.textBox1.TabIndex = 7;
+			this.TimelimitBox.Location = new System.Drawing.Point(6, 73);
+			this.TimelimitBox.Name = "TimelimitBox";
+			this.TimelimitBox.Size = new System.Drawing.Size(242, 20);
+			this.TimelimitBox.TabIndex = 7;
 			// 
-			// textBox2
+			// MemorylimitBox
 			// 
-			this.textBox2.Location = new System.Drawing.Point(6, 34);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(242, 20);
-			this.textBox2.TabIndex = 6;
+			this.MemorylimitBox.Location = new System.Drawing.Point(6, 34);
+			this.MemorylimitBox.Name = "MemorylimitBox";
+			this.MemorylimitBox.Size = new System.Drawing.Size(242, 20);
+			this.MemorylimitBox.TabIndex = 6;
 			// 
 			// StartTestingButton
 			// 
@@ -186,13 +187,14 @@ namespace UserInterface
 			this.StartTestingButton.TabIndex = 11;
 			this.StartTestingButton.Text = "Запуск";
 			this.StartTestingButton.UseVisualStyleBackColor = true;
+			this.StartTestingButton.Click += new System.EventHandler(this.StartTestingButton_Click);
 			// 
-			// PathToProgramBox
+			// PathToTestsetBox
 			// 
-			this.PathToProgramBox.Location = new System.Drawing.Point(18, 61);
-			this.PathToProgramBox.Name = "PathToProgramBox";
-			this.PathToProgramBox.Size = new System.Drawing.Size(170, 20);
-			this.PathToProgramBox.TabIndex = 13;
+			this.PathToTestsetBox.Location = new System.Drawing.Point(18, 61);
+			this.PathToTestsetBox.Name = "PathToTestsetBox";
+			this.PathToTestsetBox.Size = new System.Drawing.Size(170, 20);
+			this.PathToTestsetBox.TabIndex = 13;
 			// 
 			// choicePathToProgramLabel
 			// 
@@ -203,12 +205,12 @@ namespace UserInterface
 			this.choicePathToProgramLabel.TabIndex = 16;
 			this.choicePathToProgramLabel.Text = "Программа";
 			// 
-			// choicePathToProgramBox
+			// PathToProgramBox
 			// 
-			this.choicePathToProgramBox.Location = new System.Drawing.Point(18, 218);
-			this.choicePathToProgramBox.Name = "choicePathToProgramBox";
-			this.choicePathToProgramBox.Size = new System.Drawing.Size(170, 20);
-			this.choicePathToProgramBox.TabIndex = 15;
+			this.PathToProgramBox.Location = new System.Drawing.Point(18, 218);
+			this.PathToProgramBox.Name = "PathToProgramBox";
+			this.PathToProgramBox.Size = new System.Drawing.Size(170, 20);
+			this.PathToProgramBox.TabIndex = 15;
 			// 
 			// choicePathToTestsetLabel
 			// 
@@ -340,16 +342,16 @@ namespace UserInterface
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox TimelimitBox;
+		private System.Windows.Forms.TextBox MemorylimitBox;
 		private System.Windows.Forms.Button StartTestingButton;
-		private System.Windows.Forms.TextBox PathToProgramBox;
+		private System.Windows.Forms.TextBox PathToTestsetBox;
 		private System.Windows.Forms.Label choicePathToProgramLabel;
-		private System.Windows.Forms.TextBox choicePathToProgramBox;
+		private System.Windows.Forms.TextBox PathToProgramBox;
 		private System.Windows.Forms.Label choicePathToTestsetLabel;
-		private System.Windows.Forms.Button choicePathToProgramButton;
+		private System.Windows.Forms.Button choiceTestsetButton;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button choicePathToProgramButton;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label6;

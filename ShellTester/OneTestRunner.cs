@@ -95,7 +95,8 @@ namespace ShellTester
 				FileName = _exeName,
 				UseShellExecute = false,
 				RedirectStandardOutput = true,
-				RedirectStandardInput = true
+				RedirectStandardInput = true,
+				CreateNoWindow = true
 			};
 		}
 
