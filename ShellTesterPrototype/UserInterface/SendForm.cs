@@ -60,7 +60,7 @@ namespace UserInterface
 
 		private void SendButton_Click(Object sender, EventArgs e)
 		{
-			IPostman postman = new GmailPostman(_logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
+			
 
 			StringBuilder stringBuilder = new StringBuilder();
 
@@ -75,14 +75,27 @@ namespace UserInterface
 			stringBuilder.AppendHtmlText($"{subjectTaskLabel.Text} : {subjectTaskBox.Text}");
 			stringBuilder.AppendHtmlText($"{subjectVariantLabel.Text} : {subjectVariantBox.Text}");
 
+			using (var authForm = new TeacherAuthorizationForm())
+			{
+				if (authForm.ShowDialog() == DialogResult.OK)
+				{
+					IPostman postman = new GmailPostman(_logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
 
-			postman.Send(
-				mailBox.Text,
-				$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
-				_testResults,
-				stringBuilder.ToString()
-			);
+					postman.Send(
+						mailBox.Text,
+						$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
+						_testResults,
+						stringBuilder.ToString()
+					);
 
+					MessageBox.Show($"Авторизация пройдена, результаты отправлены на почту {mailBox.Text}");
+				}
+				else
+				{
+					MessageBox.Show($"Неверный логин/пароль");
+				}
+				
+			}
 
 		}
 

@@ -28,64 +28,66 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
-			this.choicePathToTestsetBox = new System.Windows.Forms.TextBox();
-			this.choicePathToProgramButton = new System.Windows.Forms.Button();
+			this.passwordLabel = new System.Windows.Forms.Label();
+			this.passwordBox = new System.Windows.Forms.TextBox();
+			this.loginLabel = new System.Windows.Forms.Label();
+			this.loginBox = new System.Windows.Forms.TextBox();
+			this.SendButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// label1
+			// passwordLabel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 47);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(45, 13);
-			this.label1.TabIndex = 16;
-			this.label1.Text = "Пароль";
+			this.passwordLabel.AutoSize = true;
+			this.passwordLabel.Location = new System.Drawing.Point(12, 47);
+			this.passwordLabel.Name = "passwordLabel";
+			this.passwordLabel.Size = new System.Drawing.Size(45, 13);
+			this.passwordLabel.TabIndex = 16;
+			this.passwordLabel.Text = "Пароль";
 			// 
-			// textBox1
+			// passwordBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(74, 44);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(270, 20);
-			this.textBox1.TabIndex = 17;
+			this.passwordBox.Location = new System.Drawing.Point(74, 44);
+			this.passwordBox.Name = "passwordBox";
+			this.passwordBox.PasswordChar = '*';
+			this.passwordBox.Size = new System.Drawing.Size(270, 20);
+			this.passwordBox.TabIndex = 17;
 			// 
-			// choicePathToTestsetLabel
+			// loginLabel
 			// 
-			this.choicePathToTestsetLabel.AutoSize = true;
-			this.choicePathToTestsetLabel.Location = new System.Drawing.Point(12, 21);
-			this.choicePathToTestsetLabel.Name = "choicePathToTestsetLabel";
-			this.choicePathToTestsetLabel.Size = new System.Drawing.Size(38, 13);
-			this.choicePathToTestsetLabel.TabIndex = 14;
-			this.choicePathToTestsetLabel.Text = "Логин";
+			this.loginLabel.AutoSize = true;
+			this.loginLabel.Location = new System.Drawing.Point(12, 21);
+			this.loginLabel.Name = "loginLabel";
+			this.loginLabel.Size = new System.Drawing.Size(38, 13);
+			this.loginLabel.TabIndex = 14;
+			this.loginLabel.Text = "Логин";
 			// 
-			// choicePathToTestsetBox
+			// loginBox
 			// 
-			this.choicePathToTestsetBox.Location = new System.Drawing.Point(74, 18);
-			this.choicePathToTestsetBox.Name = "choicePathToTestsetBox";
-			this.choicePathToTestsetBox.Size = new System.Drawing.Size(270, 20);
-			this.choicePathToTestsetBox.TabIndex = 15;
+			this.loginBox.Location = new System.Drawing.Point(74, 18);
+			this.loginBox.Name = "loginBox";
+			this.loginBox.Size = new System.Drawing.Size(270, 20);
+			this.loginBox.TabIndex = 15;
 			// 
-			// choicePathToProgramButton
+			// SendButton
 			// 
-			this.choicePathToProgramButton.Location = new System.Drawing.Point(151, 70);
-			this.choicePathToProgramButton.Name = "choicePathToProgramButton";
-			this.choicePathToProgramButton.Size = new System.Drawing.Size(69, 23);
-			this.choicePathToProgramButton.TabIndex = 18;
-			this.choicePathToProgramButton.Text = "Отправить";
-			this.choicePathToProgramButton.UseVisualStyleBackColor = true;
+			this.SendButton.Location = new System.Drawing.Point(151, 70);
+			this.SendButton.Name = "SendButton";
+			this.SendButton.Size = new System.Drawing.Size(69, 23);
+			this.SendButton.TabIndex = 18;
+			this.SendButton.Text = "Отправить";
+			this.SendButton.UseVisualStyleBackColor = true;
+			this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
 			// 
 			// TeacherAuthorizationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(355, 112);
-			this.Controls.Add(this.choicePathToProgramButton);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.choicePathToTestsetLabel);
-			this.Controls.Add(this.choicePathToTestsetBox);
+			this.ClientSize = new System.Drawing.Size(358, 110);
+			this.Controls.Add(this.SendButton);
+			this.Controls.Add(this.passwordLabel);
+			this.Controls.Add(this.passwordBox);
+			this.Controls.Add(this.loginLabel);
+			this.Controls.Add(this.loginBox);
 			this.Name = "TeacherAuthorizationForm";
 			this.Text = "Авторизация";
 			this.ResumeLayout(false);
@@ -95,10 +97,10 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label choicePathToTestsetLabel;
-		private System.Windows.Forms.TextBox choicePathToTestsetBox;
-		private System.Windows.Forms.Button choicePathToProgramButton;
+		private System.Windows.Forms.Label passwordLabel;
+		private System.Windows.Forms.TextBox passwordBox;
+		private System.Windows.Forms.Label loginLabel;
+		private System.Windows.Forms.TextBox loginBox;
+		private System.Windows.Forms.Button SendButton;
 	}
 }
