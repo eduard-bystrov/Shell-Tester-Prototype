@@ -64,7 +64,8 @@ namespace UserInterface
 
 			StringBuilder stringBuilder = new StringBuilder();
 
-			stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
+            stringBuilder.AppendHtmlText($"Дата : {DateTime.Now.ToString()}");
+            stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
 			stringBuilder.AppendHtmlText($"{groupLabel.Text} : {groupBox.Text}");
 			stringBuilder.AppendHtmlText($"{yearsLabel.Text} : {yearsBox.Text}");
 			stringBuilder.AppendHtmlText($"{semesterLabel.Text} : {semesterBox.Text}");

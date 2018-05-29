@@ -21,7 +21,6 @@ namespace ShellTesterPrototype
 			using (var logger = new StreamLogger(new StreamWriter(DateTime.Now.Date.ToString("dd/MM/yyyy") + ".log") { AutoFlush = true }))
 			{
 				
-
 				var parser = new FluentCommandLineParser();
 
 				String exe = null;
