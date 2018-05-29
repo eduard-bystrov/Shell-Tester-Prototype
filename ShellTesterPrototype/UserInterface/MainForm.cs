@@ -19,9 +19,13 @@ namespace UserInterface
 {
 	public partial class MainForm : Form
 	{
-		public MainForm()
+
+		private readonly IPlatformLogger _logger;
+
+		public MainForm(IPlatformLogger logger)
 		{
 			InitializeComponent();
+			_logger = logger;
 		}
 
 		private void ChoicePathDialog(TextBox textBox)
@@ -58,43 +62,53 @@ namespace UserInterface
 			}
 		}
 
+
+		private List<TestResult> RunTester(IPlatformLogger logger)
+		{
+			
+
+			String inMask = @"(input)(\d+)(.txt)";
+			String outMask = @"(output)(\d+)(.txt)";
+
+			ITester tester = new Tester(
+				logger,
+				new ZipCollectorTests(
+					logger,
+					new DefaultConfigTestsetProvider(),
+					PathToTestsetBox.Text,
+					new TestFilePattern(inMask),
+					new TestFilePattern(outMask),
+					new String[] { "228", "123" }
+
+				),
+				new CheckAllTestsLauncher
+					(
+						new OneTestRunner(
+							logger,
+							new FullStreamComparer(),
+							PathToProgramBox.Text
+						)
+					)
+			);
+
+
+			var results = new List<TestResult>(tester.Run());
+
+			IPostman postman = new GmailPostman(logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
+
+			postman.Send("eipii0@yandex.ru", "Test", results);
+
+			return results;
+			
+		}
+
 		private void StartTestingButton_Click(Object sender, EventArgs e)
 		{
-			using (var logger = new StreamLogger(new StreamWriter(DateTime.Now.Date.ToString("dd/MM/yyyy") + ".log") { AutoFlush = true }))
-			{
-
-				String inMask = @"(input)(\d+)(.txt)";
-				String outMask = @"(output)(\d+)(.txt)";
-
-				ITester tester = new Tester(
-					logger,
-					new ZipCollectorTests(
-						logger,
-						new DefaultConfigTestsetProvider(),
-						PathToTestsetBox.Text,
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask),
-						new String[] { "228", "123" }
-
-					),
-					new CheckAllTestsLauncher
-						(
-							new OneTestRunner(
-								logger,
-								new FullStreamComparer(),
-								PathToProgramBox.Text
-							)
-						)
-				);
-
-				var result = tester.Run();
-
-				List<TestResult> l = new List<TestResult>(result);
-
-				IPostman postman = new GmailPostman(logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
-
-				postman.Send("eipii0@yandex.ru", "Test", l);
-			}
+			
+			var result = RunTester(_logger);
+			var SendForm = new SendForm(_logger, result);
+			SendForm.Show();
+			
 		}
 	}
 }

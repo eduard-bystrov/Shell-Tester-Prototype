@@ -51,6 +51,7 @@
     <Compile Include="CreateNewProblem.Designer.cs">
       <DependentUpon>CreateNewProblem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extension\StringBuilderExtension.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

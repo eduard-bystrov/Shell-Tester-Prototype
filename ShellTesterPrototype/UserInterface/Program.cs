@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Logger;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,12 @@ namespace UserInterface
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+
+			using (var logger = new StreamLogger(new StreamWriter(DateTime.Now.Date.ToString("dd/MM/yyyy") + ".log") { AutoFlush = true }))
+			{
+				
+				Application.Run(new MainForm(logger));
+			}
 		}
 	}
 }
