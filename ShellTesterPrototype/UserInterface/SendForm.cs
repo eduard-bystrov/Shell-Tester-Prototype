@@ -76,6 +76,13 @@ namespace UserInterface
 			stringBuilder.AppendHtmlText($"{subjectVariantLabel.Text} : {subjectVariantBox.Text}");
 
 
+			postman.Send(
+				mailBox.Text,
+				$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
+				_testResults,
+				stringBuilder.ToString()
+			);
+
 
 		}
 

@@ -94,10 +94,6 @@ namespace UserInterface
 
 			var results = new List<TestResult>(tester.Run());
 
-			IPostman postman = new GmailPostman(logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
-
-			postman.Send("eipii0@yandex.ru", "Test", results);
-
 			return results;
 			
 		}
