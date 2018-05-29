@@ -30,19 +30,19 @@
 		{
 			this.personalData = new System.Windows.Forms.GroupBox();
 			this.extraBox = new System.Windows.Forms.TextBox();
-			this.extra = new System.Windows.Forms.Label();
+			this.extraLabel = new System.Windows.Forms.Label();
 			this.testResultBox = new System.Windows.Forms.TextBox();
 			this.scoreBox = new System.Windows.Forms.TextBox();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this.testResultLabel = new System.Windows.Forms.Label();
+			this.scoreLabel = new System.Windows.Forms.Label();
 			this.yearsBox = new System.Windows.Forms.ComboBox();
 			this.semesterBox = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.nameBox = new System.Windows.Forms.TextBox();
+			this.semesterLabel = new System.Windows.Forms.Label();
+			this.yearsLabel = new System.Windows.Forms.Label();
+			this.fullnameBox = new System.Windows.Forms.TextBox();
 			this.groupBox = new System.Windows.Forms.TextBox();
-			this.surnameLabel = new System.Windows.Forms.Label();
-			this.nameLabel = new System.Windows.Forms.Label();
+			this.groupLabel = new System.Windows.Forms.Label();
+			this.fullnameLabel = new System.Windows.Forms.Label();
 			this.SendButton = new System.Windows.Forms.Button();
 			this.dbCheckBox = new System.Windows.Forms.CheckBox();
 			this.choicePathToProgramLabel = new System.Windows.Forms.Label();
@@ -50,11 +50,11 @@
 			this.mailBox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.subjectVariantBox = new System.Windows.Forms.TextBox();
-			this.label7 = new System.Windows.Forms.Label();
+			this.subjectVariantLabel = new System.Windows.Forms.Label();
 			this.subjectTaskBox = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
+			this.subjectTaskLabel = new System.Windows.Forms.Label();
 			this.subjectNameBox = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
+			this.subjectNameLabel = new System.Windows.Forms.Label();
 			this.personalData.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -62,19 +62,19 @@
 			// personalData
 			// 
 			this.personalData.Controls.Add(this.extraBox);
-			this.personalData.Controls.Add(this.extra);
+			this.personalData.Controls.Add(this.extraLabel);
 			this.personalData.Controls.Add(this.testResultBox);
 			this.personalData.Controls.Add(this.scoreBox);
-			this.personalData.Controls.Add(this.label4);
-			this.personalData.Controls.Add(this.label3);
+			this.personalData.Controls.Add(this.testResultLabel);
+			this.personalData.Controls.Add(this.scoreLabel);
 			this.personalData.Controls.Add(this.yearsBox);
 			this.personalData.Controls.Add(this.semesterBox);
-			this.personalData.Controls.Add(this.label2);
-			this.personalData.Controls.Add(this.label1);
-			this.personalData.Controls.Add(this.nameBox);
+			this.personalData.Controls.Add(this.semesterLabel);
+			this.personalData.Controls.Add(this.yearsLabel);
+			this.personalData.Controls.Add(this.fullnameBox);
 			this.personalData.Controls.Add(this.groupBox);
-			this.personalData.Controls.Add(this.surnameLabel);
-			this.personalData.Controls.Add(this.nameLabel);
+			this.personalData.Controls.Add(this.groupLabel);
+			this.personalData.Controls.Add(this.fullnameLabel);
 			this.personalData.Location = new System.Drawing.Point(12, 12);
 			this.personalData.Name = "personalData";
 			this.personalData.Size = new System.Drawing.Size(446, 132);
@@ -91,12 +91,13 @@
 			// 
 			// extra
 			// 
-			this.extra.AutoSize = true;
-			this.extra.Location = new System.Drawing.Point(10, 103);
-			this.extra.Name = "extra";
-			this.extra.Size = new System.Drawing.Size(87, 13);
-			this.extra.TabIndex = 15;
-			this.extra.Text = "Дополнительно";
+			this.extraLabel.AutoSize = true;
+			this.extraLabel.Location = new System.Drawing.Point(10, 103);
+			this.extraLabel.Name = "extra";
+			this.extraLabel.Size = new System.Drawing.Size(87, 13);
+			this.extraLabel.TabIndex = 15;
+			this.extraLabel.Text = "Дополнительно";
+			this.extraLabel.Click += new System.EventHandler(this.extra_Click);
 			// 
 			// testResultBox
 			// 
@@ -115,23 +116,23 @@
 			this.scoreBox.Size = new System.Drawing.Size(82, 20);
 			this.scoreBox.TabIndex = 13;
 			// 
-			// label4
+			// testResultLabel
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(10, 79);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(100, 13);
-			this.label4.TabIndex = 12;
-			this.label4.Text = "Тестов пройденно";
+			this.testResultLabel.AutoSize = true;
+			this.testResultLabel.Location = new System.Drawing.Point(10, 79);
+			this.testResultLabel.Name = "testResultLabel";
+			this.testResultLabel.Size = new System.Drawing.Size(100, 13);
+			this.testResultLabel.TabIndex = 12;
+			this.testResultLabel.Text = "Тестов пройденно";
 			// 
-			// label3
+			// scoreLabel
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(195, 79);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(84, 13);
-			this.label3.TabIndex = 11;
-			this.label3.Text = "Итоговый балл";
+			this.scoreLabel.AutoSize = true;
+			this.scoreLabel.Location = new System.Drawing.Point(195, 79);
+			this.scoreLabel.Name = "scoreLabel";
+			this.scoreLabel.Size = new System.Drawing.Size(84, 13);
+			this.scoreLabel.TabIndex = 11;
+			this.scoreLabel.Text = "Итоговый балл";
 			// 
 			// yearsBox
 			// 
@@ -148,30 +149,32 @@
 			this.semesterBox.Size = new System.Drawing.Size(73, 20);
 			this.semesterBox.TabIndex = 9;
 			// 
-			// label2
+			// semesterLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(305, 50);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(51, 13);
-			this.label2.TabIndex = 8;
-			this.label2.Text = "Семестр";
+			this.semesterLabel.AutoSize = true;
+			this.semesterLabel.Location = new System.Drawing.Point(305, 50);
+			this.semesterLabel.Name = "semesterLabel";
+			this.semesterLabel.Size = new System.Drawing.Size(51, 13);
+			this.semesterLabel.TabIndex = 8;
+			this.semesterLabel.Text = "Семестр";
 			// 
-			// label1
+			// yearsLabel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(142, 49);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(74, 13);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Год обучения";
+			this.yearsLabel.AutoSize = true;
+			this.yearsLabel.Location = new System.Drawing.Point(142, 49);
+			this.yearsLabel.Name = "yearsLabel";
+			this.yearsLabel.Size = new System.Drawing.Size(74, 13);
+			this.yearsLabel.TabIndex = 6;
+			this.yearsLabel.Text = "Год обучения";
+			this.yearsLabel.Click += new System.EventHandler(this.label1_Click);
 			// 
-			// nameBox
+			// fullnameBox
 			// 
-			this.nameBox.Location = new System.Drawing.Point(58, 19);
-			this.nameBox.Name = "nameBox";
-			this.nameBox.Size = new System.Drawing.Size(377, 20);
-			this.nameBox.TabIndex = 5;
+			this.fullnameBox.Location = new System.Drawing.Point(58, 19);
+			this.fullnameBox.Name = "fullnameBox";
+			this.fullnameBox.Size = new System.Drawing.Size(377, 20);
+			this.fullnameBox.TabIndex = 5;
+			this.fullnameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
 			// 
 			// groupBox
 			// 
@@ -180,23 +183,24 @@
 			this.groupBox.Size = new System.Drawing.Size(78, 20);
 			this.groupBox.TabIndex = 3;
 			// 
-			// surnameLabel
+			// groupLabel
 			// 
-			this.surnameLabel.AutoSize = true;
-			this.surnameLabel.Location = new System.Drawing.Point(10, 50);
-			this.surnameLabel.Name = "surnameLabel";
-			this.surnameLabel.Size = new System.Drawing.Size(42, 13);
-			this.surnameLabel.TabIndex = 1;
-			this.surnameLabel.Text = "Группа";
+			this.groupLabel.AutoSize = true;
+			this.groupLabel.Location = new System.Drawing.Point(10, 50);
+			this.groupLabel.Name = "groupLabel";
+			this.groupLabel.Size = new System.Drawing.Size(42, 13);
+			this.groupLabel.TabIndex = 1;
+			this.groupLabel.Text = "Группа";
+			this.groupLabel.Click += new System.EventHandler(this.surnameLabel_Click);
 			// 
-			// nameLabel
+			// fullnameLabel
 			// 
-			this.nameLabel.AutoSize = true;
-			this.nameLabel.Location = new System.Drawing.Point(10, 23);
-			this.nameLabel.Name = "nameLabel";
-			this.nameLabel.Size = new System.Drawing.Size(34, 13);
-			this.nameLabel.TabIndex = 0;
-			this.nameLabel.Text = "ФИО";
+			this.fullnameLabel.AutoSize = true;
+			this.fullnameLabel.Location = new System.Drawing.Point(10, 23);
+			this.fullnameLabel.Name = "fullnameLabel";
+			this.fullnameLabel.Size = new System.Drawing.Size(34, 13);
+			this.fullnameLabel.TabIndex = 0;
+			this.fullnameLabel.Text = "ФИО";
 			// 
 			// SendButton
 			// 
@@ -245,11 +249,11 @@
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.subjectVariantBox);
-			this.groupBox1.Controls.Add(this.label7);
+			this.groupBox1.Controls.Add(this.subjectVariantLabel);
 			this.groupBox1.Controls.Add(this.subjectTaskBox);
-			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.subjectTaskLabel);
 			this.groupBox1.Controls.Add(this.subjectNameBox);
-			this.groupBox1.Controls.Add(this.label12);
+			this.groupBox1.Controls.Add(this.subjectNameLabel);
 			this.groupBox1.Location = new System.Drawing.Point(12, 150);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(446, 104);
@@ -267,12 +271,12 @@
 			// 
 			// label7
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(10, 75);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(49, 13);
-			this.label7.TabIndex = 8;
-			this.label7.Text = "Вариант";
+			this.subjectVariantLabel.AutoSize = true;
+			this.subjectVariantLabel.Location = new System.Drawing.Point(10, 75);
+			this.subjectVariantLabel.Name = "label7";
+			this.subjectVariantLabel.Size = new System.Drawing.Size(49, 13);
+			this.subjectVariantLabel.TabIndex = 8;
+			this.subjectVariantLabel.Text = "Вариант";
 			// 
 			// subjectTaskBox
 			// 
@@ -284,12 +288,12 @@
 			// 
 			// label6
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(10, 48);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(50, 13);
-			this.label6.TabIndex = 6;
-			this.label6.Text = "Задание";
+			this.subjectTaskLabel.AutoSize = true;
+			this.subjectTaskLabel.Location = new System.Drawing.Point(10, 48);
+			this.subjectTaskLabel.Name = "label6";
+			this.subjectTaskLabel.Size = new System.Drawing.Size(50, 13);
+			this.subjectTaskLabel.TabIndex = 6;
+			this.subjectTaskLabel.Text = "Задание";
 			// 
 			// subjectNameBox
 			// 
@@ -301,12 +305,12 @@
 			// 
 			// label12
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(10, 23);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(57, 13);
-			this.label12.TabIndex = 0;
-			this.label12.Text = "Название";
+			this.subjectNameLabel.AutoSize = true;
+			this.subjectNameLabel.Location = new System.Drawing.Point(10, 23);
+			this.subjectNameLabel.Name = "label12";
+			this.subjectNameLabel.Size = new System.Drawing.Size(57, 13);
+			this.subjectNameLabel.TabIndex = 0;
+			this.subjectNameLabel.Text = "Название";
 			// 
 			// SendForm
 			// 
@@ -335,31 +339,31 @@
 		#endregion
 
 		private System.Windows.Forms.GroupBox personalData;
-		private System.Windows.Forms.TextBox nameBox;
+		private System.Windows.Forms.TextBox fullnameBox;
 		private System.Windows.Forms.TextBox groupBox;
-		private System.Windows.Forms.Label surnameLabel;
-		private System.Windows.Forms.Label nameLabel;
+		private System.Windows.Forms.Label groupLabel;
+		private System.Windows.Forms.Label fullnameLabel;
 		private System.Windows.Forms.Button SendButton;
 		private System.Windows.Forms.TextBox scoreBox;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label testResultLabel;
+		private System.Windows.Forms.Label scoreLabel;
 		private System.Windows.Forms.ComboBox yearsBox;
 		private System.Windows.Forms.TextBox semesterBox;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label semesterLabel;
+		private System.Windows.Forms.Label yearsLabel;
 		private System.Windows.Forms.CheckBox dbCheckBox;
 		private System.Windows.Forms.Label choicePathToProgramLabel;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox testResultBox;
 		private System.Windows.Forms.TextBox mailBox;
-		private System.Windows.Forms.Label extra;
+		private System.Windows.Forms.Label extraLabel;
 		private System.Windows.Forms.TextBox extraBox;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.TextBox subjectNameBox;
-		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label subjectNameLabel;
 		private System.Windows.Forms.TextBox subjectVariantBox;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label subjectVariantLabel;
 		private System.Windows.Forms.TextBox subjectTaskBox;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label subjectTaskLabel;
 	}
 }

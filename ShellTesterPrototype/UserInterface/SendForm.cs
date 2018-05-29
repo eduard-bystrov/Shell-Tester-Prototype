@@ -64,7 +64,41 @@ namespace UserInterface
 
 			StringBuilder stringBuilder = new StringBuilder();
 
-			stringBuilder.AppendHtmlText("");
+			stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
+			stringBuilder.AppendHtmlText($"{groupLabel.Text} : {groupBox.Text}");
+			stringBuilder.AppendHtmlText($"{yearsLabel.Text} : {yearsBox.Text}");
+			stringBuilder.AppendHtmlText($"{semesterLabel.Text} : {semesterBox.Text}");
+			stringBuilder.AppendHtmlText($"{testResultLabel.Text} : {testResultBox.Text}");
+			stringBuilder.AppendHtmlText($"{scoreLabel.Text} : {scoreBox.Text}");
+			stringBuilder.AppendHtmlText($"{extraLabel.Text} : {extraBox.Text}");
+			stringBuilder.AppendHtmlText($"{subjectNameLabel.Text} : {subjectNameBox.Text}");
+			stringBuilder.AppendHtmlText($"{subjectTaskLabel.Text} : {subjectTaskBox.Text}");
+			stringBuilder.AppendHtmlText($"{subjectVariantLabel.Text} : {subjectVariantBox.Text}");
+
+
+
+		}
+
+
+	
+
+		private void nameBox_TextChanged(Object sender, EventArgs e)
+		{
+
+		}
+
+		private void surnameLabel_Click(Object sender, EventArgs e)
+		{
+
+		}
+
+		private void label1_Click(Object sender, EventArgs e)
+		{
+
+		}
+
+		private void extra_Click(Object sender, EventArgs e)
+		{
 
 		}
 	}

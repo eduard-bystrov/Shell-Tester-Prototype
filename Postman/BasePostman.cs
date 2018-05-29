@@ -51,16 +51,19 @@ namespace Postman
 		public void Send(
 			String email,
 			String subject,
-			IEnumerable<TestResult> testResults
+			IEnumerable<TestResult> testResults,
+			String prefixText = null
 		)
 		{
 			MailAddress to = new MailAddress(email);
 			MailMessage message = new MailMessage(From, to)
 			{
 				Subject = subject,
-				Body = CSharpObjectToHtmlTableConverter.CreateHtmlTable<TestResult>(
-						testResults,
-						_funcs),
+				Body = 
+					(prefixText is null ? "" : prefixText) + 
+					CSharpObjectToHtmlTableConverter.CreateHtmlTable<TestResult>(
+							testResults,
+							_funcs),
 				
 				IsBodyHtml = true,
 			};
@@ -71,13 +74,15 @@ namespace Postman
 		public Boolean TrySend(
 			String email,
 			String subject,
-			IEnumerable<TestResult> testResults)
+			IEnumerable<TestResult> testResults,
+			String prefixText = null
+		)
 		{
 			Boolean result = true;
 
 			try
 			{
-				Send(email, subject, testResults);
+				Send(email, subject, testResults, prefixText);
 			}
 			catch (Exception ex)
 			{

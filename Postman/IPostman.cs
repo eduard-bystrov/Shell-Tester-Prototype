@@ -9,7 +9,7 @@ namespace Postman
 {
 	public interface IPostman
 	{
-		Boolean TrySend(String email, String subject, IEnumerable<TestResult> testResults);
-		void Send(String email, String subject, IEnumerable<TestResult> testResults);
+		Boolean TrySend(String email, String subject, IEnumerable<TestResult> testResults, String prefixText = null);
+		void Send(String email, String subject, IEnumerable<TestResult> testResults, String prefixText = null);
 	}
 }
