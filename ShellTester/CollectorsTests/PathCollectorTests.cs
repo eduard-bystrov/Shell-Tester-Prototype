@@ -1,5 +1,6 @@
 ﻿using Logger;
 using Logger.Enhanced;
+using ShellTester.ConfigProviders;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,11 +13,12 @@ namespace ShellTester.CollectorsTests
 	{
 		public PathCollectorTests(
 			IPlatformLogger logger,
+			IConfigTestsetProvider configProvider,
 			String workPath,
 			TestFilePattern inputFilePattern,
 			TestFilePattern outputFilePatten
 		)
-			: base(logger, workPath, inputFilePattern, outputFilePatten)
+			: base(logger, configProvider, workPath, inputFilePattern, outputFilePatten)
 		{
 		}
 
@@ -48,10 +50,14 @@ namespace ShellTester.CollectorsTests
 
 					if (inNumber == outNumber)
 					{
+						var idTest = inputNumberFilenames[i];
+
 						yield return new Test(
 							new StreamReader(inputFiles[i]),
 							new StreamReader(outputFiles[j]),
-							inputNumberFilenames[i]
+							idTest,
+							_configTestsetProvider.TimeLimitFor(idTest),
+							_configTestsetProvider.MemoryLimitFor(idTest)
 						);
 						break;
 					}

@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Logger;
 using SevenZipLib;
+using ShellTester.ConfigProviders;
 
 namespace ShellTester.CollectorsTests
 {
@@ -15,12 +16,13 @@ namespace ShellTester.CollectorsTests
 	{
 		public ZipCollectorTests(
 			IPlatformLogger logger,
+			IConfigTestsetProvider configProvider,
 			String workPath,
 			TestFilePattern inputFilePattern,
 			TestFilePattern outputFilePatten,
 			IEnumerable<String> passwords
 		) 
-			: base(logger, workPath, inputFilePattern, outputFilePatten)
+			: base(logger,configProvider, workPath, inputFilePattern, outputFilePatten)
 		{
 			_password = BruteForcePassword(new List<String>(passwords));
 		}
@@ -61,10 +63,14 @@ namespace ShellTester.CollectorsTests
 
 						if (comparer.Equals(inName, outName))
 						{
+							var idTest = _inputFilePattern.GetNumberPart(inName);
+
 							yield return new Test(
 								inputFile.ExtractToStreamReader(),
 								outputFile.ExtractToStreamReader(),
-								_inputFilePattern.GetNumberPart(inName)
+								idTest,
+								_configTestsetProvider.TimeLimitFor(idTest),
+								_configTestsetProvider.MemoryLimitFor(idTest)
 							);
 						}
 					}

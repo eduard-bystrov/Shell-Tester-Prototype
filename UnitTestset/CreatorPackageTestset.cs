@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShellTester;
 using ShellTester.CollectorsTests;
+using ShellTester.ConfigProviders;
 using ShellTester.CreatorsTestset;
 using System;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace UnitTestset
 
 			var collector = new PathCollectorTests(
 						Logger,
+						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask)
@@ -49,6 +51,7 @@ namespace UnitTestset
 
 			var collector = new PathCollectorTests(
 						Logger,
+						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask)

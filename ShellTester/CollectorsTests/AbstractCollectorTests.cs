@@ -1,4 +1,5 @@
 ﻿using Logger;
+using ShellTester.ConfigProviders;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,12 +12,14 @@ namespace ShellTester.CollectorsTests
 	{
 		public AbstractCollectorTests(
 			IPlatformLogger logger,
+			IConfigTestsetProvider configProvider,
 			String workPath,
 			TestFilePattern inputFilePattern,
 			TestFilePattern outputFilePatten
 		)
 		{
 			_logger = logger;
+			_configTestsetProvider = configProvider;
 			_workPath = workPath;
 			_inputFilePattern = inputFilePattern;
 			_outputFilePattern = outputFilePatten;
@@ -31,6 +34,7 @@ namespace ShellTester.CollectorsTests
 		protected readonly String _workPath;
 		protected readonly TestFilePattern _inputFilePattern;
 		protected readonly TestFilePattern _outputFilePattern;
+		protected readonly IConfigTestsetProvider _configTestsetProvider;
 
 	}
 }

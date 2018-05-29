@@ -8,6 +8,7 @@ using System.Linq;
 using ShellTester.Launchers;
 using Newtonsoft.Json;
 using System.IO;
+using ShellTester.ConfigProviders;
 
 namespace UnitTestset
 {
@@ -21,6 +22,7 @@ namespace UnitTestset
 					Logger,
 					new ZipCollectorTests(
 						Logger,
+						new DefaultConfigTestsetProvider(),
 						pathToProgram,
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),
@@ -101,6 +103,7 @@ namespace UnitTestset
 					Logger,
 					new ZipCollectorTests(
 						Logger,
+						new DefaultConfigTestsetProvider(),
 						@"../../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),

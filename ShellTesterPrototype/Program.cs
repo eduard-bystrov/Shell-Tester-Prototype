@@ -4,6 +4,7 @@ using Logger.Enhanced;
 using Postman;
 using ShellTester;
 using ShellTester.CollectorsTests;
+using ShellTester.ConfigProviders;
 using ShellTester.Launchers;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,7 @@ namespace ShellTesterPrototype
 					logger,
 					new ZipCollectorTests(
 						logger,
+						new DefaultConfigTestsetProvider(),
 						path,
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),
