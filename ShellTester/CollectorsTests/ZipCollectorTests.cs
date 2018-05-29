@@ -95,6 +95,5 @@ namespace ShellTester.CollectorsTests
 		}
 
 		private readonly String _password;
-		private readonly SevenZipArchive _archive;
 	}
 }

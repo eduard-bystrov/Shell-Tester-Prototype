@@ -35,28 +35,28 @@ namespace UserInterface
 			this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.button2 = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.choicePathToProgramButton = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.StartTestingButton = new System.Windows.Forms.Button();
+			this.PathToProgramBox = new System.Windows.Forms.TextBox();
 			this.choicePathToProgramLabel = new System.Windows.Forms.Label();
-			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
 			this.choicePathToProgramBox = new System.Windows.Forms.TextBox();
-			this.choicePathToTestsetBox = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.label3 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
+			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.label7 = new System.Windows.Forms.Label();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.button3 = new System.Windows.Forms.Button();
+			this.label6 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.menuStrip.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -74,14 +74,12 @@ namespace UserInterface
 			this.menuStrip.Size = new System.Drawing.Size(897, 24);
 			this.menuStrip.TabIndex = 2;
 			this.menuStrip.Text = "MenuStrip";
-			this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip_ItemClicked);
 			// 
 			// SettingsToolStripMenuItem
 			// 
 			this.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
 			this.SettingsToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
 			this.SettingsToolStripMenuItem.Text = "Настройки";
-			this.SettingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
 			// 
 			// AboutToolStripMenuItem
 			// 
@@ -94,10 +92,10 @@ namespace UserInterface
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel1.Controls.Add(this.button2);
 			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.button1);
+			this.panel1.Controls.Add(this.choicePathToProgramButton);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Controls.Add(this.StartTestingButton);
-			this.panel1.Controls.Add(this.choicePathToTestsetBox);
+			this.panel1.Controls.Add(this.PathToProgramBox);
 			this.panel1.Controls.Add(this.choicePathToProgramLabel);
 			this.panel1.Controls.Add(this.choicePathToProgramBox);
 			this.panel1.Controls.Add(this.choicePathToTestsetLabel);
@@ -106,6 +104,34 @@ namespace UserInterface
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(274, 546);
 			this.panel1.TabIndex = 4;
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(191, 218);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(69, 20);
+			this.button2.TabIndex = 17;
+			this.button2.Text = "Выбрать";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(91, 21);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(97, 13);
+			this.label3.TabIndex = 5;
+			this.label3.Text = "Проверка работы";
+			// 
+			// choicePathToProgramButton
+			// 
+			this.choicePathToProgramButton.Location = new System.Drawing.Point(191, 60);
+			this.choicePathToProgramButton.Name = "choicePathToProgramButton";
+			this.choicePathToProgramButton.Size = new System.Drawing.Size(69, 20);
+			this.choicePathToProgramButton.TabIndex = 11;
+			this.choicePathToProgramButton.Text = "Выбрать";
+			this.choicePathToProgramButton.UseVisualStyleBackColor = true;
+			this.choicePathToProgramButton.Click += new System.EventHandler(this.ChoicePathToProgramButton_Click);
 			// 
 			// groupBox1
 			// 
@@ -161,6 +187,13 @@ namespace UserInterface
 			this.StartTestingButton.Text = "Запуск";
 			this.StartTestingButton.UseVisualStyleBackColor = true;
 			// 
+			// PathToProgramBox
+			// 
+			this.PathToProgramBox.Location = new System.Drawing.Point(18, 61);
+			this.PathToProgramBox.Name = "PathToProgramBox";
+			this.PathToProgramBox.Size = new System.Drawing.Size(170, 20);
+			this.PathToProgramBox.TabIndex = 13;
+			// 
 			// choicePathToProgramLabel
 			// 
 			this.choicePathToProgramLabel.AutoSize = true;
@@ -170,6 +203,13 @@ namespace UserInterface
 			this.choicePathToProgramLabel.TabIndex = 16;
 			this.choicePathToProgramLabel.Text = "Программа";
 			// 
+			// choicePathToProgramBox
+			// 
+			this.choicePathToProgramBox.Location = new System.Drawing.Point(18, 218);
+			this.choicePathToProgramBox.Name = "choicePathToProgramBox";
+			this.choicePathToProgramBox.Size = new System.Drawing.Size(170, 20);
+			this.choicePathToProgramBox.TabIndex = 15;
+			// 
 			// choicePathToTestsetLabel
 			// 
 			this.choicePathToTestsetLabel.AutoSize = true;
@@ -178,47 +218,6 @@ namespace UserInterface
 			this.choicePathToTestsetLabel.Size = new System.Drawing.Size(89, 13);
 			this.choicePathToTestsetLabel.TabIndex = 12;
 			this.choicePathToTestsetLabel.Text = "Тестовый пакет";
-			// 
-			// choicePathToProgramBox
-			// 
-			this.choicePathToProgramBox.Location = new System.Drawing.Point(18, 218);
-			this.choicePathToProgramBox.Name = "choicePathToProgramBox";
-			this.choicePathToProgramBox.Size = new System.Drawing.Size(170, 20);
-			this.choicePathToProgramBox.TabIndex = 15;
-			// 
-			// choicePathToTestsetBox
-			// 
-			this.choicePathToTestsetBox.Location = new System.Drawing.Point(18, 61);
-			this.choicePathToTestsetBox.Name = "choicePathToTestsetBox";
-			this.choicePathToTestsetBox.Size = new System.Drawing.Size(170, 20);
-			this.choicePathToTestsetBox.TabIndex = 13;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(191, 60);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(69, 20);
-			this.button1.TabIndex = 11;
-			this.button1.Text = "Выбрать";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(91, 21);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(97, 13);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "Проверка работы";
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(191, 218);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(69, 20);
-			this.button2.TabIndex = 17;
-			this.button2.Text = "Выбрать";
-			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// panel2
 			// 
@@ -237,57 +236,13 @@ namespace UserInterface
 			this.panel2.Size = new System.Drawing.Size(623, 546);
 			this.panel2.TabIndex = 5;
 			// 
-			// label4
+			// textBox3
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(237, 21);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(140, 13);
-			this.label4.TabIndex = 0;
-			this.label4.Text = "Результаты тестирования";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(15, 57);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(86, 13);
-			this.label5.TabIndex = 1;
-			this.label5.Text = "Выбор попытки";
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(107, 54);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(486, 21);
-			this.comboBox1.TabIndex = 2;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(237, 87);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(126, 13);
-			this.label6.TabIndex = 4;
-			this.label6.Text = "Информация о запуске";
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(258, 512);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(130, 22);
-			this.button3.TabIndex = 12;
-			this.button3.Text = "Отправить результат";
-			this.button3.UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(18, 160);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(585, 346);
-			this.dataGridView1.TabIndex = 13;
+			this.textBox3.Location = new System.Drawing.Point(125, 124);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.ReadOnly = true;
+			this.textBox3.Size = new System.Drawing.Size(107, 20);
+			this.textBox3.TabIndex = 16;
 			// 
 			// label7
 			// 
@@ -298,13 +253,57 @@ namespace UserInterface
 			this.label7.TabIndex = 14;
 			this.label7.Text = "Пройденные тесты";
 			// 
-			// textBox3
+			// dataGridView1
 			// 
-			this.textBox3.Location = new System.Drawing.Point(125, 124);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.ReadOnly = true;
-			this.textBox3.Size = new System.Drawing.Size(107, 20);
-			this.textBox3.TabIndex = 16;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(18, 160);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(585, 346);
+			this.dataGridView1.TabIndex = 13;
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(258, 512);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(130, 22);
+			this.button3.TabIndex = 12;
+			this.button3.Text = "Отправить результат";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(237, 87);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(126, 13);
+			this.label6.TabIndex = 4;
+			this.label6.Text = "Информация о запуске";
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(107, 54);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(486, 21);
+			this.comboBox1.TabIndex = 2;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(15, 57);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(86, 13);
+			this.label5.TabIndex = 1;
+			this.label5.Text = "Выбор попытки";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(237, 21);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(140, 13);
+			this.label4.TabIndex = 0;
+			this.label4.Text = "Результаты тестирования";
 			// 
 			// MainForm
 			// 
@@ -317,7 +316,6 @@ namespace UserInterface
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
 			this.Text = "Тестировщик программ-решений ";
-			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.panel1.ResumeLayout(false);
@@ -345,11 +343,11 @@ namespace UserInterface
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Button StartTestingButton;
-		private System.Windows.Forms.TextBox choicePathToTestsetBox;
+		private System.Windows.Forms.TextBox PathToProgramBox;
 		private System.Windows.Forms.Label choicePathToProgramLabel;
 		private System.Windows.Forms.TextBox choicePathToProgramBox;
 		private System.Windows.Forms.Label choicePathToTestsetLabel;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button choicePathToProgramButton;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Panel panel2;

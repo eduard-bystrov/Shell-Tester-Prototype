@@ -107,6 +107,6 @@ namespace ShellTester
 		private Int64 _peakWorkingSet = 0;
 		private Int64 _peakVirtualMem = 0;
 
-		private Int32 TIME_REFRESH_DATA_ABOUT_PROCESS_MS => 10;
+		private Int32 TIME_REFRESH_DATA_ABOUT_PROCESS_MS => 1;
 	}
 }
