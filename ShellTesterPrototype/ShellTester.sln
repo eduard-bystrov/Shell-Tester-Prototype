@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestset", "..\UnitTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemCreatorUI", "..\ProblemCreatorUI\ProblemCreatorUI.csproj", "{4016E82C-05F8-4874-B7E4-02665447EA02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesterMongoDb", "..\TesterMongoDb\TesterMongoDb.csproj", "{56649530-2D08-4C2C-ABED-AF0E3A066D90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,14 @@ Global
 		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|x64.ActiveCfg = Release|Any CPU
 		{4016E82C-05F8-4874-B7E4-02665447EA02}.Release|x64.Build.0 = Release|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Debug|x64.Build.0 = Debug|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Release|x64.ActiveCfg = Release|Any CPU
+		{56649530-2D08-4C2C-ABED-AF0E3A066D90}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

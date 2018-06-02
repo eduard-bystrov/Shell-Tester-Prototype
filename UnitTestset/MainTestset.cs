@@ -22,7 +22,7 @@ namespace UnitTestset
 					Logger,
 					new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
+						new DefaultConfigTestsetSettings(),
 						pathToProgram,
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),
@@ -103,7 +103,7 @@ namespace UnitTestset
 					Logger,
 					new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
+						new DefaultConfigTestsetSettings(),
 						@"../../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),

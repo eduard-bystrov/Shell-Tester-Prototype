@@ -92,7 +92,6 @@
       <DependentUpon>CreateNewProblem.cs</DependentUpon>
     </Compile>
     <Compile Include="Extension\StringExtension.cs" />
-    <Compile Include="Model\DbSettings.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -100,10 +99,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MongoDb\CompleteTestResult.cs" />
-    <Compile Include="MongoDb\CompleteTestResultContext.cs" />
-    <Compile Include="MongoDb\ICompleteTestResultRepository.cs" />
-    <Compile Include="MongoDb\CompleteTestResultRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultTestsForm.cs">
@@ -175,6 +170,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Data\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Postman\Postman.csproj">
@@ -184,6 +180,10 @@
     <ProjectReference Include="..\..\ShellTester\ShellTester.csproj">
       <Project>{FD1D9D71-881D-400E-89F3-BC66285782B1}</Project>
       <Name>ShellTester</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TesterMongoDb\TesterMongoDb.csproj">
+      <Project>{56649530-2d08-4c2c-abed-af0e3a066d90}</Project>
+      <Name>TesterMongoDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{20F41CDB-3FB1-4032-86FD-023A484DEA40}</Project>

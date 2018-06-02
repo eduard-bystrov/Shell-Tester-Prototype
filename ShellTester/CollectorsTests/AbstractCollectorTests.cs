@@ -12,7 +12,7 @@ namespace ShellTester.CollectorsTests
 	{
 		public AbstractCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetProvider configProvider,
+			IConfigTestsetSettings configProvider,
 			String workPath,
 			TestFilePattern inputFilePattern,
 			TestFilePattern outputFilePatten
@@ -34,7 +34,7 @@ namespace ShellTester.CollectorsTests
 		protected readonly String _workPath;
 		protected readonly TestFilePattern _inputFilePattern;
 		protected readonly TestFilePattern _outputFilePattern;
-		protected readonly IConfigTestsetProvider _configTestsetProvider;
+		protected readonly IConfigTestsetSettings _configTestsetProvider;
 
 	}
 }

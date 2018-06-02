@@ -133,19 +133,7 @@ namespace UserInterface
 
 		private void SendToMail()
 		{
-			StringBuilder stringBuilder = new StringBuilder();
-
-			stringBuilder.AppendHtmlText($"Дата : {DateTime.Now.ToString()}");
-			stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
-			stringBuilder.AppendHtmlText($"{groupLabel.Text} : {groupBox.Text}");
-			stringBuilder.AppendHtmlText($"{yearsLabel.Text} : {yearsBox.Text}");
-			stringBuilder.AppendHtmlText($"{semesterLabel.Text} : {semesterBox.Text}");
-			stringBuilder.AppendHtmlText($"{testResultLabel.Text} : {testResultBox.Text}");
-			stringBuilder.AppendHtmlText($"{scoreLabel.Text} : {scoreBox.Text}");
-			stringBuilder.AppendHtmlText($"{extraLabel.Text} : {extraBox.Text}");
-			stringBuilder.AppendHtmlText($"{subjectNameLabel.Text} : {subjectNameBox.Text}");
-			stringBuilder.AppendHtmlText($"{subjectTaskLabel.Text} : {subjectTaskBox.Text}");
-			stringBuilder.AppendHtmlText($"{subjectVariantLabel.Text} : {subjectVariantBox.Text}");
+			
 
 			IPostman postman = new GmailPostman(_logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
 
@@ -153,8 +141,29 @@ namespace UserInterface
 				mailBox.Text,
 				$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
 				_testResults,
-				stringBuilder.ToString()
+				MakePrefix
 			);
+		}
+
+		private String MakePrefix
+		{
+			get
+			{
+				StringBuilder stringBuilder = new StringBuilder();
+
+				stringBuilder.AppendHtmlText($"Дата : {DateTime.Now.ToString()}");
+				stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
+				stringBuilder.AppendHtmlText($"{groupLabel.Text} : {groupBox.Text}");
+				stringBuilder.AppendHtmlText($"{yearsLabel.Text} : {yearsBox.Text}");
+				stringBuilder.AppendHtmlText($"{semesterLabel.Text} : {semesterBox.Text}");
+				stringBuilder.AppendHtmlText($"{testResultLabel.Text} : {testResultBox.Text}");
+				stringBuilder.AppendHtmlText($"{scoreLabel.Text} : {scoreBox.Text}");
+				stringBuilder.AppendHtmlText($"{extraLabel.Text} : {extraBox.Text}");
+				stringBuilder.AppendHtmlText($"{subjectNameLabel.Text} : {subjectNameBox.Text}");
+				stringBuilder.AppendHtmlText($"{subjectTaskLabel.Text} : {subjectTaskBox.Text}");
+
+				return stringBuilder.ToString();
+			}
 		}
 	
 	}

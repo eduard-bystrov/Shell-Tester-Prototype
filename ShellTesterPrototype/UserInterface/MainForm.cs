@@ -77,7 +77,7 @@ namespace UserInterface
 				logger,
 				new ZipCollectorTests(
 					logger,
-					new DefaultConfigTestsetProvider(),
+					new DefaultConfigTestsetSettings(),
 					PathToTestsetBox.Text,
 					new TestFilePattern(inMask),
 					new TestFilePattern(outMask),

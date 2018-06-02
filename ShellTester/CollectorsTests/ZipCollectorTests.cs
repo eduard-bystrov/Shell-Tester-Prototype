@@ -16,7 +16,7 @@ namespace ShellTester.CollectorsTests
 	{
 		public ZipCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetProvider configProvider,
+			IConfigTestsetSettings configProvider,
 			String workPath,
 			TestFilePattern inputFilePattern,
 			TestFilePattern outputFilePatten,

@@ -111,13 +111,13 @@
     <Compile Include="CollectorsTests\PathCollectorTests.cs" />
     <Compile Include="CollectorsTests\TestFileNameComparer.cs" />
     <Compile Include="CollectorsTests\ZipCollectorTests.cs" />
-    <Compile Include="ConfigProviders\DefaultConfigTestsetProvider.cs" />
+    <Compile Include="ConfigProviders\DefaultConfigTestsetSettings.cs" />
     <Compile Include="CreatorsTestset\ITestOutputDataCreator.cs" />
     <Compile Include="CreatorsTestset\ITestsetCreator.cs" />
     <Compile Include="CreatorsTestset\TestOutputDataCreator.cs" />
     <Compile Include="CreatorsTestset\TestsetCreator.cs" />
     <Compile Include="FullStreamComparer.cs" />
-    <Compile Include="ConfigProviders\IConfigTestsetProvider.cs" />
+    <Compile Include="ConfigProviders\IConfigTestsetSettings.cs" />
     <Compile Include="Launchers\AbstractTestsLauncher.cs" />
     <Compile Include="Launchers\IProcessTestsLauncher.cs" />
     <Compile Include="Launchers\CheckAllTestsLauncher.cs" />

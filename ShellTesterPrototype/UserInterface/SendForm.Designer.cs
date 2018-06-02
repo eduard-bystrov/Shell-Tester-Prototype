@@ -49,8 +49,6 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.mailBox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.subjectVariantBox = new System.Windows.Forms.TextBox();
-			this.subjectVariantLabel = new System.Windows.Forms.Label();
 			this.subjectTaskBox = new System.Windows.Forms.TextBox();
 			this.subjectTaskLabel = new System.Windows.Forms.Label();
 			this.subjectNameBox = new System.Windows.Forms.TextBox();
@@ -89,11 +87,11 @@
 			this.extraBox.Size = new System.Drawing.Size(319, 20);
 			this.extraBox.TabIndex = 16;
 			// 
-			// extra
+			// extraLabel
 			// 
 			this.extraLabel.AutoSize = true;
 			this.extraLabel.Location = new System.Drawing.Point(10, 103);
-			this.extraLabel.Name = "extra";
+			this.extraLabel.Name = "extraLabel";
 			this.extraLabel.Size = new System.Drawing.Size(87, 13);
 			this.extraLabel.TabIndex = 15;
 			this.extraLabel.Text = "Дополнительно";
@@ -200,7 +198,7 @@
 			// 
 			// SendButton
 			// 
-			this.SendButton.Location = new System.Drawing.Point(196, 309);
+			this.SendButton.Location = new System.Drawing.Point(196, 278);
 			this.SendButton.Name = "SendButton";
 			this.SendButton.Size = new System.Drawing.Size(69, 23);
 			this.SendButton.TabIndex = 9;
@@ -211,7 +209,7 @@
 			// dbCheckBox
 			// 
 			this.dbCheckBox.AutoSize = true;
-			this.dbCheckBox.Location = new System.Drawing.Point(178, 289);
+			this.dbCheckBox.Location = new System.Drawing.Point(178, 258);
 			this.dbCheckBox.Name = "dbCheckBox";
 			this.dbCheckBox.Size = new System.Drawing.Size(15, 14);
 			this.dbCheckBox.TabIndex = 13;
@@ -220,7 +218,7 @@
 			// choicePathToProgramLabel
 			// 
 			this.choicePathToProgramLabel.AutoSize = true;
-			this.choicePathToProgramLabel.Location = new System.Drawing.Point(22, 289);
+			this.choicePathToProgramLabel.Location = new System.Drawing.Point(22, 258);
 			this.choicePathToProgramLabel.Name = "choicePathToProgramLabel";
 			this.choicePathToProgramLabel.Size = new System.Drawing.Size(150, 13);
 			this.choicePathToProgramLabel.TabIndex = 12;
@@ -229,7 +227,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(22, 266);
+			this.label5.Location = new System.Drawing.Point(22, 235);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(168, 13);
 			this.label5.TabIndex = 14;
@@ -237,42 +235,23 @@
 			// 
 			// mailBox
 			// 
-			this.mailBox.Location = new System.Drawing.Point(196, 263);
+			this.mailBox.Location = new System.Drawing.Point(196, 232);
 			this.mailBox.Name = "mailBox";
 			this.mailBox.Size = new System.Drawing.Size(251, 20);
 			this.mailBox.TabIndex = 15;
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.subjectVariantBox);
-			this.groupBox1.Controls.Add(this.subjectVariantLabel);
 			this.groupBox1.Controls.Add(this.subjectTaskBox);
 			this.groupBox1.Controls.Add(this.subjectTaskLabel);
 			this.groupBox1.Controls.Add(this.subjectNameBox);
 			this.groupBox1.Controls.Add(this.subjectNameLabel);
 			this.groupBox1.Location = new System.Drawing.Point(12, 150);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(446, 104);
+			this.groupBox1.Size = new System.Drawing.Size(446, 76);
 			this.groupBox1.TabIndex = 16;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Предмет";
-			// 
-			// subjectVariantBox
-			// 
-			this.subjectVariantBox.Location = new System.Drawing.Point(73, 71);
-			this.subjectVariantBox.Name = "subjectVariantBox";
-			this.subjectVariantBox.Size = new System.Drawing.Size(362, 20);
-			this.subjectVariantBox.TabIndex = 9;
-			this.subjectVariantBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-			// 
-			// label7
-			// 
-			this.subjectVariantLabel.AutoSize = true;
-			this.subjectVariantLabel.Location = new System.Drawing.Point(10, 75);
-			this.subjectVariantLabel.Name = "label7";
-			this.subjectVariantLabel.Size = new System.Drawing.Size(49, 13);
-			this.subjectVariantLabel.TabIndex = 8;
-			this.subjectVariantLabel.Text = "Вариант";
 			// 
 			// subjectTaskBox
 			// 
@@ -282,11 +261,11 @@
 			this.subjectTaskBox.TabIndex = 7;
 			this.subjectTaskBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
-			// label6
+			// subjectTaskLabel
 			// 
 			this.subjectTaskLabel.AutoSize = true;
 			this.subjectTaskLabel.Location = new System.Drawing.Point(10, 48);
-			this.subjectTaskLabel.Name = "label6";
+			this.subjectTaskLabel.Name = "subjectTaskLabel";
 			this.subjectTaskLabel.Size = new System.Drawing.Size(50, 13);
 			this.subjectTaskLabel.TabIndex = 6;
 			this.subjectTaskLabel.Text = "Задание";
@@ -299,11 +278,11 @@
 			this.subjectNameBox.TabIndex = 5;
 			this.subjectNameBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
 			// 
-			// label12
+			// subjectNameLabel
 			// 
 			this.subjectNameLabel.AutoSize = true;
 			this.subjectNameLabel.Location = new System.Drawing.Point(10, 23);
-			this.subjectNameLabel.Name = "label12";
+			this.subjectNameLabel.Name = "subjectNameLabel";
 			this.subjectNameLabel.Size = new System.Drawing.Size(57, 13);
 			this.subjectNameLabel.TabIndex = 0;
 			this.subjectNameLabel.Text = "Название";
@@ -312,7 +291,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(469, 339);
+			this.ClientSize = new System.Drawing.Size(469, 310);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.mailBox);
 			this.Controls.Add(this.label5);
@@ -357,8 +336,6 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.TextBox subjectNameBox;
 		private System.Windows.Forms.Label subjectNameLabel;
-		private System.Windows.Forms.TextBox subjectVariantBox;
-		private System.Windows.Forms.Label subjectVariantLabel;
 		private System.Windows.Forms.TextBox subjectTaskBox;
 		private System.Windows.Forms.Label subjectTaskLabel;
 	}

@@ -1,7 +1,7 @@
 {
-  "ProblemName": "Имя задания", // A+B
-  "LaboratoryWorkName": "Имя", // ООП:Лабораторная работа №1
+  "TaskkName": "Имя", // ООП:Лабораторная работа №1
   "TestsetVersion": "3.2.2.8", // версия пакета тестов
+  "Key" :  "secret" ,
 
   "Tests": [
     {
@@ -9,17 +9,17 @@
       //имя файла делится на 3 части, префикс - input, нумерация-00, суффикс-.txt
 
       "InputMask": {
-        "prefix": "input",
-        "numeration": "[\\d]+",
-        "suffix": ".txt"
+        "Prefix": "input",
+        "Numeration": "[\\d]+",
+        "Suffix": ".txt"
       },
 
       //пример выходной маски-файлов output00.txt
       //нумерация должна совпадать у входного и выходного файла
       "OutputMask": {
-        "prefix": "output",
-        "numeration": "[\\d]+",
-        "suffix": ".txt"
+        "Prefix": "output",
+        "Numeration": "[\\d]+",
+        "Suffix": ".txt"
       },
 
       //максимальное время на тест

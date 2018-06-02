@@ -16,7 +16,7 @@ namespace UnitTestset
 		{
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
+						new DefaultConfigTestsetSettings(),
 						@"../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask)
@@ -33,7 +33,7 @@ namespace UnitTestset
 		{
 			var collector = new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
+						new DefaultConfigTestsetSettings(),
 						@"../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),
@@ -48,7 +48,7 @@ namespace UnitTestset
 		{
 			var collector = new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
+						new DefaultConfigTestsetSettings(),
 						@"../Tests/test.zip",
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),

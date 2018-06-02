@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 using ShellTester;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,10 @@ namespace UserInterface.MongoDb
 		public List<TestResult> TestResult { get; set; }
 
 
-		[BsonId]
+		[BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
 		public string Id { get; set; }
+
+
 		public DateTime UpdatedOn { get; set; } = DateTime.Now;
 		public DateTime CreatedOn { get; set; } = DateTime.Now;
 	}

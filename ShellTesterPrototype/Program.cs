@@ -44,7 +44,7 @@ namespace ShellTesterPrototype
 					logger,
 					new ZipCollectorTests(
 						logger,
-						new DefaultConfigTestsetProvider(),
+						new DefaultConfigTestsetSettings(),
 						path,
 						new TestFilePattern(inMask),
 						new TestFilePattern(outMask),

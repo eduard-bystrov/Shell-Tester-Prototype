@@ -66,6 +66,7 @@ namespace UserInterface.MongoDb
 		{
 			try
 			{
+				//item.Id = Guid.NewGuid().ToString();
 				await _context.TestResults.InsertOneAsync(item).ConfigureAwait(false);
 			}
 			catch (Exception ex)
