@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserInterface.MongoDb;
 
 namespace UserInterface
 {
@@ -21,11 +22,13 @@ namespace UserInterface
 	{
 
 		private readonly IPlatformLogger _logger;
+		private readonly ICompleteTestResultRepository _repository;
 
-		public MainForm(IPlatformLogger logger)
+		public MainForm(IPlatformLogger logger, ICompleteTestResultRepository repository)
 		{
 			InitializeComponent();
 			_logger = logger;
+			_repository = repository;
 		}
 
 		private void ChoicePathDialog(TextBox textBox)
@@ -102,7 +105,7 @@ namespace UserInterface
 		{
 			
 			var result = RunTester(_logger);
-			var SendForm = new SendForm(_logger, result);
+			var SendForm = new SendForm(_logger,_repository, result);
 			SendForm.Show();
 			
 		}

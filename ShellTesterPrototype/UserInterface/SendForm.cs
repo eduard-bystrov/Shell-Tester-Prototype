@@ -11,17 +11,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Extension;
+using UserInterface.MongoDb;
 
 namespace UserInterface
 {
 	public partial class SendForm : Form
 	{
-		public SendForm(IPlatformLogger logger, IList<TestResult> testResults)
+		private readonly List<TestResult> _testResults;
+		private readonly IPlatformLogger _logger;
+		private readonly ICompleteTestResultRepository _repository;
+
+
+		public SendForm(IPlatformLogger logger, ICompleteTestResultRepository repository, List<TestResult> testResults)
 		{
 			InitializeComponent();
 
 			_testResults = testResults;
 			_logger = logger;
+			_repository = repository;
 
 			var currentYear = DateTime.Now.Year;
 
@@ -40,8 +47,7 @@ namespace UserInterface
 
 		}
 
-		private readonly IList<TestResult> _testResults;
-		private readonly IPlatformLogger _logger;
+		
 
 		private void textBox5_TextChanged(Object sender, EventArgs e)
 		{
@@ -58,14 +64,79 @@ namespace UserInterface
 
 		}
 
+
+		//TODO пустой email
 		private void SendButton_Click(Object sender, EventArgs e)
 		{
-			
 
+
+
+
+			using (var authForm = new TeacherAuthorizationForm())
+			{
+				if (authForm.ShowDialog() == DialogResult.OK)
+				{
+					String resultMessageBox;
+
+					if (mailBox.Text.IsValidEmail())
+					{
+						SendToMail();
+						resultMessageBox = $"Авторизация пройдена, результаты отправлены на почту {mailBox.Text}";
+
+						if (dbCheckBox.Enabled)
+						{
+							SendToDb();
+							resultMessageBox += " и в базу данных";
+						}
+					}
+					else
+					{
+						resultMessageBox = $"Неверный формат email: {mailBox.Text}";
+					}
+
+					MessageBox.Show(resultMessageBox);
+				}
+				else
+				{
+					MessageBox.Show($"Неверный логин/пароль");
+				}
+
+			}
+
+		}
+
+
+		private void SendToDb()
+		{
+			_repository.AddTestResult(CompleteTestResult).Wait();
+		}
+
+
+		private CompleteTestResult CompleteTestResult
+		{
+			get
+			{
+				return new CompleteTestResult()
+				{
+					FullName = fullnameBox.Text,
+					Group = groupBox.Text,
+					Year = yearsBox.Text,
+					Semester = semesterBox.Text,
+					TestResult = _testResults,
+					Score = scoreBox.Text,
+					Extra = extraBox.Text,
+					SubjectName = subjectNameBox.Text,
+					TaskName = subjectTaskBox.Text
+				};
+			} 
+		}
+
+		private void SendToMail()
+		{
 			StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendHtmlText($"Дата : {DateTime.Now.ToString()}");
-            stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
+			stringBuilder.AppendHtmlText($"Дата : {DateTime.Now.ToString()}");
+			stringBuilder.AppendHtmlText($"{fullnameLabel.Text} : {fullnameBox.Text}");
 			stringBuilder.AppendHtmlText($"{groupLabel.Text} : {groupBox.Text}");
 			stringBuilder.AppendHtmlText($"{yearsLabel.Text} : {yearsBox.Text}");
 			stringBuilder.AppendHtmlText($"{semesterLabel.Text} : {semesterBox.Text}");
@@ -76,51 +147,15 @@ namespace UserInterface
 			stringBuilder.AppendHtmlText($"{subjectTaskLabel.Text} : {subjectTaskBox.Text}");
 			stringBuilder.AppendHtmlText($"{subjectVariantLabel.Text} : {subjectVariantBox.Text}");
 
-			using (var authForm = new TeacherAuthorizationForm())
-			{
-				if (authForm.ShowDialog() == DialogResult.OK)
-				{
-					IPostman postman = new GmailPostman(_logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
+			IPostman postman = new GmailPostman(_logger, "testersfedu@gmail.com", "123456vkr^^", "TesterSfedu");
 
-					postman.Send(
-						mailBox.Text,
-						$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
-						_testResults,
-						stringBuilder.ToString()
-					);
-
-					MessageBox.Show($"Авторизация пройдена, результаты отправлены на почту {mailBox.Text}");
-				}
-				else
-				{
-					MessageBox.Show($"Неверный логин/пароль");
-				}
-				
-			}
-
+			postman.Send(
+				mailBox.Text,
+				$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
+				_testResults,
+				stringBuilder.ToString()
+			);
 		}
-
-
 	
-
-		private void nameBox_TextChanged(Object sender, EventArgs e)
-		{
-
-		}
-
-		private void surnameLabel_Click(Object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(Object sender, EventArgs e)
-		{
-
-		}
-
-		private void extra_Click(Object sender, EventArgs e)
-		{
-
-		}
 	}
 }

@@ -97,7 +97,6 @@
 			this.extraLabel.Size = new System.Drawing.Size(87, 13);
 			this.extraLabel.TabIndex = 15;
 			this.extraLabel.Text = "Дополнительно";
-			this.extraLabel.Click += new System.EventHandler(this.extra_Click);
 			// 
 			// testResultBox
 			// 
@@ -166,7 +165,6 @@
 			this.yearsLabel.Size = new System.Drawing.Size(74, 13);
 			this.yearsLabel.TabIndex = 6;
 			this.yearsLabel.Text = "Год обучения";
-			this.yearsLabel.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// fullnameBox
 			// 
@@ -174,7 +172,6 @@
 			this.fullnameBox.Name = "fullnameBox";
 			this.fullnameBox.Size = new System.Drawing.Size(377, 20);
 			this.fullnameBox.TabIndex = 5;
-			this.fullnameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
 			// 
 			// groupBox
 			// 
@@ -191,7 +188,6 @@
 			this.groupLabel.Size = new System.Drawing.Size(42, 13);
 			this.groupLabel.TabIndex = 1;
 			this.groupLabel.Text = "Группа";
-			this.groupLabel.Click += new System.EventHandler(this.surnameLabel_Click);
 			// 
 			// fullnameLabel
 			// 
