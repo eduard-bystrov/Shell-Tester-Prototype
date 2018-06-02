@@ -19,8 +19,8 @@ namespace UserInterface.Properties
 	internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
 	{
 
-		public String ConnectionString => "";
-		public String Database => "";
+		public String ConnectionString => "mongodb://admin:admin@localhost";
+		public String Database => "TestResultsDb";
 
 		private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
 
