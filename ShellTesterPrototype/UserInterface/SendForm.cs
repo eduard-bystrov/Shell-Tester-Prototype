@@ -118,15 +118,24 @@ namespace UserInterface
 			{
 				return new CompleteTestResult()
 				{
-					FullName = fullnameBox.Text,
-					Group = groupBox.Text,
-					Year = yearsBox.Text,
-					Semester = semesterBox.Text,
-					TestResult = _testResults,
-					Score = scoreBox.Text,
+					Student = new Student
+					{
+						FullName = fullnameBox.Text,
+						Group = groupBox.Text,
+						Year = yearsBox.Text,
+						Semester = semesterBox.Text,
+					},
+
+					//TODO TestSetVersion
+					Work = new Work
+					{
+						SubjectName = subjectNameBox.Text,
+						TaskName = subjectTaskBox.Text
+					},
+
 					Extra = extraBox.Text,
-					SubjectName = subjectNameBox.Text,
-					TaskName = subjectTaskBox.Text
+					Score = scoreBox.Text,
+					TestResult = _testResults,
 				};
 			} 
 		}
