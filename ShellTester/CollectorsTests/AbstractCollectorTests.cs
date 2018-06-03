@@ -25,10 +25,8 @@ namespace ShellTester.CollectorsTests
 			_outputFilePattern = outputFilePatten;
 		}
 
-		public virtual IEnumerable<Test> MakeTestBlocks()
-		{
-			throw new NotImplementedException();
-		}
+		public virtual IEnumerable<Test> MakeTestBlocks() => throw new NotImplementedException();
+		public virtual IConfigTestsetSettings Config { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
 		protected readonly IPlatformLogger _logger;
 		protected readonly String _workPath;
@@ -36,5 +34,6 @@ namespace ShellTester.CollectorsTests
 		protected readonly TestFilePattern _outputFilePattern;
 		protected readonly IConfigTestsetSettings _configTestsetProvider;
 
+		
 	}
 }

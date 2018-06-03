@@ -54,7 +54,7 @@ namespace UserInterface
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.choiceTryBox = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.menuStrip.SuspendLayout();
@@ -229,7 +229,7 @@ namespace UserInterface
 			this.panel2.Controls.Add(this.dataGridView1);
 			this.panel2.Controls.Add(this.button3);
 			this.panel2.Controls.Add(this.label6);
-			this.panel2.Controls.Add(this.comboBox1);
+			this.panel2.Controls.Add(this.choiceTryBox);
 			this.panel2.Controls.Add(this.label5);
 			this.panel2.Controls.Add(this.label4);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -281,13 +281,14 @@ namespace UserInterface
 			this.label6.TabIndex = 4;
 			this.label6.Text = "Информация о запуске";
 			// 
-			// comboBox1
+			// choiceTryBox
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(107, 54);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(486, 21);
-			this.comboBox1.TabIndex = 2;
+			this.choiceTryBox.FormattingEnabled = true;
+			this.choiceTryBox.Location = new System.Drawing.Point(107, 54);
+			this.choiceTryBox.Name = "choiceTryBox";
+			this.choiceTryBox.Size = new System.Drawing.Size(486, 21);
+			this.choiceTryBox.TabIndex = 2;
+			this.choiceTryBox.SelectedIndexChanged += new System.EventHandler(this.ChoiceTryBox_SelectedIndexChanged);
 			// 
 			// label5
 			// 
@@ -355,7 +356,7 @@ namespace UserInterface
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox choiceTryBox;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox textBox3;

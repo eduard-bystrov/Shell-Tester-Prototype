@@ -107,7 +107,35 @@ namespace UserInterface
 			var result = RunTester(_logger);
 			var SendForm = new SendForm(_logger,_repository, result);
 			SendForm.Show();
+
+			choiceTryBox.Items.Add(new OneTestRunnerResult(
+				$"",
+				result
+			));
 			
+		}
+
+		private void ChoiceTryBox_SelectedIndexChanged(Object sender, EventArgs e)
+		{
+
+		}
+
+		private class OneTestRunnerResult
+		{
+			private readonly String _name;
+			private readonly List<TestResult> _results;
+
+			public OneTestRunnerResult(String name, List<TestResult> results)
+			{
+				_name = name;
+				_results = results;
+			}
+
+
+			public override String ToString()
+			{
+				return _name;
+			}
 		}
 	}
 }
