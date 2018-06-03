@@ -11,11 +11,8 @@ namespace ShellTester.ConfigProviders
 		public String TaskkName { get; set; }
 		public String TestsetVersion { get; set; }
 		public String Key { get; set; }
-		
-
-
+		public Tests Tests { get; set; }
 	}
-
 
 	public class Tests
 	{
