@@ -26,7 +26,7 @@ namespace ShellTester.CollectorsTests
 		}
 
 		public virtual IEnumerable<Test> MakeTestBlocks() => throw new NotImplementedException();
-		public virtual IConfigTestsetSettings Config { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public virtual IConfigTestsetSettings Config { get => throw new NotImplementedException(); }
 
 		protected readonly IPlatformLogger _logger;
 		protected readonly String _workPath;

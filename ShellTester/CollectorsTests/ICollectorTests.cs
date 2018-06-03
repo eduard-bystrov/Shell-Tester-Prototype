@@ -7,6 +7,6 @@ namespace ShellTester.CollectorsTests
 	public interface ICollectorTests
 	{
 		IEnumerable<Test> MakeTestBlocks();
-		IConfigTestsetSettings Config { get; set; } 
+		IConfigTestsetSettings Config { get; } 
 	}
 }

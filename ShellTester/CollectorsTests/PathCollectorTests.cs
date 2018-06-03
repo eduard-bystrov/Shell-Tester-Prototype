@@ -78,5 +78,7 @@ namespace ShellTester.CollectorsTests
 							.Where(file => reg.IsMatch(file))
 							.ToArray();
 		}
+
+		public override IConfigTestsetSettings Config { get => base.Config; }
 	}
 }

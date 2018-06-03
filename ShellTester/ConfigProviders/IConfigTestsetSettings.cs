@@ -22,5 +22,6 @@ namespace ShellTester.ConfigProviders
 
 		TestFilePattern InputFilePattern { get; }
 		TestFilePattern OuputFilePattern { get; }
+
 	}
 }
