@@ -51,7 +51,7 @@ namespace UserInterface
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.ResultTestRunBox = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.testResultDataGridView = new System.Windows.Forms.DataGridView();
 			this.SendResultButton = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.choiceTryBox = new System.Windows.Forms.ComboBox();
@@ -61,7 +61,7 @@ namespace UserInterface
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.testResultDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -228,7 +228,7 @@ namespace UserInterface
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel2.Controls.Add(this.ResultTestRunBox);
 			this.panel2.Controls.Add(this.label7);
-			this.panel2.Controls.Add(this.dataGridView1);
+			this.panel2.Controls.Add(this.testResultDataGridView);
 			this.panel2.Controls.Add(this.SendResultButton);
 			this.panel2.Controls.Add(this.label6);
 			this.panel2.Controls.Add(this.choiceTryBox);
@@ -257,13 +257,14 @@ namespace UserInterface
 			this.label7.TabIndex = 14;
 			this.label7.Text = "Пройденные тесты";
 			// 
-			// dataGridView1
+			// testResultDataGridView
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(18, 160);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(585, 346);
-			this.dataGridView1.TabIndex = 13;
+			this.testResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.testResultDataGridView.Location = new System.Drawing.Point(18, 160);
+			this.testResultDataGridView.Name = "testResultDataGridView";
+			this.testResultDataGridView.ReadOnly = true;
+			this.testResultDataGridView.Size = new System.Drawing.Size(585, 346);
+			this.testResultDataGridView.TabIndex = 13;
 			// 
 			// SendResultButton
 			// 
@@ -330,7 +331,7 @@ namespace UserInterface
 			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.testResultDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -364,7 +365,7 @@ namespace UserInterface
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox ResultTestRunBox;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView testResultDataGridView;
 	}
 }
 

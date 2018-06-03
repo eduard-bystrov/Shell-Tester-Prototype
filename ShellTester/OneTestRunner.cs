@@ -109,8 +109,8 @@ namespace ShellTester
 		private Int64 _peakPagedMem = 0;
 		private Int64 _peakWorkingSet = 0;
 		private Int64 _peakVirtualMem = 0;
-        private Int64 Memory_b { get; set; }
-        private Int64 Time_ms { get; set; }
+		private Int64 Memory_b { get; set; }
+		private Int64 Time_ms { get; set; }
 
 		private Int32 TIME_REFRESH_DATA_ABOUT_PROCESS_MS => 1;
 	}

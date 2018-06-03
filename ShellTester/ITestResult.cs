@@ -24,9 +24,10 @@ namespace ShellTester
 		TestResultKind Kind { get; }
 		TimeSpan ExecutionTime { get; }
 		Int64 PeekMemory { get; }
+		Int64 PeekMemory_mb { get; set; }
 
-		Int32 ExecutionTime_ms { get; }
-		Int32 ExecutionTime_s { get; }
-		Int32 ExecutionTime_m { get; }
+		Int64 ExecutionTime_ms { get; }
+		Int64 ExecutionTime_s { get; }
+		Int64 ExecutionTime_m { get; }
 	}
 }

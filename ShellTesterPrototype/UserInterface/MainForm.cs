@@ -115,13 +115,27 @@ namespace UserInterface
 
 			choiceTryBox.SelectedIndex = choiceTryBox.Items.Count-1;
 
-
 		}
 
 		private void ChoiceTryBox_SelectedIndexChanged(Object sender, EventArgs e)
 		{
 			var selected = choiceTryBox.SelectedItem as OneTestRunnerResult;
 			ResultTestRunBox.Text = selected.Result.StringResult();
+
+
+			var source = new BindingSource
+			{
+				DataSource = selected.Result.Select(x => new TestResulUserView()
+				{
+					Id = x.Id,
+					Kind = x.Kind,
+					Time_ms = x.ExecutionTime_ms,
+					Memory_mb = x.PeekMemory_mb
+				})
+
+			};
+
+			testResultDataGridView.DataSource = source;
 		}
 
 		private class OneTestRunnerResult
@@ -142,13 +156,20 @@ namespace UserInterface
 			}
 		}
 
+		private class TestResulUserView
+		{
+
+			public String Id { get; set; }
+			public TestResultKind Kind { get; set; }
+			public Int64 Time_ms { get; set; }
+			public Int64 Memory_mb { get; set; }
+		}
+
 		private void SendResultButton_Click(Object sender, EventArgs e)
 		{
 			var selected = choiceTryBox.SelectedItem as OneTestRunnerResult;
 			var SendForm = new SendForm(_logger, _repository, selected.Result);
 			SendForm.Show();
 		}
-
-		
 	}
 }
