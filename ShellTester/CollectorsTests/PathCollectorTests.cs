@@ -79,6 +79,12 @@ namespace ShellTester.CollectorsTests
 							.ToArray();
 		}
 
-		public override IConfigTestsetSettings Config { get => base.Config; }
+		public override IConfigTestsetSettings Config
+		{
+			get
+			{
+				return base.Config;
+			}
+		}
 	}
 }

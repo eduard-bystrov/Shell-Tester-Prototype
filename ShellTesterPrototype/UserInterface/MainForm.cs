@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserInterface.Extension;
 using UserInterface.MongoDb;
 
 namespace UserInterface
@@ -105,37 +106,49 @@ namespace UserInterface
 		{
 			
 			var result = RunTester(_logger);
-			var SendForm = new SendForm(_logger,_repository, result);
-			SendForm.Show();
 
 			choiceTryBox.Items.Add(new OneTestRunnerResult(
-				$"",
+				$"{DateTime.Now.ToString()} {Path.GetFileNameWithoutExtension(PathToTestsetBox.Text)} Memory:{MemorylimitBox.Text} Time: {TimelimitBox.Text}"+
+				$"{result.StringResult()}",
 				result
 			));
-			
+
+			choiceTryBox.SelectedIndex = choiceTryBox.Items.Count-1;
+
+
 		}
 
 		private void ChoiceTryBox_SelectedIndexChanged(Object sender, EventArgs e)
 		{
-
+			var selected = choiceTryBox.SelectedItem as OneTestRunnerResult;
+			ResultTestRunBox.Text = selected.Result.StringResult();
 		}
 
 		private class OneTestRunnerResult
 		{
-			private readonly String _name;
-			private readonly List<TestResult> _results;
+			public String Name { get; private set; }
+			public List<TestResult> Result { get; private set; }
 
 			public OneTestRunnerResult(String name, List<TestResult> results)
 			{
-				_name = name;
-				_results = results;
+				Name = name;
+				Result = results;
 			}
 
 
 			public override String ToString()
 			{
-				return _name;
+				return Name;
 			}
 		}
+
+		private void SendResultButton_Click(Object sender, EventArgs e)
+		{
+			var selected = choiceTryBox.SelectedItem as OneTestRunnerResult;
+			var SendForm = new SendForm(_logger, _repository, selected.Result);
+			SendForm.Show();
+		}
+
+		
 	}
 }

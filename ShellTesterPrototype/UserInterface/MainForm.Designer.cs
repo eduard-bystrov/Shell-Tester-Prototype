@@ -49,10 +49,10 @@ namespace UserInterface
 			this.PathToProgramBox = new System.Windows.Forms.TextBox();
 			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.ResultTestRunBox = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.button3 = new System.Windows.Forms.Button();
+			this.SendResultButton = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.choiceTryBox = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
@@ -169,6 +169,7 @@ namespace UserInterface
 			// 
 			this.TimelimitBox.Location = new System.Drawing.Point(6, 73);
 			this.TimelimitBox.Name = "TimelimitBox";
+			this.TimelimitBox.ReadOnly = true;
 			this.TimelimitBox.Size = new System.Drawing.Size(242, 20);
 			this.TimelimitBox.TabIndex = 7;
 			// 
@@ -176,6 +177,7 @@ namespace UserInterface
 			// 
 			this.MemorylimitBox.Location = new System.Drawing.Point(6, 34);
 			this.MemorylimitBox.Name = "MemorylimitBox";
+			this.MemorylimitBox.ReadOnly = true;
 			this.MemorylimitBox.Size = new System.Drawing.Size(242, 20);
 			this.MemorylimitBox.TabIndex = 6;
 			// 
@@ -224,10 +226,10 @@ namespace UserInterface
 			// panel2
 			// 
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel2.Controls.Add(this.textBox3);
+			this.panel2.Controls.Add(this.ResultTestRunBox);
 			this.panel2.Controls.Add(this.label7);
 			this.panel2.Controls.Add(this.dataGridView1);
-			this.panel2.Controls.Add(this.button3);
+			this.panel2.Controls.Add(this.SendResultButton);
 			this.panel2.Controls.Add(this.label6);
 			this.panel2.Controls.Add(this.choiceTryBox);
 			this.panel2.Controls.Add(this.label5);
@@ -238,13 +240,13 @@ namespace UserInterface
 			this.panel2.Size = new System.Drawing.Size(623, 546);
 			this.panel2.TabIndex = 5;
 			// 
-			// textBox3
+			// ResultTestRunBox
 			// 
-			this.textBox3.Location = new System.Drawing.Point(125, 124);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.ReadOnly = true;
-			this.textBox3.Size = new System.Drawing.Size(107, 20);
-			this.textBox3.TabIndex = 16;
+			this.ResultTestRunBox.Location = new System.Drawing.Point(125, 124);
+			this.ResultTestRunBox.Name = "ResultTestRunBox";
+			this.ResultTestRunBox.ReadOnly = true;
+			this.ResultTestRunBox.Size = new System.Drawing.Size(107, 20);
+			this.ResultTestRunBox.TabIndex = 16;
 			// 
 			// label7
 			// 
@@ -263,14 +265,15 @@ namespace UserInterface
 			this.dataGridView1.Size = new System.Drawing.Size(585, 346);
 			this.dataGridView1.TabIndex = 13;
 			// 
-			// button3
+			// SendResultButton
 			// 
-			this.button3.Location = new System.Drawing.Point(258, 512);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(130, 22);
-			this.button3.TabIndex = 12;
-			this.button3.Text = "Отправить результат";
-			this.button3.UseVisualStyleBackColor = true;
+			this.SendResultButton.Location = new System.Drawing.Point(258, 512);
+			this.SendResultButton.Name = "SendResultButton";
+			this.SendResultButton.Size = new System.Drawing.Size(130, 22);
+			this.SendResultButton.TabIndex = 12;
+			this.SendResultButton.Text = "Отправить результат";
+			this.SendResultButton.UseVisualStyleBackColor = true;
+			this.SendResultButton.Click += new System.EventHandler(this.SendResultButton_Click);
 			// 
 			// label6
 			// 
@@ -354,12 +357,12 @@ namespace UserInterface
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button choicePathToProgramButton;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button SendResultButton;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ComboBox choiceTryBox;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox ResultTestRunBox;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.DataGridView dataGridView1;
 	}

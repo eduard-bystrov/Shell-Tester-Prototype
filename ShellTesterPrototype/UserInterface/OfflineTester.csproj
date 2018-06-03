@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
+    <Compile Include="Extension\TestResultExtension.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
