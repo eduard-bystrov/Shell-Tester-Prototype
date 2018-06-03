@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShellTester.ConfigProviders
 {
-	public class ConfigTestsetSettings
+	public class JsonTestsetSettings
 	{
+
 		public String TaskkName { get; set; }
 		public String TestsetVersion { get; set; }
 		public String Key { get; set; }
@@ -33,7 +34,6 @@ namespace ShellTester.ConfigProviders
 		public Int32 TimeLimit_ms { get; set; }
 		public Int32 MemoryLimit_mb { get; set; }
 		public Int32 DefaultPrice { get; set; }
-
 	}
 
 	public class FileTestPatternSettings
@@ -41,6 +41,12 @@ namespace ShellTester.ConfigProviders
 		public String Prefix { get; set; }
 		public String Numeration { get; set; }
 		public String Suffix { get; set; }
+
+
+		public TestFilePattern GetFileTestPattern()
+		{
+			return new TestFilePattern($"({Prefix})({Numeration})({Suffix})");
+		}
 	}
 
 
