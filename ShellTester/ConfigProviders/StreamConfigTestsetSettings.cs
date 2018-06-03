@@ -40,18 +40,64 @@ namespace ShellTester.ConfigProviders
 
 		public TestFilePattern OuputFilePattern => _settings.Tests.OutputMask.GetFileTestPattern();
 
-		public Int32 MemoryLimitFor(String testId)
+		private Int32 MemoryLimitFor(Int32 testId)
 		{
-			throw new NotImplementedException();
+			Int32 result = DefaultMemoryLimit_mb;
+
+			var wh = _settings.Tests.Customizations
+				.Where(x => x.inRange(testId));
+
+			if (wh.Any())
+			{
+				result = wh.First().MemoryLimit_mb;
+			}
+
+			return result;
+		}
+
+		private Int32 TimeLimitFor(Int32 testId)
+		{
+			Int32 result = DefaultTimeLimit_ms;
+
+			var wh = _settings.Tests.Customizations
+				.Where(x => x.inRange(testId));
+
+			if (wh.Any())
+			{
+				result = wh.First().TimeLimit_ms;
+			}
+
+			return result;
+		}
+
+		private Int32 PriceFor(Int32 testId)
+		{
+			Int32 result = DefaultPrice;
+
+			var wh = _settings.Tests.Customizations
+				.Where(x => x.inRange(testId));
+
+			if (wh.Any())
+			{
+				result = wh.First().Price;
+			}
+
+			return result;
 		}
 
 		public Int32 TimeLimitFor(String testId)
 		{
-			throw new NotImplementedException();
+			return TimeLimitFor(Int32.Parse(testId));
 		}
 
+		public Int32 MemoryLimitFor(String testId)
+		{
+			return MemoryLimitFor(Int32.Parse(testId));
+		}
 
-
-
+		public Int32 PriceFor(String testId)
+		{
+			return PriceFor(Int32.Parse(testId));
+		}
 	}
 }

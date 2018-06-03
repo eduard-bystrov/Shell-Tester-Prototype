@@ -41,6 +41,11 @@ namespace ShellTester.ConfigProviders
 			return DefaultMemoryLimit_mb;
 		}
 
+		public Int32 PriceFor(String testId)
+		{
+			return DefaultPrice;
+		}
+
 		public Int32 TimeLimitFor(String testId)
 		{
 			return DefaultTimeLimit_ms;

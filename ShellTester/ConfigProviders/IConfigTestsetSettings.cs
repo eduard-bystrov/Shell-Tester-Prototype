@@ -10,7 +10,7 @@ namespace ShellTester.ConfigProviders
 	{
 		Int32 TimeLimitFor(String testId);
 		Int32 MemoryLimitFor(String testId);
-
+		Int32 PriceFor(String testId);
 
 
 		String Key { get; }

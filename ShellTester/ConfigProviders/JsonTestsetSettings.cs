@@ -24,7 +24,7 @@ namespace ShellTester.ConfigProviders
 		public FileTestPatternSettings InputMask { get; set; }
 		public FileTestPatternSettings OutputMask { get; set; }
 
-		List<Customizations> Customizations { get; set; }
+		public List<Customizations> Customizations { get; set; }
 
 	}
 
@@ -33,7 +33,32 @@ namespace ShellTester.ConfigProviders
 		public String Number { get; set; }
 		public Int32 TimeLimit_ms { get; set; }
 		public Int32 MemoryLimit_mb { get; set; }
-		public Int32 DefaultPrice { get; set; }
+		public Int32 Price { get; set; }
+
+
+		//TODO Int32 ????
+		public Boolean inRange(Int32 id)
+		{
+			return From >= id && id <= To;
+		}
+
+		private Int32 From
+		{
+			get
+			{
+				var index = Number.IndexOf('-');
+				return index == -1 ? Int32.Parse(Number) : Int32.Parse(Number.Substring(0, index));
+			}
+		}
+
+		private Int32 To
+		{
+			get
+			{
+				var index = Number.IndexOf('-');
+				return index == -1 ? Int32.Parse(Number) : Int32.Parse(Number.Substring(index));
+			}
+		}
 	}
 
 	public class FileTestPatternSettings
