@@ -16,13 +16,11 @@ namespace ShellTester.CollectorsTests
 	{
 		public ZipCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetSettings configProvider,
+			IConfigTestsetProvider configProvider,
 			String workPath,
-			TestFilePattern inputFilePattern,
-			TestFilePattern outputFilePatten,
 			IEnumerable<String> passwords
 		) 
-			: base(logger,configProvider, workPath, inputFilePattern, outputFilePatten)
+			: base(logger,configProvider, workPath)
 		{
 			_password = BruteForcePassword(new List<String>(passwords));
 		}
@@ -50,9 +48,9 @@ namespace ShellTester.CollectorsTests
 		{
 			using (var archive = new SevenZipArchive(_workPath, ArchiveFormat.Unkown, _password))
 			{
-				var inputFiles = archive.Where(x => _inputFilePattern.GetFullRegex().IsMatch(x.FileName));
-				var ouputFiles = archive.Where(x => _outputFilePattern.GetFullRegex().IsMatch(x.FileName));
-				var comparer = new TestFileNameComparer(_inputFilePattern, _outputFilePattern);
+				var inputFiles = archive.Where(x => InputFilePattern.GetFullRegex().IsMatch(x.FileName));
+				var ouputFiles = archive.Where(x => OutputFilePattern.GetFullRegex().IsMatch(x.FileName));
+				var comparer = new TestFileNameComparer(InputFilePattern, OutputFilePattern);
 
 				foreach (var inputFile in inputFiles)
 				{
@@ -63,7 +61,7 @@ namespace ShellTester.CollectorsTests
 
 						if (comparer.Equals(inName, outName))
 						{
-							var idTest = _inputFilePattern.GetNumberPart(inName);
+							var idTest = InputFilePattern.GetNumberPart(inName);
 
 							yield return new Test(
 								inputFile.ExtractToStreamReader(),

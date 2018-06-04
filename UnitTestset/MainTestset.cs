@@ -22,10 +22,8 @@ namespace UnitTestset
 					Logger,
 					new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
+						new DefaultConfigTestsetProvider(),
 						pathToProgram,
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask),
 						new String[] { "228", "123" }
 
 					),
@@ -103,10 +101,8 @@ namespace UnitTestset
 					Logger,
 					new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
+						new DefaultConfigTestsetProvider(),
 						@"../../Tests/test.zip",
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask),
 						new String[] { "228", "123" }
 
 					),

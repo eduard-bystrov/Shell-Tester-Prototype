@@ -47,32 +47,11 @@ namespace UserInterface
 
 		}
 
-		
-
-		private void textBox5_TextChanged(Object sender, EventArgs e)
-		{
-
-		}
-
-		private void textBox1_TextChanged(Object sender, EventArgs e)
-		{
-
-		}
-
-		private void textBox2_TextChanged(Object sender, EventArgs e)
-		{
-
-		}
-
-
 		//TODO пустой email
 		private void SendButton_Click(Object sender, EventArgs e)
 		{
 
-
-
-
-			using (var authForm = new TeacherAuthorizationForm())
+			using (var authForm = new TeacherAuthorizationForm("secret"))
 			{
 				if (authForm.ShowDialog() == DialogResult.OK)
 				{
@@ -91,7 +70,14 @@ namespace UserInterface
 					}
 					else
 					{
-						resultMessageBox = $"Неверный формат email: {mailBox.Text}";
+						resultMessageBox = $"Неверный формат email: {mailBox.Text}\n";
+
+						if (dbCheckBox.Enabled)
+						{
+							SendToDb();
+							resultMessageBox += "Результаты отправлены в базу данных";
+						}
+
 					}
 
 					MessageBox.Show(resultMessageBox);

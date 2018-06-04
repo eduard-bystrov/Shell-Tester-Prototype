@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace ShellTester.ConfigProviders
 {
-	public class StreamConfigTestsetSettings : IConfigTestsetSettings
+	public class StreamConfigTestsetProvider : IConfigTestsetProvider
 	{
-		private JsonTestsetSettings _settings;
+		private JsonTestsetProvider _settings;
 
-		public StreamConfigTestsetSettings(StreamReader stream)
+		public StreamConfigTestsetProvider(StreamReader stream)
 		{
 			if (stream == null)
 			{
 				throw new NullReferenceException(nameof(StreamReader));
 			}
 
-			JsonTestsetSettings settings = JsonConvert.DeserializeObject<JsonTestsetSettings>(stream.ReadToEnd());
+			JsonTestsetProvider settings = JsonConvert.DeserializeObject<JsonTestsetProvider>(stream.ReadToEnd());
 
 			_settings = settings;
 		}

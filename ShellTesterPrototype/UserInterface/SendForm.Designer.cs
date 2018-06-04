@@ -259,7 +259,6 @@
 			this.subjectTaskBox.Name = "subjectTaskBox";
 			this.subjectTaskBox.Size = new System.Drawing.Size(362, 20);
 			this.subjectTaskBox.TabIndex = 7;
-			this.subjectTaskBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// subjectTaskLabel
 			// 
@@ -276,7 +275,6 @@
 			this.subjectNameBox.Name = "subjectNameBox";
 			this.subjectNameBox.Size = new System.Drawing.Size(362, 20);
 			this.subjectNameBox.TabIndex = 5;
-			this.subjectNameBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
 			// 
 			// subjectNameLabel
 			// 

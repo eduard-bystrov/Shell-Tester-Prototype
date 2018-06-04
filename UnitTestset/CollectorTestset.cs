@@ -16,10 +16,8 @@ namespace UnitTestset
 		{
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
-						@"../Tests/test.zip",
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask)
+						new DefaultConfigTestsetProvider(),
+						@"../Tests/test.zip"
 					);
 
 			var result = new List<Test>(collector.MakeTestBlocks());
@@ -33,10 +31,8 @@ namespace UnitTestset
 		{
 			var collector = new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
+						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip",
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask),
 						Enumerable.Empty<String>()
 					);
 
@@ -48,10 +44,8 @@ namespace UnitTestset
 		{
 			var collector = new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
+						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip",
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask),
 						new String[] {"228", "123" }
 					);
 

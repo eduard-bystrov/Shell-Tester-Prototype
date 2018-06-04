@@ -24,17 +24,12 @@ namespace ShellTesterPrototype
 				var parser = new FluentCommandLineParser();
 
 				String exe = null;
-				String inMask = null, outMask = null;
 				String path = null;
 
 				parser.Setup<String>("p", longOption: "path")
 					.Callback(e => path = e);
 				parser.Setup<String>("e", longOption: "exe")
 					.Callback(e => exe = e);
-				parser.Setup<String>(longOption: "inMask")
-					.Callback(e => inMask = e);
-				parser.Setup<String>(longOption: "outMask")
-					.Callback(e => outMask = e);
 
 				parser.Parse(args);
 
@@ -44,10 +39,8 @@ namespace ShellTesterPrototype
 					logger,
 					new ZipCollectorTests(
 						logger,
-						new DefaultConfigTestsetSettings(),
+						new DefaultConfigTestsetProvider(),
 						path,
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask),
 						new String[] {"228", "123"}
 
 					),

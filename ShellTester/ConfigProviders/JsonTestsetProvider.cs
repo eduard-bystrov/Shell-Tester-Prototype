@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShellTester.ConfigProviders
 {
-	public class JsonTestsetSettings
+	public class JsonTestsetProvider
 	{
 
 		public String TaskkName { get; set; }

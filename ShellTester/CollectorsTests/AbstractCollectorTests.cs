@@ -12,27 +12,23 @@ namespace ShellTester.CollectorsTests
 	{
 		public AbstractCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetSettings configProvider,
-			String workPath,
-			TestFilePattern inputFilePattern,
-			TestFilePattern outputFilePatten
+			IConfigTestsetProvider configProvider,
+			String workPath
 		)
 		{
 			_logger = logger;
 			_configTestsetProvider = configProvider;
 			_workPath = workPath;
-			_inputFilePattern = inputFilePattern;
-			_outputFilePattern = outputFilePatten;
 		}
 
 		public virtual IEnumerable<Test> MakeTestBlocks() => throw new NotImplementedException();
-		public virtual IConfigTestsetSettings Config { get => throw new NotImplementedException(); }
+		public virtual IConfigTestsetProvider Config { get => throw new NotImplementedException(); }
 
 		protected readonly IPlatformLogger _logger;
 		protected readonly String _workPath;
-		protected readonly TestFilePattern _inputFilePattern;
-		protected readonly TestFilePattern _outputFilePattern;
-		protected readonly IConfigTestsetSettings _configTestsetProvider;
+		protected TestFilePattern InputFilePattern => _configTestsetProvider.InputFilePattern;
+		protected TestFilePattern OutputFilePattern => _configTestsetProvider.OuputFilePattern;
+		protected readonly IConfigTestsetProvider _configTestsetProvider;
 
 		
 	}

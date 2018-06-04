@@ -28,49 +28,30 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.passwordLabel = new System.Windows.Forms.Label();
-			this.passwordBox = new System.Windows.Forms.TextBox();
-			this.loginLabel = new System.Windows.Forms.Label();
-			this.loginBox = new System.Windows.Forms.TextBox();
+			this.KeyLabel = new System.Windows.Forms.Label();
+			this.KeyBox = new System.Windows.Forms.TextBox();
 			this.SendButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// passwordLabel
+			// KeyLabel
 			// 
-			this.passwordLabel.AutoSize = true;
-			this.passwordLabel.Location = new System.Drawing.Point(12, 47);
-			this.passwordLabel.Name = "passwordLabel";
-			this.passwordLabel.Size = new System.Drawing.Size(45, 13);
-			this.passwordLabel.TabIndex = 16;
-			this.passwordLabel.Text = "Пароль";
+			this.KeyLabel.AutoSize = true;
+			this.KeyLabel.Location = new System.Drawing.Point(12, 21);
+			this.KeyLabel.Name = "KeyLabel";
+			this.KeyLabel.Size = new System.Drawing.Size(33, 13);
+			this.KeyLabel.TabIndex = 14;
+			this.KeyLabel.Text = "Ключ";
 			// 
-			// passwordBox
+			// KeyBox
 			// 
-			this.passwordBox.Location = new System.Drawing.Point(74, 44);
-			this.passwordBox.Name = "passwordBox";
-			this.passwordBox.PasswordChar = '*';
-			this.passwordBox.Size = new System.Drawing.Size(270, 20);
-			this.passwordBox.TabIndex = 17;
-			// 
-			// loginLabel
-			// 
-			this.loginLabel.AutoSize = true;
-			this.loginLabel.Location = new System.Drawing.Point(12, 21);
-			this.loginLabel.Name = "loginLabel";
-			this.loginLabel.Size = new System.Drawing.Size(38, 13);
-			this.loginLabel.TabIndex = 14;
-			this.loginLabel.Text = "Логин";
-			// 
-			// loginBox
-			// 
-			this.loginBox.Location = new System.Drawing.Point(74, 18);
-			this.loginBox.Name = "loginBox";
-			this.loginBox.Size = new System.Drawing.Size(270, 20);
-			this.loginBox.TabIndex = 15;
+			this.KeyBox.Location = new System.Drawing.Point(74, 18);
+			this.KeyBox.Name = "KeyBox";
+			this.KeyBox.Size = new System.Drawing.Size(270, 20);
+			this.KeyBox.TabIndex = 15;
 			// 
 			// SendButton
 			// 
-			this.SendButton.Location = new System.Drawing.Point(151, 70);
+			this.SendButton.Location = new System.Drawing.Point(149, 44);
 			this.SendButton.Name = "SendButton";
 			this.SendButton.Size = new System.Drawing.Size(69, 23);
 			this.SendButton.TabIndex = 18;
@@ -82,12 +63,10 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(358, 110);
+			this.ClientSize = new System.Drawing.Size(358, 78);
 			this.Controls.Add(this.SendButton);
-			this.Controls.Add(this.passwordLabel);
-			this.Controls.Add(this.passwordBox);
-			this.Controls.Add(this.loginLabel);
-			this.Controls.Add(this.loginBox);
+			this.Controls.Add(this.KeyLabel);
+			this.Controls.Add(this.KeyBox);
 			this.Name = "TeacherAuthorizationForm";
 			this.Text = "Авторизация";
 			this.ResumeLayout(false);
@@ -96,11 +75,8 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Label passwordLabel;
-		private System.Windows.Forms.TextBox passwordBox;
-		private System.Windows.Forms.Label loginLabel;
-		private System.Windows.Forms.TextBox loginBox;
+		private System.Windows.Forms.Label KeyLabel;
+		private System.Windows.Forms.TextBox KeyBox;
 		private System.Windows.Forms.Button SendButton;
 	}
 }

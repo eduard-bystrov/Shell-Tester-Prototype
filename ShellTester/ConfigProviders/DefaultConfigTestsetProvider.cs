@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShellTester.ConfigProviders
 {
-	public class DefaultConfigTestsetSettings : IConfigTestsetSettings
+	public class DefaultConfigTestsetProvider : IConfigTestsetProvider
 	{
 		public String Key => "secret";
 

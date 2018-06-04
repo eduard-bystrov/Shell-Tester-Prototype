@@ -24,6 +24,7 @@ namespace UserInterface
 
 		private readonly IPlatformLogger _logger;
 		private readonly ICompleteTestResultRepository _repository;
+		private IConfigTestsetProvider _lastRunConfig = null;
 
 		public MainForm(IPlatformLogger logger, ICompleteTestResultRepository repository)
 		{
@@ -71,20 +72,21 @@ namespace UserInterface
 		{
 			
 
-			String inMask = @"(input)(\d+)(.txt)";
-			String outMask = @"(output)(\d+)(.txt)";
+			var collector = new ZipCollectorTests(
+					logger,
+					new DefaultConfigTestsetProvider(),
+					PathToTestsetBox.Text,
+					new String[] { "228", "123" }
+
+				);
+
+
+			//TODO пложу конфиги
+			var _lastRunConfig = collector.Config;
 
 			ITester tester = new Tester(
 				logger,
-				new ZipCollectorTests(
-					logger,
-					new DefaultConfigTestsetSettings(),
-					PathToTestsetBox.Text,
-					new TestFilePattern(inMask),
-					new TestFilePattern(outMask),
-					new String[] { "228", "123" }
-
-				),
+				collector,
 				new CheckAllTestsLauncher
 					(
 						new OneTestRunner(
@@ -130,7 +132,9 @@ namespace UserInterface
 					Id = x.Id,
 					Kind = x.Kind,
 					Time_ms = x.ExecutionTime_ms,
-					Memory_mb = x.PeekMemory_mb
+					TimeLimit_ms = _lastRunConfig.TimeLimitFor(x.Id),
+					Memory_mb = x.PeekMemory_mb,
+					MemoryLimit_mb = _lastRunConfig.MemoryLimitFor(x.Id)
 				})
 
 			};
@@ -162,7 +166,10 @@ namespace UserInterface
 			public String Id { get; set; }
 			public TestResultKind Kind { get; set; }
 			public Int64 Time_ms { get; set; }
+			public Int64 TimeLimit_ms { get; set; }
 			public Int64 Memory_mb { get; set; }
+			public Int64 MemoryLimit_mb { get; set; }
+			
 		}
 
 		private void SendResultButton_Click(Object sender, EventArgs e)

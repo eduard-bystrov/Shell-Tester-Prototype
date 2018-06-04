@@ -1,4 +1,5 @@
 ﻿using Logger;
+using ShellTester.ConfigProviders;
 using System;
 using System.IO;
 using System.Linq;
@@ -10,16 +11,12 @@ namespace ShellTester.CreatorsTestset
 		public TestsetCreator(
 			ITestOutputDataCreator creator,
 			IPlatformLogger logger,
-			String workPath,
-			TestFilePattern inputFilePattern,
-			TestFilePattern outputFilePatten
+			String workPath
 		)
 		{
 			_creator = creator;
 			_logger = logger;
 			_workPath = workPath;
-			_inputFilePattern = inputFilePattern;
-			_outputFilePattern = outputFilePatten;
 		}
 
 		public void Create()
@@ -46,6 +43,8 @@ namespace ShellTester.CreatorsTestset
 				_inputFilePattern.GetNumberPart(inputFileName) +
 				_outputFilePattern.SuffixPattern;
 		}
+
+		public IConfigTestsetProvider Config { get; }
 
 		private readonly ITestOutputDataCreator _creator;
 		private readonly IPlatformLogger _logger;

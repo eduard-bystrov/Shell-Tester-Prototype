@@ -13,12 +13,10 @@ namespace ShellTester.CollectorsTests
 	{
 		public PathCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetSettings configProvider,
-			String workPath,
-			TestFilePattern inputFilePattern,
-			TestFilePattern outputFilePatten
+			IConfigTestsetProvider configProvider,
+			String workPath
 		)
-			: base(logger, configProvider, workPath, inputFilePattern, outputFilePatten)
+			: base(logger, configProvider, workPath)
 		{
 		}
 
@@ -26,8 +24,8 @@ namespace ShellTester.CollectorsTests
 		{
 			_logger.Info("Find test files...");
 
-			String[] inputFiles = GetFilesByMask(_inputFilePattern.GetFullRegex());
-			String[] outputFiles = GetFilesByMask(_outputFilePattern.GetFullRegex());
+			String[] inputFiles = GetFilesByMask(InputFilePattern.GetFullRegex());
+			String[] outputFiles = GetFilesByMask(OutputFilePattern.GetFullRegex());
 
 			var tests = MakeTestBlocks(inputFiles, outputFiles);
 
@@ -38,8 +36,8 @@ namespace ShellTester.CollectorsTests
 
 		private IEnumerable<Test> MakeTestBlocks(String[] inputFiles, String[] outputFiles)
 		{
-			String[] inputNumberFilenames = GetOnlyNumberFilenames(inputFiles, _inputFilePattern);
-			String[] outpuNumberFilenames = GetOnlyNumberFilenames(outputFiles, _outputFilePattern);
+			String[] inputNumberFilenames = GetOnlyNumberFilenames(inputFiles, InputFilePattern);
+			String[] outpuNumberFilenames = GetOnlyNumberFilenames(outputFiles, OutputFilePattern);
 
 			for (Int32 i = 0; i < inputNumberFilenames.Length; ++i)
 			{
@@ -79,7 +77,7 @@ namespace ShellTester.CollectorsTests
 							.ToArray();
 		}
 
-		public override IConfigTestsetSettings Config
+		public override IConfigTestsetProvider Config
 		{
 			get
 			{

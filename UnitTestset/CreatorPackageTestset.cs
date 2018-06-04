@@ -17,19 +17,15 @@ namespace UnitTestset
 			var creator = new TestsetCreator(
 				new TestOutputDataCreator(@"../../Programs/AllTestAC.exe"),
 				Logger,
-				"@../../Tests/Creator/",
-				new TestFilePattern(inMask),
-				new TestFilePattern(outMask)
+				"@../../Tests/Creator/"
 			);
 
 			creator.Create();
 
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
-						@"../Tests/test.zip",
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask)
+						new DefaultConfigTestsetProvider(),
+						@"../Tests/test.zip"
 					);
 
 			Assert.IsTrue(collector.MakeTestBlocks().Count() == 2);
@@ -42,19 +38,15 @@ namespace UnitTestset
 			var creator = new TestsetCreator(
 				new TestOutputDataCreator(@"../../Programs/ErrorInProcess.exe"),
 				Logger,
-				"@../../Tests/Creator/",
-				new TestFilePattern(inMask),
-				new TestFilePattern(outMask)
+				"@../../Tests/Creator/"
 			);
 
 			creator.Create();
 
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetSettings(),
-						@"../Tests/test.zip",
-						new TestFilePattern(inMask),
-						new TestFilePattern(outMask)
+						new DefaultConfigTestsetProvider(),
+						@"../Tests/test.zip"
 					);
 
 			Assert.IsTrue(collector.MakeTestBlocks().Count() == 2);

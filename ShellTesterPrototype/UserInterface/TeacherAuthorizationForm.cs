@@ -13,18 +13,20 @@ namespace UserInterface
 {
 	public partial class TeacherAuthorizationForm : Form
 	{
-		public TeacherAuthorizationForm()
+		private readonly String _key;
+
+		public TeacherAuthorizationForm(String key)
 		{
 			InitializeComponent();
+			_key = key;
 			
 		}
 
 		private void SendButton_Click(Object sender, EventArgs e)
 		{
-			var login = loginBox.Text;
-			var pass = passwordBox.Text;
+			var key = KeyBox.Text;
 
-			if (login == "admin" && pass == "admin")
+			if (_key == key)
 			{
 				this.DialogResult = DialogResult.OK;
 				
