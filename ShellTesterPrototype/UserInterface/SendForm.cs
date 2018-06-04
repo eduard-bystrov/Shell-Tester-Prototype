@@ -168,6 +168,7 @@ namespace UserInterface
 				stringBuilder.AppendHtmlText($"{extraLabel.Text} : {extraBox.Text}");
 				stringBuilder.AppendHtmlText($"{subjectNameLabel.Text} : {subjectNameBox.Text}");
 				stringBuilder.AppendHtmlText($"{subjectTaskLabel.Text} : {subjectTaskBox.Text}");
+				stringBuilder.AppendHtmlText($"Версия пакета : {_runResult.TestsetVersion}");
 
 				return stringBuilder.ToString();
 			}
