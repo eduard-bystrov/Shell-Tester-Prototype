@@ -16,11 +16,10 @@ namespace ShellTester.CollectorsTests
 	{
 		public ZipCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetProvider configProvider,
 			String workPath,
 			IEnumerable<String> passwords
 		) 
-			: base(logger,configProvider, workPath)
+			: base(logger, workPath)
 		{
 			_password = BruteForcePassword(new List<String>(passwords));
 		}

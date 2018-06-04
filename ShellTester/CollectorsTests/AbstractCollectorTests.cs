@@ -10,19 +10,22 @@ namespace ShellTester.CollectorsTests
 {
 	public abstract class AbstractCollectorTests : ICollectorTests
 	{
+
+		//TODO workPath check
 		public AbstractCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetProvider configProvider,
 			String workPath
 		)
 		{
-			_logger = logger;
-			_configTestsetProvider = configProvider;
+			_logger = logger ?? throw new NullReferenceException(nameof(IPlatformLogger));
 			_workPath = workPath;
 		}
 
 		public virtual IEnumerable<Test> MakeTestBlocks() => throw new NotImplementedException();
-		public virtual IConfigTestsetProvider Config { get => throw new NotImplementedException(); }
+
+
+		private readonly IConfigTestsetProvider _defaultConfig = new DefaultConfigTestsetProvider();
+		public virtual IConfigTestsetProvider Config { get => _defaultConfig; }
 
 		protected readonly IPlatformLogger _logger;
 		protected readonly String _workPath;

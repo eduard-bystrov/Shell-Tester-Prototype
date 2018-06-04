@@ -195,6 +195,7 @@ namespace UserInterface
 			// 
 			this.PathToTestsetBox.Location = new System.Drawing.Point(18, 61);
 			this.PathToTestsetBox.Name = "PathToTestsetBox";
+			this.PathToTestsetBox.ReadOnly = true;
 			this.PathToTestsetBox.Size = new System.Drawing.Size(170, 20);
 			this.PathToTestsetBox.TabIndex = 13;
 			// 
@@ -211,6 +212,7 @@ namespace UserInterface
 			// 
 			this.PathToProgramBox.Location = new System.Drawing.Point(18, 218);
 			this.PathToProgramBox.Name = "PathToProgramBox";
+			this.PathToProgramBox.ReadOnly = true;
 			this.PathToProgramBox.Size = new System.Drawing.Size(170, 20);
 			this.PathToProgramBox.TabIndex = 15;
 			// 

@@ -25,6 +25,7 @@ namespace UserInterface
 		private readonly IPlatformLogger _logger;
 		private readonly ICompleteTestResultRepository _repository;
 		private IConfigTestsetProvider _lastRunConfig = null;
+		private ICollectorTests _lastCollectorTests = null;
 
 		public MainForm(IPlatformLogger logger, ICompleteTestResultRepository repository)
 		{
@@ -37,7 +38,7 @@ namespace UserInterface
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 
-			openFileDialog.InitialDirectory = textBox.Text.Length > 0 ? textBox.Text  : "c:\\";
+			openFileDialog.InitialDirectory = textBox.Text.Length > 0 ? textBox.Text : "c:\\";
 
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
@@ -49,6 +50,21 @@ namespace UserInterface
 		private void ChoiceTestsetButton_Click(Object sender, EventArgs e)
 		{
 			ChoicePathDialog(PathToTestsetBox);
+			UpdateCollector();
+
+		}
+
+
+		private void UpdateCollector()
+		{
+			_lastCollectorTests = new ZipCollectorTests(
+					_logger,
+					PathToTestsetBox.Text,
+					new String[] { "228", "123" }
+
+				);
+
+			_lastRunConfig = _lastCollectorTests.Config;
 		}
 
 		private void ChoicePathToProgramButton_Click(Object sender, EventArgs e)
@@ -71,22 +87,9 @@ namespace UserInterface
 		private List<TestResult> RunTester(IPlatformLogger logger)
 		{
 			
-
-			var collector = new ZipCollectorTests(
-					logger,
-					new DefaultConfigTestsetProvider(),
-					PathToTestsetBox.Text,
-					new String[] { "228", "123" }
-
-				);
-
-
-			//TODO пложу конфиги
-			var _lastRunConfig = collector.Config;
-
 			ITester tester = new Tester(
 				logger,
-				collector,
+				_lastCollectorTests,
 				new CheckAllTestsLauncher
 					(
 						new OneTestRunner(
@@ -97,9 +100,7 @@ namespace UserInterface
 					)
 			);
 
-
 			var results = new List<TestResult>(tester.Run());
-
 			return results;
 			
 		}

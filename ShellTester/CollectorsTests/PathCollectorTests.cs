@@ -13,10 +13,9 @@ namespace ShellTester.CollectorsTests
 	{
 		public PathCollectorTests(
 			IPlatformLogger logger,
-			IConfigTestsetProvider configProvider,
 			String workPath
 		)
-			: base(logger, configProvider, workPath)
+			: base(logger, workPath)
 		{
 		}
 

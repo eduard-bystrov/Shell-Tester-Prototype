@@ -16,7 +16,6 @@ namespace UnitTestset
 		{
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip"
 					);
 
@@ -31,7 +30,6 @@ namespace UnitTestset
 		{
 			var collector = new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip",
 						Enumerable.Empty<String>()
 					);
@@ -44,7 +42,6 @@ namespace UnitTestset
 		{
 			var collector = new ZipCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip",
 						new String[] {"228", "123" }
 					);

@@ -24,11 +24,10 @@ namespace UnitTestset
 
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip"
 					);
 
-			Assert.IsTrue(collector.MakeTestBlocks().Count() == 2);
+			Assert.IsTrue(collector.MakeTestBlocks().Any());
 		}
 
 		[TestMethod]
@@ -45,7 +44,6 @@ namespace UnitTestset
 
 			var collector = new PathCollectorTests(
 						Logger,
-						new DefaultConfigTestsetProvider(),
 						@"../Tests/test.zip"
 					);
 

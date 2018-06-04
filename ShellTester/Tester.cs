@@ -1,6 +1,7 @@
 ﻿using Logger;
 using ShellTester.CollectorsTests;
 using ShellTester.Launchers;
+using System;
 using System.Collections.Generic;
 
 namespace ShellTester
@@ -13,9 +14,9 @@ namespace ShellTester
 			IProcessTestsLauncher processTestsLauncher
 		)
 		{
-			_processTestsLauncher = processTestsLauncher;
-			_collector = collertor;
-			_logger = logger;
+			_logger = logger ?? throw new NullReferenceException(nameof(IPlatformLogger));
+			_collector = collertor ?? throw new NullReferenceException(nameof(ICollectorTests));
+			_processTestsLauncher = processTestsLauncher ?? throw new NullReferenceException(nameof(IProcessTestsLauncher));
 		}
 
 		public IEnumerable<TestResult> Run()

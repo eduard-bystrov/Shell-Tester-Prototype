@@ -39,7 +39,6 @@ namespace ShellTesterPrototype
 					logger,
 					new ZipCollectorTests(
 						logger,
-						new DefaultConfigTestsetProvider(),
 						path,
 						new String[] {"228", "123"}
 
