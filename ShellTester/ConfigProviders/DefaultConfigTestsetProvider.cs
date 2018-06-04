@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShellTester.ConfigProviders
 {
@@ -12,9 +8,9 @@ namespace ShellTester.ConfigProviders
 
 		public String TaskName => "DefaultName";
 
-		public Int32 DefaultTimeLimit_ms => 10;
+		public Int32 DefaultTimeLimit_ms => 1000;
 
-		public Int32 DefaultMemoryLimit_mb => 512;
+		public Int32 DefaultMemoryLimit_mb => 256;
 
 		public Int32 DefaultPrice => 1;
 

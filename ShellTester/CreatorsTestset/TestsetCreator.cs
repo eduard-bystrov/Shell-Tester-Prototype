@@ -14,15 +14,15 @@ namespace ShellTester.CreatorsTestset
 			String workPath
 		)
 		{
-			_creator = creator;
-			_logger = logger;
+			_creator = creator ?? throw new NullReferenceException(nameof(ITestOutputDataCreator));
+			_logger = logger ?? throw new NullReferenceException(nameof(IPlatformLogger));
 			_workPath = workPath;
 		}
 
 		public void Create()
 		{
 			var inputFiles = Directory.GetFiles(_workPath)
-							.Where(file => _inputFilePattern.GetFullRegex().IsMatch(file));
+							.Where(file => InputFilePattern.GetFullRegex().IsMatch(file));
 
 			foreach (var inputFile in inputFiles)
 			{
@@ -39,17 +39,16 @@ namespace ShellTester.CreatorsTestset
 		private String CreateOutputFileName(String inputFileName)
 		{
 			return inputFileName.Substring(0, inputFileName.LastIndexOf('/')) +
-				_outputFilePattern.PrefixPattern +
-				_inputFilePattern.GetNumberPart(inputFileName) +
-				_outputFilePattern.SuffixPattern;
+				Config.OuputFilePattern.PrefixPattern +
+				Config.InputFilePattern.GetNumberPart(inputFileName) +
+				Config.OuputFilePattern.SuffixPattern;
 		}
 
 		public IConfigTestsetProvider Config { get; }
+		public TestFilePattern InputFilePattern { get => Config.InputFilePattern; }
 
 		private readonly ITestOutputDataCreator _creator;
 		private readonly IPlatformLogger _logger;
 		private readonly String _workPath;
-		private readonly TestFilePattern _inputFilePattern;
-		private readonly TestFilePattern _outputFilePattern;
 	}
 }

@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Extension;
+using UserInterface.Model;
 using UserInterface.MongoDb;
 
 namespace UserInterface
@@ -109,10 +110,14 @@ namespace UserInterface
 		{
 			
 			var result = RunTester(_logger);
+			var archiveName = Path.GetFileNameWithoutExtension(PathToTestsetBox.Text);
 
-			choiceTryBox.Items.Add(new OneTestRunnerResult(
-				$"{DateTime.Now.ToString()} {Path.GetFileNameWithoutExtension(PathToTestsetBox.Text)} Memory:{MemorylimitBox.Text} Time: {TimelimitBox.Text}"+
-				$"{result.StringResult()}",
+			choiceTryBox.Items.Add(new TestsetRunResult(
+				$"{DateTime.Now.ToString()} Task: {archiveName} Memory: {MemorylimitBox.Text} Time: {TimelimitBox.Text}"+
+				$"Result: {result.StringResult()}",
+				archiveName,
+				_lastRunConfig.TestsetVersion,
+				_lastRunConfig.Key,
 				result
 			));
 
@@ -122,7 +127,7 @@ namespace UserInterface
 
 		private void ChoiceTryBox_SelectedIndexChanged(Object sender, EventArgs e)
 		{
-			var selected = choiceTryBox.SelectedItem as OneTestRunnerResult;
+			var selected = choiceTryBox.SelectedItem as TestsetRunResult;
 			ResultTestRunBox.Text = selected.Result.StringResult();
 
 
@@ -133,33 +138,18 @@ namespace UserInterface
 					Id = x.Id,
 					Kind = x.Kind,
 					Time_ms = x.ExecutionTime_ms,
-					TimeLimit_ms = _lastRunConfig.TimeLimitFor(x.Id),
 					Memory_mb = x.PeekMemory_mb,
+					Price = x.Price,
+					TimeLimit_ms = _lastRunConfig.TimeLimitFor(x.Id),
 					MemoryLimit_mb = _lastRunConfig.MemoryLimitFor(x.Id)
 				})
 
 			};
 
 			testResultDataGridView.DataSource = source;
+			percentageBox.Text = $"{selected.Result.PercentageResult().ToString()}%";
 		}
 
-		private class OneTestRunnerResult
-		{
-			public String Name { get; private set; }
-			public List<TestResult> Result { get; private set; }
-
-			public OneTestRunnerResult(String name, List<TestResult> results)
-			{
-				Name = name;
-				Result = results;
-			}
-
-
-			public override String ToString()
-			{
-				return Name;
-			}
-		}
 
 		private class TestResulUserView
 		{
@@ -167,16 +157,21 @@ namespace UserInterface
 			public String Id { get; set; }
 			public TestResultKind Kind { get; set; }
 			public Int64 Time_ms { get; set; }
-			public Int64 TimeLimit_ms { get; set; }
 			public Int64 Memory_mb { get; set; }
+			public Int64 Price { get; set; }
+			public Int64 TimeLimit_ms { get; set; }
 			public Int64 MemoryLimit_mb { get; set; }
 			
 		}
 
 		private void SendResultButton_Click(Object sender, EventArgs e)
 		{
-			var selected = choiceTryBox.SelectedItem as OneTestRunnerResult;
-			var SendForm = new SendForm(_logger, _repository, selected.Result);
+			var selected = choiceTryBox.SelectedItem as TestsetRunResult;
+			var SendForm = new SendForm(
+				_logger,
+				_repository,
+				selected
+			);
 			SendForm.Show();
 		}
 	}

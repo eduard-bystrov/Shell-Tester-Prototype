@@ -19,20 +19,18 @@ namespace ShellTester.CollectorsTests
 		{
 			_logger = logger ?? throw new NullReferenceException(nameof(IPlatformLogger));
 			_workPath = workPath;
+			_configTestsetProvider = new DefaultConfigTestsetProvider();
 		}
 
 		public virtual IEnumerable<Test> MakeTestBlocks() => throw new NotImplementedException();
 
 
-		private readonly IConfigTestsetProvider _defaultConfig = new DefaultConfigTestsetProvider();
-		public virtual IConfigTestsetProvider Config { get => _defaultConfig; }
+		public virtual IConfigTestsetProvider Config { get => _configTestsetProvider; }
 
 		protected readonly IPlatformLogger _logger;
 		protected readonly String _workPath;
 		protected TestFilePattern InputFilePattern => _configTestsetProvider.InputFilePattern;
 		protected TestFilePattern OutputFilePattern => _configTestsetProvider.OuputFilePattern;
 		protected readonly IConfigTestsetProvider _configTestsetProvider;
-
-		
 	}
 }

@@ -67,7 +67,8 @@ namespace ShellTester.CollectorsTests
 								outputFile.ExtractToStreamReader(),
 								idTest,
 								_configTestsetProvider.TimeLimitFor(idTest),
-								_configTestsetProvider.MemoryLimitFor(idTest)
+								_configTestsetProvider.MemoryLimitFor(idTest),
+								_configTestsetProvider.PriceFor(idTest)
 							);
 						}
 					}

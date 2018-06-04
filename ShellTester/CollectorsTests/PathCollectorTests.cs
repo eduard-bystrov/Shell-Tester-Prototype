@@ -54,7 +54,8 @@ namespace ShellTester.CollectorsTests
 							new StreamReader(outputFiles[j]),
 							idTest,
 							_configTestsetProvider.TimeLimitFor(idTest),
-							_configTestsetProvider.MemoryLimitFor(idTest)
+							_configTestsetProvider.MemoryLimitFor(idTest),
+							_configTestsetProvider.PriceFor(idTest)
 						);
 						break;
 					}

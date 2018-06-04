@@ -10,7 +10,7 @@ namespace ShellTester.Launchers
 	{
 		public AbstractTestsLauncher(IOneTestRunner oneTestRunner)
 		{
-			_oneTestRunner = oneTestRunner;
+			_oneTestRunner = oneTestRunner ?? throw new NullReferenceException(nameof(IOneTestRunner));
 		}
 
 		public virtual IEnumerable<TestResult> StartTesting(IEnumerable<Test> tests)

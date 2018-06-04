@@ -13,6 +13,14 @@ namespace UserInterface.Extension
 		{
 			return $"{result.Count(x => x.Kind == TestResultKind.Success)}/{result.Count}";
 		}
+
+		public static Int64 PercentageResult(this List<TestResult> results)
+		{
+			Int64 complete = results.Where(x => x.Kind == TestResultKind.Success).Sum(x => x.Price);
+			Int64 total = results.Sum(x => x.Price);
+			return (Int64)Math.Round((double)(100 * complete) / total);
+		}
+
 	}
 
 }

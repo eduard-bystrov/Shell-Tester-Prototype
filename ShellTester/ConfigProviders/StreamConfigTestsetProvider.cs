@@ -77,6 +77,7 @@ namespace ShellTester.ConfigProviders
 			var wh = _settings.Tests.Customizations
 				.Where(x => x.inRange(testId));
 
+			//TODO Exception
 			if (wh.Any())
 			{
 				result = wh.First().Price;

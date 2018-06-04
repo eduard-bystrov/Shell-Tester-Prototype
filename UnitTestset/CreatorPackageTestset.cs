@@ -47,7 +47,7 @@ namespace UnitTestset
 						@"../Tests/test.zip"
 					);
 
-			Assert.IsTrue(collector.MakeTestBlocks().Count() == 2);
+			Assert.IsTrue(collector.MakeTestBlocks().Any());
 		}
 	}
 }

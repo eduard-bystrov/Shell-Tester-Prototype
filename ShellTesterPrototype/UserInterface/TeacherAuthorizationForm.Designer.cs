@@ -46,6 +46,7 @@
 			// 
 			this.KeyBox.Location = new System.Drawing.Point(74, 18);
 			this.KeyBox.Name = "KeyBox";
+			this.KeyBox.PasswordChar = '*';
 			this.KeyBox.Size = new System.Drawing.Size(270, 20);
 			this.KeyBox.TabIndex = 15;
 			// 

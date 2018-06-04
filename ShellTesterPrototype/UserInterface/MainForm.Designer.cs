@@ -57,6 +57,8 @@ namespace UserInterface
 			this.choiceTryBox = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.percentageLabel = new System.Windows.Forms.Label();
+			this.percentageBox = new System.Windows.Forms.TextBox();
 			this.menuStrip.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -228,6 +230,8 @@ namespace UserInterface
 			// panel2
 			// 
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel2.Controls.Add(this.percentageBox);
+			this.panel2.Controls.Add(this.percentageLabel);
 			this.panel2.Controls.Add(this.ResultTestRunBox);
 			this.panel2.Controls.Add(this.label7);
 			this.panel2.Controls.Add(this.testResultDataGridView);
@@ -314,6 +318,23 @@ namespace UserInterface
 			this.label4.TabIndex = 0;
 			this.label4.Text = "Результаты тестирования";
 			// 
+			// percentageLabel
+			// 
+			this.percentageLabel.AutoSize = true;
+			this.percentageLabel.Location = new System.Drawing.Point(238, 126);
+			this.percentageLabel.Name = "percentageLabel";
+			this.percentageLabel.Size = new System.Drawing.Size(138, 13);
+			this.percentageLabel.TabIndex = 17;
+			this.percentageLabel.Text = "Процентное соотношение";
+			// 
+			// percentageBox
+			// 
+			this.percentageBox.Location = new System.Drawing.Point(382, 124);
+			this.percentageBox.Name = "percentageBox";
+			this.percentageBox.ReadOnly = true;
+			this.percentageBox.Size = new System.Drawing.Size(107, 20);
+			this.percentageBox.TabIndex = 18;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,6 +389,8 @@ namespace UserInterface
 		private System.Windows.Forms.TextBox ResultTestRunBox;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.DataGridView testResultDataGridView;
+		private System.Windows.Forms.TextBox percentageBox;
+		private System.Windows.Forms.Label percentageLabel;
 	}
 }
 

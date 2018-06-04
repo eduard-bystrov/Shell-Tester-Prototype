@@ -11,25 +11,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Extension;
+using UserInterface.Model;
 using UserInterface.MongoDb;
 
 namespace UserInterface
 {
 	public partial class SendForm : Form
 	{
-		private readonly List<TestResult> _testResults;
+		private readonly TestsetRunResult _runResult;
 		private readonly IPlatformLogger _logger;
 		private readonly ICompleteTestResultRepository _repository;
 
 
-		public SendForm(IPlatformLogger logger, ICompleteTestResultRepository repository, List<TestResult> testResults)
+		public SendForm(
+			IPlatformLogger logger, 
+			ICompleteTestResultRepository repository, 
+			TestsetRunResult runResult
+		)
 		{
 			InitializeComponent();
 
-			_testResults = testResults;
+			_runResult = runResult;
 			_logger = logger;
 			_repository = repository;
 
+			var testResults = _runResult.Result;
+
+			InitYearBox();
+			this.testResultBox.Text = $"{testResults.Count(x => x.Kind == TestResultKind.Success)}/{testResults.Count}";
+			this.semesterBox.Text = DateTime.Now.Month >= 9 ? "Осенний" : "Весенний";
+			this.scoreBox.Text = $"{testResults.PercentageResult()}%";
+			this.subjectTaskBox.Text = _runResult.ArchiveName;
+		}
+
+		void InitYearBox()
+		{
 			var currentYear = DateTime.Now.Year;
 
 			List<int> years = new List<int>();
@@ -42,16 +58,13 @@ namespace UserInterface
 			this.yearsBox.DataSource = years;
 			this.yearsBox.DropDownStyle = ComboBoxStyle.DropDownList;
 			this.yearsBox.SelectedIndex = 0;
-
-			this.testResultBox.Text = $"{testResults.Count(x => x.Kind == TestResultKind.Success)}/{testResults.Count}";
-
 		}
 
 		//TODO пустой email
 		private void SendButton_Click(Object sender, EventArgs e)
 		{
 
-			using (var authForm = new TeacherAuthorizationForm("secret"))
+			using (var authForm = new TeacherAuthorizationForm(_runResult.Key))
 			{
 				if (authForm.ShowDialog() == DialogResult.OK)
 				{
@@ -91,12 +104,10 @@ namespace UserInterface
 
 		}
 
-
 		private void SendToDb()
 		{
 			_repository.AddTestResult(CompleteTestResult).Wait();
 		}
-
 
 		private CompleteTestResult CompleteTestResult
 		{
@@ -116,12 +127,13 @@ namespace UserInterface
 					Work = new Work
 					{
 						SubjectName = subjectNameBox.Text,
-						TaskName = subjectTaskBox.Text
+						TaskName = subjectTaskBox.Text,
+						TestVesion = _runResult.TestsetVersion
 					},
 
 					Extra = extraBox.Text,
 					Score = scoreBox.Text,
-					TestResult = _testResults,
+					TestResult = _runResult.Result,
 				};
 			} 
 		}
@@ -135,7 +147,7 @@ namespace UserInterface
 			postman.Send(
 				mailBox.Text,
 				$"{fullnameBox.Text}_{groupBox.Text}_{yearsBox.Text}_{semesterBox.Text}_{subjectNameBox.Text}",
-				_testResults,
+				_runResult.Result,
 				MakePrefix
 			);
 		}

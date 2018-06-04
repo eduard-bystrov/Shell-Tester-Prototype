@@ -65,7 +65,11 @@ namespace ShellTester
 		{
 			//StreamReader streamReaderIdeal = new StreamReader(test.IdealOutputFileName);
 
-			var res = new TestResult();
+			var res = new TestResult()
+			{
+				Price = test.Price,
+				Id = test.Id
+			};
 
 			//TODO Сравниватель файлов, доблы и тд
 			Boolean accepted = _comparer.Equals(test.IdealOutputStream, process.StandardOutput);
@@ -84,7 +88,7 @@ namespace ShellTester
 			//TODO память точно верно(сравнить)
 			res.ExecutionTime = process.TotalProcessorTime;
 			res.PeekMemory = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
-			res.Id = test.Id;
+			
 
 			return res;
 		}
