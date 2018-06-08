@@ -11,11 +11,11 @@ namespace Postman
 			String password,
 			String name
 		)
-		: base(logger, email, password, name, _smptpAdress, _port)
+		: base(logger, email, password, name, _smtpAdress, _port)
 		{
 		}
 
-		private static readonly String _smptpAdress = @"smtp.gmail.com";
+		private static readonly String _smtpAdress = @"smtp.gmail.com";
 		private static readonly Int32 _port = 25;
 	}
 }

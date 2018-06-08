@@ -1,7 +1,9 @@
 {
   "TaskkName": "Имя", // ООП:Лабораторная работа №1
   "TestsetVersion": "3.2.2.8", // версия пакета тестов
-  "Key" :  "secret" ,
+  "Key": "secret",
+
+  //TODO возможно почту тоже сюда
 
   "Tests": [
     {
@@ -18,7 +20,7 @@
       //нумерация должна совпадать у входного и выходного файла
       "OutputMask": {
         "Prefix": "output",
-        "Numeration": "[\\d]+",
+        "Numeration": "[d]+",
         "Suffix": ".txt"
       },
 

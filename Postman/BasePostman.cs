@@ -18,7 +18,7 @@ namespace Postman
 			String email,
 			String password,
 			String name,
-			String smptpAdress,
+			String smtpAdress,
 			Int32 port
 
 		)
@@ -26,7 +26,7 @@ namespace Postman
 
 			Logger = logger;
 
-			SmtpClient = new SmtpClient(smptpAdress, port)
+			SmtpClient = new SmtpClient(smtpAdress, port)
 			{
 				Credentials = new NetworkCredential(email, password),
 				EnableSsl = true,
@@ -44,7 +44,7 @@ namespace Postman
 				x => x.Description,
 				x => x.Kind,
 				x => x.ExecutionTime,
-				x => x.PeekMemory
+				x => x.PeekMemory_bit
 			};
 		}
 

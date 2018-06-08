@@ -15,7 +15,7 @@ namespace ShellTester
 		public Int64 ExecutionTime_m => Convert.ToInt32(ExecutionTime.TotalMinutes);
 
 
-		public Int64 PeekMemory { get; set; }
+		public Int64 PeekMemory_bit { get; set; }
 		public Int64 PeekMemory_mb { get; set; }
 
 

@@ -23,7 +23,7 @@ namespace ShellTester
 		TestDescription Description { get; }
 		TestResultKind Kind { get; }
 		TimeSpan ExecutionTime { get; }
-		Int64 PeekMemory { get; }
+		Int64 PeekMemory_bit { get; }
 		Int64 PeekMemory_mb { get; set; }
 
 		Int64 ExecutionTime_ms { get; }

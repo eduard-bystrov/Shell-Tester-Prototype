@@ -49,6 +49,8 @@ namespace UserInterface
 			this.PathToProgramBox = new System.Windows.Forms.TextBox();
 			this.choicePathToTestsetLabel = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.percentageBox = new System.Windows.Forms.TextBox();
+			this.percentageLabel = new System.Windows.Forms.Label();
 			this.ResultTestRunBox = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.testResultDataGridView = new System.Windows.Forms.DataGridView();
@@ -57,8 +59,6 @@ namespace UserInterface
 			this.choiceTryBox = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.percentageLabel = new System.Windows.Forms.Label();
-			this.percentageBox = new System.Windows.Forms.TextBox();
 			this.menuStrip.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -174,6 +174,7 @@ namespace UserInterface
 			this.TimelimitBox.ReadOnly = true;
 			this.TimelimitBox.Size = new System.Drawing.Size(242, 20);
 			this.TimelimitBox.TabIndex = 7;
+			this.TimelimitBox.Text = "1000";
 			// 
 			// MemorylimitBox
 			// 
@@ -182,6 +183,7 @@ namespace UserInterface
 			this.MemorylimitBox.ReadOnly = true;
 			this.MemorylimitBox.Size = new System.Drawing.Size(242, 20);
 			this.MemorylimitBox.TabIndex = 6;
+			this.MemorylimitBox.Text = "256";
 			// 
 			// StartTestingButton
 			// 
@@ -246,8 +248,34 @@ namespace UserInterface
 			this.panel2.Size = new System.Drawing.Size(623, 546);
 			this.panel2.TabIndex = 5;
 			// 
+			// percentageBox
+			// 
+			this.percentageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.percentageBox.Location = new System.Drawing.Point(382, 124);
+			this.percentageBox.Name = "percentageBox";
+			this.percentageBox.ReadOnly = true;
+			this.percentageBox.Size = new System.Drawing.Size(107, 20);
+			this.percentageBox.TabIndex = 18;
+			// 
+			// percentageLabel
+			// 
+			this.percentageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.percentageLabel.AutoSize = true;
+			this.percentageLabel.Location = new System.Drawing.Point(238, 126);
+			this.percentageLabel.Name = "percentageLabel";
+			this.percentageLabel.Size = new System.Drawing.Size(138, 13);
+			this.percentageLabel.TabIndex = 17;
+			this.percentageLabel.Text = "Процентное соотношение";
+			// 
 			// ResultTestRunBox
 			// 
+			this.ResultTestRunBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ResultTestRunBox.Location = new System.Drawing.Point(125, 124);
 			this.ResultTestRunBox.Name = "ResultTestRunBox";
 			this.ResultTestRunBox.ReadOnly = true;
@@ -256,8 +284,11 @@ namespace UserInterface
 			// 
 			// label7
 			// 
+			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(15, 124);
+			this.label7.Location = new System.Drawing.Point(15, 127);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(104, 13);
 			this.label7.TabIndex = 14;
@@ -265,6 +296,9 @@ namespace UserInterface
 			// 
 			// testResultDataGridView
 			// 
+			this.testResultDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.testResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.testResultDataGridView.Location = new System.Drawing.Point(18, 160);
 			this.testResultDataGridView.Name = "testResultDataGridView";
@@ -284,6 +318,9 @@ namespace UserInterface
 			// 
 			// label6
 			// 
+			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label6.AutoSize = true;
 			this.label6.Location = new System.Drawing.Point(237, 87);
 			this.label6.Name = "label6";
@@ -293,6 +330,9 @@ namespace UserInterface
 			// 
 			// choiceTryBox
 			// 
+			this.choiceTryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.choiceTryBox.FormattingEnabled = true;
 			this.choiceTryBox.Location = new System.Drawing.Point(107, 54);
 			this.choiceTryBox.Name = "choiceTryBox";
@@ -302,6 +342,9 @@ namespace UserInterface
 			// 
 			// label5
 			// 
+			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.AutoSize = true;
 			this.label5.Location = new System.Drawing.Point(15, 57);
 			this.label5.Name = "label5";
@@ -311,29 +354,15 @@ namespace UserInterface
 			// 
 			// label4
 			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
 			this.label4.Location = new System.Drawing.Point(237, 21);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(140, 13);
 			this.label4.TabIndex = 0;
 			this.label4.Text = "Результаты тестирования";
-			// 
-			// percentageLabel
-			// 
-			this.percentageLabel.AutoSize = true;
-			this.percentageLabel.Location = new System.Drawing.Point(238, 126);
-			this.percentageLabel.Name = "percentageLabel";
-			this.percentageLabel.Size = new System.Drawing.Size(138, 13);
-			this.percentageLabel.TabIndex = 17;
-			this.percentageLabel.Text = "Процентное соотношение";
-			// 
-			// percentageBox
-			// 
-			this.percentageBox.Location = new System.Drawing.Point(382, 124);
-			this.percentageBox.Name = "percentageBox";
-			this.percentageBox.ReadOnly = true;
-			this.percentageBox.Size = new System.Drawing.Size(107, 20);
-			this.percentageBox.TabIndex = 18;
 			// 
 			// MainForm
 			// 

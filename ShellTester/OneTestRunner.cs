@@ -87,7 +87,7 @@ namespace ShellTester
 
 			//TODO память точно верно(сравнить)
 			res.ExecutionTime = process.TotalProcessorTime;
-			res.PeekMemory = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
+			res.PeekMemory_bit = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
 			
 
 			return res;

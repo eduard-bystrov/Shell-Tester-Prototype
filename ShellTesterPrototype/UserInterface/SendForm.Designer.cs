@@ -134,7 +134,7 @@
 			// yearsBox
 			// 
 			this.yearsBox.FormattingEnabled = true;
-			this.yearsBox.Location = new System.Drawing.Point(222, 45);
+			this.yearsBox.Location = new System.Drawing.Point(222, 48);
 			this.yearsBox.Name = "yearsBox";
 			this.yearsBox.Size = new System.Drawing.Size(77, 21);
 			this.yearsBox.TabIndex = 10;

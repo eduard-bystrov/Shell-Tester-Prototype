@@ -3,7 +3,7 @@
   <Class Name="Postman.GmailPostman">
     <Position X="5.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GmailPostman.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -18,8 +18,15 @@
   <Class Name="Postman.YandexPostman">
     <Position X="3.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>YandexPostman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Postman.Helpers.CSharpObjectToHtmlTableConverter">
+    <Position X="6" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABAABAA=</HashCode>
+      <FileName>Helpers\CSharpObjectToHtmlTableConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
