@@ -33,8 +33,6 @@ namespace UserInterface.MongoDb
 		public String Semester { get; set; }
 	}	
 	
-	
-
 	public class Work
 	{
 		public String SubjectName { get; set; }

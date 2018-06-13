@@ -66,7 +66,11 @@ namespace UserInterface
 				);
 
 			_lastRunConfig = _lastCollectorTests.Config;
-		}
+
+            MemorylimitBox.Text = _lastRunConfig.DefaultMemoryLimit_mb.ToString();
+            TimelimitBox.Text = _lastRunConfig.DefaultTimeLimit_ms.ToString();
+
+        }
 
 		private void ChoicePathToProgramButton_Click(Object sender, EventArgs e)
 		{
@@ -153,7 +157,6 @@ namespace UserInterface
 
 		private class TestResulUserView
 		{
-
 			public String Id { get; set; }
 			public TestResultKind Kind { get; set; }
 			public Int64 Time_ms { get; set; }
