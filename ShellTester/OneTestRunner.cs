@@ -86,8 +86,20 @@ namespace ShellTester
 			var res = new TestResult()
 			{
 				Price = test.Price,
-				Id = test.Id
+				Id = test.Id,
+				ExecutionTime = process.TotalProcessorTime,
+				PeekMemory_bit = _peakPagedMem + _peakVirtualMem + _peakWorkingSet
 			};
+
+			if (res.ExecutionTime.TotalMilliseconds > test.TimeLimit_ms)
+			{
+				res.Kind = TestResultKind.TimeLimitExceeded;
+			}
+
+			if (Memory_mb > test.MemoryLimit_mb)
+			{
+				res.Kind = TestResultKind.MemoryLimitExceeded;
+			}
 
 			//TODO Сравниватель файлов, доблы и тд
 			Boolean accepted = _comparer.Equals(test.IdealOutputStream, process.StandardOutput);
@@ -104,9 +116,6 @@ namespace ShellTester
 			}
 
 			//TODO память точно верно(сравнить)
-			res.ExecutionTime = process.TotalProcessorTime;
-			res.PeekMemory_bit = _peakPagedMem + _peakVirtualMem + _peakWorkingSet;
-			
 
 			return res;
 		}
